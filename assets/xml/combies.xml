@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<combinations xmlns:xlink="http://www.w3.org/1999/xlink">
+  <images>
+  <im value='labeled'>assets/photos/ld.png</im>
+  <im value='unlabeled'>assets/photos/ud.png</im>
+  <im value='supervised'>assets/photos/sl.png</im>
+  <im value='unsupervised'>assets/photos/us.png</im>
+</images>
+  <combi>
+    <name>Predictions based on images</name>
+    <datatype>Image</datatype>
+    <ability>Foresee</ability>
+    <datatoken>236</datatoken>
+    <abilitytoken>22</abilitytoken>
+    <description>Using images as input for predicting actions, states, etc or predict an image based on other types of input.
+    </description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Classification, regression</techterm>
+    <examples>
+      <ex>
+        <exname>LikelyAI</exname>
+        <exdescription>Predict the popularity of your instagram posts</exdescription>
+        <eximage>assets/photos/likelyai.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.likelyai.com/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/analytics-vidhya/fastai-image-regression-age-prediction-based-on-image-68294d34f2ed"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Image recognition</name>
+    <datatype>Image</datatype>
+    <ability>Categorize</ability>
+    <datatoken>236</datatoken>
+    <abilitytoken>140</abilitytoken>
+    <description>Recognize what is visible in images. This can be a person, an object, handwritten numbers and more. Some models can recognize only one object in each image and others can detect multiple, as well as their location.</description>
+    <capabilities>
+      <c1 value="Can recognize all kind of visual input"></c1>
+      <c2 value="It can learn things humans are not capable of recognizing"></c2>
+    </capabilities>
+    <limitations>
+      <l1 value="Requires labeled data"></l1>
+      <l2 value="Only recognizes on what it is trained"></l2>
+      <l3></l3>
+    </limitations>
+    <techterm>Image classification</techterm>
+    <examples>
+      <ex >
+        <exname>Google Lens</exname>
+        <exdescription>Identify objects in your image, translate text from photos , explore similar looking items.</exdescription>
+        <eximage>assets/photos/googlelens.jpg</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://techengage.com/google-lens-now-detects-billion-items/">Link to example</exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://www.tensorflow.org/tutorials/images/classification">Link to DIY</diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Image clustering</name>
+    <datatype>Image</datatype>
+    <ability>Cluster</ability>
+    <datatoken>236</datatoken>
+    <abilitytoken>124</abilitytoken>
+    <description>Group images that are similar together</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Image clustering</techterm>
+    <examples>
+      <ex>
+        <exname>Google Photos</exname>
+        <exdescription>Cluster your photos based on activities, locations, objects, etc. that are in the photos</exdescription>
+        <eximage>assets/photos/googlephotos.jpg</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://photos.google.com/explore"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/how-to-cluster-images-based-on-visual-similarity-cd6e7209fe34"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Image to text/speech</name>
+    <datatype>Image</datatype>
+    <ability>Communicate</ability>
+    <datatoken>236</datatoken>
+    <abilitytoken></abilitytoken>
+    <description></description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Image recognition, speech/ text synthesis, optical character recognition</techterm>
+    <examples>
+      <ex>
+        <exname>Alternative text</exname>
+        <exdescription>Describes the content of an image placed in Word or another Microsoft appliaction</exdescription>
+        <eximage>assets/photos/</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://blogs.microsoft.com/ai/azure-image-captioning/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/swlh/automatic-image-captioning-using-deep-learning-5e899c127387"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Image generation</name>
+    <datatype>Image</datatype>
+    <ability>Generate</ability>
+    <datatoken>236</datatoken>
+    <abilitytoken>24</abilitytoken>
+    <description>Generate new images based on examples</description>
+    <capabilities>
+      <c1 value="Can create new content from scratch"></c1>
+      <c2 value="Can augment your dataset so you have more data to train with"></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value="The model might only create one small subset of the data and fails to generalize"></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Generative adversarial network, image generation</techterm>
+    <examples>
+      <ex>
+        <exname>Dall-e</exname>
+        <exdescription>Create images from text captions.</exdescription>
+        <eximage>assets/photos/dall-e.JPG</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://openai.com/blog/dall-e/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/image-generation-in-10-minutes-with-generative-adversarial-networks-c2afc56bfa3b"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Text prediction</name>
+    <datatype>Text</datatype>
+    <ability>Foresee</ability>
+    <datatoken>224</datatoken>
+    <abilitytoken>22</abilitytoken>
+    <description>Predict how to complete a word or a sentence or what possible response options are based on the entered text data</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Autocomplete, predictive text</techterm>
+    <examples>
+      <ex>
+        <exname>Autocomplete Google</exname>
+        <exdescription>When using the Google search engine, it will predict what you are probably searching and suggest several options for completing your search query</exdescription>
+        <eximage>assets/photos/autocomplete.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.google.com/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/analytics-vidhya/build-a-simple-autocomplete-model-with-your-own-google-search-history-ead26b3b6bd4"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Text recognition</name>
+    <datatype>Text</datatype>
+    <ability>Categorize</ability>
+    <datatoken>224</datatoken>
+    <abilitytoken>140</abilitytoken>
+    <description>Matches texts with certain predefined categories, these could be certain sentiments, categories of mail, etc.</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>Categories should be predefined, does not understand the text</limitations>
+    <techterm>Text classification</techterm>
+    <examples>
+      <ex>
+        <exname>Sentiment analysis</exname>
+        <exdescription>Analyse the text and show if it has a postive or a negative sentiment.</exdescription>
+        <eximage>assets/photos/sentimentanalysis.JPG</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://monkeylearn.com/sentiment-analysis-online/">Link to example</exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://www.tensorflow.org/text/tutorials/text_classification_rnn">Link to DIY</diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Text clustering</name>
+    <datatype>Text</datatype>
+    <ability>Cluster</ability>
+    <datatoken>224</datatoken>
+    <abilitytoken>124</abilitytoken>
+    <description>Cluster text based similarities such as topics, sentence construction, language, etc.</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Text clustering, NLP</techterm>
+    <examples>
+      <ex>
+        <exname>Google News</exname>
+        <exdescription>Shows news in clusters of articles that cover the same topic but come from different sources</exdescription>
+        <eximage>assets/photos/googlenews.JPG</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://news.google.com/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/making-sense-of-text-clustering-ca649c190b20"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Text understanding</name>
+    <datatype>Text</datatype>
+    <ability>Understand</ability>
+    <datatoken>242</datatoken>
+    <abilitytoken></abilitytoken>
+    <description>Can recognize text from e.g. sheets of papers, credit cards, receipts and convert it to digital text</description>
+    <capabilities>Can recognize text in real-time</capabilities>
+    <limitations>The scan/image should be of good enough quality</limitations>
+    <techterm>Optical character recognition, NLP</techterm>
+    <examples>
+      <ex>
+        <exname>OneNote</exname>
+        <exdescription>Copy text from a picture into your notes</exdescription>
+        <eximage>assets/photos/onenote.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://support.microsoft.com/en-us/office/copy-text-from-pictures-and-file-printouts-using-ocr-in-onenote-93a70a2f-ebcd-42dc-9f0b-19b09fd775b4">Link to example</exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://developers.google.com/ml-kit/vision/text-recognition">Link to diy site</diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Written communication</name>
+    <datatype>Text</datatype>
+    <ability>Communicate</ability>
+    <datatoken>224</datatoken>
+    <abilitytoken></abilitytoken>
+    <description>Craft messages in understandable written language</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Natural Language Processing (NLP)</techterm>
+    <examples>
+      <ex>
+        <exname>Duolingo chatbot</exname>
+        <exdescription>Helps you practice real conversations in French, German or Spanish</exdescription>
+        <eximage>assets/photos/duolingo.jpg</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.tristatetechnology.com/blog/best-language-learning-chatbot-apps/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/how-to-create-a-chatbot-with-python-deep-learning-in-less-than-an-hour-56a063bdfc44"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Text generation</name>
+    <datatype>Text</datatype>
+    <ability>Generate</ability>
+    <datatoken>224</datatoken>
+    <abilitytoken>24</abilitytoken>
+    <description>Generate new texts from scratch, often based on a few words or a style (e.g. Shakespearean texts)</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Text generation, generative adversarial network (GAN)</techterm>
+    <examples>
+      <ex>
+        <exname>Plot generator</exname>
+        <exdescription>Based on a few parameters you can generate movie scripts, short stories, opening lines and more.</exdescription>
+        <eximage>assets/photos/plotgenerator.JPG</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.plot-generator.org.uk/">"</exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/the-making-of-an-ai-storyteller-c3b8d5a983f5"></diylink>
+      </ex>
+    </examples>
+  </combi>
+
+  <combi>
+    <name>Prediction</name>
+    <datatype>Time series</datatype>
+    <ability>Foresee</ability>
+    <datatoken>59</datatoken>
+    <abilitytoken>22</abilitytoken>
+    <description>Predict action, events, states, etc. that will happen in the future</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Forecasting, time series regression</techterm>
+    <examples>
+      <ex>
+        <exname>Stock market</exname>
+        <exdescription>Predictions for the stockmarket</exdescription>
+        <eximage>assets/photos/stockmarket.JPG</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.wallstreetzen.com/stock-screener/stock-forecast"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://data-flair.training/blogs/stock-price-prediction-machine-learning-project-in-python/"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Time series categorization</name>
+    <datatype>Time series</datatype>
+    <ability>Categorize</ability>
+    <datatoken>59</datatoken>
+    <abilitytoken>140</abilitytoken>
+    <description>Match extracts of a time series (e.g. 10 seconds) with categories. You first need to preprocess the data before you are able to do this.</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Time series classification</techterm>
+    <examples>
+      <ex>
+        <exname>Acitivity recognition</exname>
+        <exdescription>Recognize activity based on data from gps and sensors</exdescription>
+        <eximage>assets/photos/activityrecognition.JPG</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://tinyurl.com/ytms74s9"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://machinelearningmastery.com/how-to-load-and-explore-a-standard-human-activity-recognition-problem/"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Time series clustering</name>
+    <datatype>Time series</datatype>
+    <ability>Cluster</ability>
+    <datatoken>59</datatoken>
+    <abilitytoken>124</abilitytoken>
+    <description>Cluster extracts of a time series (e.g. 10 seconds). You first need to preprocess the data before you are able to do this.</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Time series clustering</techterm>
+    <examples>
+      <ex>
+        <exname>Clustering earthquake signals</exname>
+        <exdescription>Cluster continuous seismic activity data into different type of signals which could help to forecast eartquakes</exdescription>
+        <eximage>assets/photos/earthquake.JPG</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.nature.com/articles/s41467-020-17841-x"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://www.kaggle.com/izzettunc/introduction-to-time-series-clustering"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi exist='no'>
+    <name></name>
+    <datatype>Time series</datatype>
+    <ability>Communicate</ability>
+    <datatoken>59</datatoken>
+    <abilitytoken></abilitytoken>
+    <description></description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm></techterm>
+    <examples exist="no">
+      <ex>
+        <exname></exname>
+        <exdescription></exdescription>
+        <eximage>assets/photos/</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href=""></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href=""></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Synthetic time series</name>
+    <datatype>Time series</datatype>
+    <ability>Generate</ability>
+    <datatoken>59</datatoken>
+    <abilitytoken>24</abilitytoken>
+    <description>Create time series from scratch</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Generative adversarial networks (GAN), synthetic time series</techterm>
+    <examples>
+      <ex>
+        <exname>Synthetic time series data</exname>
+        <exdescription>Creating extra time series data based on some starting data. More data can help to train a better model.</exdescription>
+        <eximage></eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.osti.gov/servlets/purl/1607585"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/creating-synthetic-time-series-data-67223ff08e34"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi exist='no'>
+    <name></name>
+    <datatype>Audio</datatype>
+    <ability>Foresee</ability>
+    <datatoken>94</datatoken>
+    <abilitytoken>22</abilitytoken>
+    <description></description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm></techterm>
+    <examples>
+      <ex>
+        <exname></exname>
+        <exdescription></exdescription>
+        <eximage>assets/photos/</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href=""></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href=""></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Audio categorization</name>
+    <datatype>Audio</datatype>
+    <ability>Categorize</ability>
+    <datatoken>94</datatoken>
+    <abilitytoken>140</abilitytoken>
+    <description>Match audio with predefined categories</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Audio classification</techterm>
+    <examples>
+      <ex>
+        <exname>Lego Duplo Stories</exname>
+        <exdescription>Use voice commands (via Alexa) to interact with the story being told (e.g. quite, yes, no, colours) while building with lego blocks</exdescription>
+        <eximage>assets/photos/legoduplostories.jpg</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.amazon.com/LEGO-System-A-S-Stories/dp/B07C225J2T"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://www.tensorflow.org/tutorials/audio/simple_audio"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Audio clustering</name>
+    <datatype>Audio</datatype>
+    <ability>Cluster</ability>
+    <datatoken>94</datatoken>
+    <abilitytoken>124</abilitytoken>
+    <description>Cluster audio based on similarities</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Audio clustering</techterm>
+    <examples>
+      <ex>
+        <exname>Bird sounds</exname>
+        <exdescription>Bird sounds are placed in a map where similar sounding sounds are placed closer together</exdescription>
+        <eximage>assets/photos/birdsounds.JPG</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://experiments.withgoogle.com/ai/bird-sounds/view/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/clustering-music-to-create-your-personal-playlists-on-spotify-using-python-and-k-means-a39c4158589a"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Spoken word/speech communication
+    </name>
+    <datatype>Audio</datatype>
+    <ability>Communicate</ability>
+    <datatoken>94</datatoken>
+    <abilitytoken></abilitytoken>
+    <description>Create understandable messages that are being spoken</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>NLP, text to speech, speech synthesis</techterm>
+    <examples>
+      <ex>
+        <exname>Smart assistants</exname>
+        <exdescription>Smart assistents (such as Siri and Alexa) respond to your questions using understandable spoken language</exdescription>
+        <eximage>assets/photos/smartassistants.jpg</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://en.wikipedia.org/wiki/Amazon_Alexa"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/how-to-build-your-own-ai-personal-assistant-using-python-f57247b4494b"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Audio generation</name>
+    <datatype>Audio</datatype>
+    <ability>Generate</ability>
+    <datatoken>94</datatoken>
+    <abilitytoken>24</abilitytoken>
+    <description>Create new sounds from scratch. For example voices or music.</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Audio synthesis, generative adversarial networks (GAN)</techterm>
+    <examples>
+      <ex>
+        <exname>AIVA</exname>
+        <exdescription>Create new music from scratch for different genres of music</exdescription>
+        <eximage>assets/photos/aiva.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.aiva.ai/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/neuronio/audio-generation-with-gans-428bc2de5a89"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Predictions</name>
+    <datatype>Table</datatype>
+    <ability>Foresee</ability>
+    <datatoken>98</datatoken>
+    <abilitytoken>22</abilitytoken>
+    <description>Predict actions, events, values, etc. based on information stored in table</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Regression, classification</techterm>
+    <examples>
+      <ex>
+        <exname>Credit card fraud detection</exname>
+        <exdescription>Predict if a transaction is fraudulent</exdescription>
+        <eximage>assets/photos/creditcardfraud.jfif</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.mastercard.us/en-us/business/issuers/business-payments/fraud-prevention.html"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/credit-card-fraud-detection-using-machine-learning-python-5b098d4a8edc"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Categorize tabular data</name>
+    <datatype>Table</datatype>
+    <ability>Categorize</ability>
+    <datatoken>98</datatoken>
+    <abilitytoken>140</abilitytoken>
+    <description>Match rows (or columns) from a table with categories</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Classification</techterm>
+    <examples>
+      <ex>
+        <exname>Spotify</exname>
+        <exdescription>Match music based on several characteristics with different genres</exdescription>
+        <eximage>assets/photos/spotify.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.spotify.com/nl/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://data-flair.training/blogs/python-project-music-genre-classification/"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Clustering tabular data</name>
+    <datatype>Table</datatype>
+    <ability>Cluster</ability>
+    <datatoken>98</datatoken>
+    <abilitytoken>124</abilitytoken>
+    <description>Group similar rows together</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Clustering</techterm>
+    <examples>
+      <ex>
+        <exname>Customer clustering</exname>
+        <exdescription>Group customers together who are similar and use e.g. target marketing techniques for all groups</exdescription>
+        <eximage>assets/photos/customersegment.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.segmentify.com/blog/customer-consumer-user-segmentation-examples"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/codex/customer-segmentation-with-k-means-in-python-18336fb915be"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi exist='no'>
+    <name></name>
+    <datatype>Table</datatype>
+    <ability>Communicate</ability>
+    <datatoken>98</datatoken>
+    <abilitytoken></abilitytoken>
+    <description></description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm></techterm>
+    <examples>
+      <ex>
+        <exname></exname>
+        <exdescription></exdescription>
+        <eximage>assets/photos/</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href=""></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href=""></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Synthetic tabular data</name>
+    <datatype>Table</datatype>
+    <ability>Generate</ability>
+    <datatoken>98</datatoken>
+    <abilitytoken>24</abilitytoken>
+    <description>Create extra tabular data from scratch</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Generative adversarial networks (GAN), synthetic tabular data</techterm>
+    <examples>
+      <ex>
+        <exname>Tonic.ai</exname>
+        <exdescription>Company that creates fake data based on your original data. This extra fake data can for example be used for sharing (no privacy issues) or for training a (better) model with more data.</exdescription>
+        <eximage>assets/photos/tonic.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.tonic.ai/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/analytics-vidhya/a-step-by-step-guide-to-generate-tabular-synthetic-dataset-with-gans-d55fc373c8db"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Video prediction</name>
+    <datatype>Video</datatype>
+    <ability>Foresee</ability>
+    <datatoken>138</datatoken>
+    <abilitytoken>22</abilitytoken>
+    <description>Predicting the next frames of a video (what happens next)</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Video prediction</techterm>
+    <examples>
+      <ex>
+        <exname>Self driving cars</exname>
+        <exdescription>Predict where other vehicles or people will go
+        </exdescription>
+        <eximage>assets/photos/selfdrivingcars.jpg</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.youtube.com/watch?v=yEtH23rKY8Q"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/deeppicar-part-1-102e03c83f2c"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Video categorization</name>
+    <datatype>Video</datatype>
+    <ability>Categorize</ability>
+    <datatoken>138</datatoken>
+    <abilitytoken>140</abilitytoken>
+    <description>Match the video itself with a certain category or match elements in the video with categories</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Video classification</techterm>
+    <examples>
+      <ex>
+        <exname>Zenia</exname>
+        <exdescription>An app that provides yoga classes and uses pose recognition to to give feedback</exdescription>
+        <eximage>assets/photos/zenia.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://zenia.app/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://thecodingtrain.com/learning/ml5/7.1-posenet.html"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Video clustering</name>
+    <datatype>Video</datatype>
+    <ability>Cluster</ability>
+    <datatoken>138</datatoken>
+    <abilitytoken>124</abilitytoken>
+    <description>Clustering videos based on similar characteristics</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Video clustering</techterm>
+    <examples>
+      <ex>
+        <exname>Video summarization</exname>
+        <exdescription>Use clustering to identify the unique segments of a video and use these segments to create a summary</exdescription>
+        <eximage>assets/photos/videocluster.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.researchgate.net/publication/266032463_Video_Summarization_Using_Clustering"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href=""></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name></name>
+    <datatype>Video</datatype>
+    <ability>Communicate</ability>
+    <datatoken>138</datatoken>
+    <abilitytoken></abilitytoken>
+    <description></description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm></techterm>
+    <examples>
+      <ex>
+        <exname></exname>
+        <exdescription></exdescription>
+        <eximage>assets/photos/</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href=""></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href=""></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Video generation</name>
+    <datatype>Video</datatype>
+    <ability>Generate</ability>
+    <datatoken>138</datatoken>
+    <abilitytoken>24</abilitytoken>
+    <description>Create videos either from scratch or based on already existing videos</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Video generative adversarial network (GAN)</techterm>
+    <examples>
+      <ex>
+        <exname>Deep fakes</exname>
+        <exdescription>Videos that are created from scratch or adapted from an original video where for example faces are swapped or where the person is saying something else compared to the original video.</exdescription>
+        <eximage>assets/photos/deepfake.jpg</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://edition.cnn.com/interactive/2019/01/business/pentagons-race-against-deepfakes/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://github.com/xaliceli/video-GAN"></diylink>
+      </ex>
+    </examples>
+  </combi>
+
+  <combi>
+    <name>Audio recommendation</name>
+    <datatype>Audio</datatype>
+    <ability>Recommend</ability>
+    <datatoken>94</datatoken>
+    <abilitytoken>17</abilitytoken>
+    <description>Recommending audio based on similar audio or audio that similar users also liked.</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Recommender system audio, collaborative filtering audio, content based filtering audio</techterm>
+    <examples>
+      <ex>
+        <exname>Spotifiy</exname>
+        <exdescription>Spotify's weekly discover suggests songs based on your listening behaviour</exdescription>
+        <eximage>assets/photos/spotify.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.spotify.com/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/making-your-own-discover-weekly-f1ac7546fedb"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Recommender system</name>
+    <datatype>Table</datatype>
+    <ability>Recommend</ability>
+    <datatoken>98</datatoken>
+    <abilitytoken>17</abilitytoken>
+    <description>Recommend items based on similar features (content-based) in a table or compare features between users or items to find what others also liked and recommend these items (collaborative filtering).</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Recommender system, collaborative filtering, content based filtering</techterm>
+    <examples>
+      <ex>
+        <exname>Amazon</exname>
+        <exdescription>Recommend items based on your browsing history and related articles</exdescription>
+        <eximage>assets/photos/amazon.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.amazon.com/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://www.kaggle.com/saurav9786/recommender-system-using-amazon-reviews"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Text recommendation</name>
+    <datatype>Text</datatype>
+    <ability>Recommend</ability>
+    <datatoken>224</datatoken>
+    <abilitytoken>17</abilitytoken>
+    <description>Recommend items based on their textual description or recommend similar texts (e.g. newspaper articles).</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Recommender system text, text collaborative filtering, text content based filtering</techterm>
+    <examples>
+      <ex>
+        <exname>LinkedIn</exname>
+        <exdescription>Recommends jobs based on your job searches, job alerts, profile, and activity on LinkedIn</exdescription>
+        <eximage>assets/photos/linkedin.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.linkedin.com/help/linkedin/answer/11783/job-recommendations-overview?lang=en"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/@armandj.olivares/building-nlp-content-based-recommender-systems-b104a709c042"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Video recommendation</name>
+    <datatype>Video</datatype>
+    <ability>Recommend</ability>
+    <datatoken>138</datatoken>
+    <abilitytoken>17</abilitytoken>
+    <description>Recommend similar videos or videos that you similar users liked</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Recommender system video, collaborative filtering video, content based filtering video</techterm>
+    <examples>
+      <ex>
+        <exname>Youtube</exname>
+        <exdescription>Recommend videos that you will probably like based on previous watched videos and on what other similar users like</exdescription>
+        <eximage>assets/photos/youtube.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.youtube.com/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://www.datacamp.com/community/tutorials/recommender-systems-python"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Image recommendation</name>
+    <datatype>Image</datatype>
+    <ability>Recommend</ability>
+    <datatoken>236</datatoken>
+    <abilitytoken>17</abilitytoken>
+    <description>Recommend similar images or images that similar users liked</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Recommender system images, collaborative filtering images, content based filtering images</techterm>
+    <examples>
+      <ex>
+        <exname>Pinterest</exname>
+        <exdescription>Recommend images based on images you have pinned and your past browsing activity</exdescription>
+        <eximage>assets/photos/pinterest.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://pinterest.com/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/geekculture/building-a-visual-similarity-based-recommendation-system-using-python-872a5bea568e"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
+    <name>Time series recommendation</name>
+    <datatype>Time series</datatype>
+    <ability>Recommend</ability>
+    <datatoken>59</datatoken>
+    <abilitytoken>17</abilitytoken>
+    <description>Takes time into account when making recommendations: when to predict something (e.g. at what time of the day)</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Time series recommender systems, latent dirichlet allocation time series</techterm>
+    <examples>
+      <ex>
+        <exname>Netflix</exname>
+        <exdescription>Netflix takes into account the time of the day when making recommendations</exdescription>
+        <eximage>assets/photos/netflix.jpg</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://help.netflix.com/en/node/100639"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/create-a-recommendation-system-based-on-time-series-data-using-latent-dirichlet-allocation-2aa141b99e19"></diylink>
+      </ex>
+    </examples>
+  </combi>
+</combinations>
