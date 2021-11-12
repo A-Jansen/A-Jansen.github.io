@@ -78,13 +78,14 @@
 		OOCSI.connect('wss://oocsi.id.tue.nl/ws');
 		console.log("Connected to oocsi");
 
-		function sendOOCSI(action, tag) {
+		function sendOOCSI(action, tag1, tag2) {
 
 			let output = {
 				'timestamp': Date.now(),
 				'id': IDnumber,
 				'action': action,
-				'tagID': tag
+				'tag1': tag1,
+				'tag2': tag2
 			}
 			//console.log(output);
 			OOCSI.send("M21_Anniek", output);
@@ -113,27 +114,29 @@
 		function openDatabyClick(tag) {
 			if (labeledDataTokens.includes(tag)) {
 				openDataPage(transform('datatypes.xml', 'labeleddata.xsl', tag));
+				sendOOCSI('labeleddatapage', tag,0);
 			} else {
 				openDataPage(transform('datatypes.xml', 'unlabeleddata.xsl', tag));
+				sendOOCSI('unlabeleddatapage', tag, 0);
 			}
 		}
 
 		function openAbilitybyClick(tagID) {
 			if (supTokens.includes(tagID)) {
 				openAbilityPage(transform('abilities.xml', 'supervised.xsl', tagID));
-				sendOOCSI('supervised', tagID);
+				sendOOCSI('supervised', tagID,0);
 			} else if (unsupTokens.includes(tagID)) {
 				openAbilityPage(transform('abilities.xml', 'unsupervised.xsl', tagID));
-				sendOOCSI('unsupervised', tagID);
+				sendOOCSI('unsupervised', tagID,0);
 			} else if (reinTokens.includes(tagID)) {
 				openAbilityPage(transform('abilities.xml', 'reinforcement.xsl', tagID));
-
+				sendOOCSI('reinforcement', tagID,0);
 			}
 		}
 
 		function openCombibyClick(tag1, tag2) {
 			openCombinationPage(transform2('combies.xml', 'combies.xsl', tag1, tag2));
-
+			sendOOCSI('combination', tag1, tag2);
 		}
 
 		//Control the pages for now with keys, replace once tokens work

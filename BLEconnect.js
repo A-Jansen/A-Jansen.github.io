@@ -166,19 +166,19 @@ function open1Page(tagID) {
   } else if (labeledDataTokens.includes(tagID)) {
     //  openDataPage(transform('datatypes.xml', 'datatokens.xsl', 'Text'));
     openDataPage(transform('datatypes.xml', 'labeleddata.xsl', tagID));
-    sendOOCSI('labeleddatapage', tagID);
+    sendOOCSI('labeleddatapage', tagID,0);
   } else if (unlabeledDataTokens.includes(tagID)) {
     openDataPage(transform('datatypes.xml', 'unlabeleddata.xsl', tagID));
-    sendOOCSI('unlabeleddatapage', tagID);
+    sendOOCSI('unlabeleddatapage', tagID,0);
   } else if (supTokens.includes(tagID)) {
     openAbilityPage(transform('abilities.xml', 'supervised.xsl', tagID));
-    sendOOCSI('supervised', tagID);
+    sendOOCSI('supervised', tagID,0);
   } else if (unsupTokens.includes(tagID)) {
     openAbilityPage(transform('abilities.xml', 'unsupervised.xsl', tagID));
-    sendOOCSI('unsupervised', tagID);
+    sendOOCSI('unsupervised', tagID,0);
   } else if (reinTokens.includes(tagID)) {
     openAbilityPage(transform('abilities.xml', 'reinforcement.xsl', tagID));
-    sendOOCSI('reinforcement', tagID);
+    sendOOCSI('reinforcement', tagID,0);
   } else {
     openInfo();
     alert('Token not recognized');
@@ -190,12 +190,13 @@ function openCombiPage(tag1, tag2) {
   console.log(tag1);
   if (labeledDataTokens.includes(tag1) && (supTokens.includes(tag2) || unsupTokens.includes(tag2))) {
     openCombinationPage(transform2('combies.xml', 'combies.xsl', tag1, tag2));
-    // sendOOCSI('labeleddata', tagID);
+    sendOOCSI('combination', tag1, tag2);
   }
   else if (unlabeledDataTokens.includes(tag1) && unsupTokens.includes(tag2)) {
     // console.log(tag1);
     // let i = unlabeledDataTokens.indexOf(tag1);
     openCombinationPage(transform2('combies.xml', 'combies.xsl',tag1, tag2));
+    sendOOCSI('combination', tag1, tag2);
   } else {
     openInfo();
 
