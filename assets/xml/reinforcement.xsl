@@ -84,7 +84,7 @@
         <div>
 
           <table>
-            <tr style="background-color:#78C8A5">
+            <tr style="background-color:#82BE14">
               <th>Example</th>
               <th>Description</th>
               <!-- <th>Link</th> -->

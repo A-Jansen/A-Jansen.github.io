@@ -32,7 +32,7 @@
     <ultoken>242</ultoken>
     <structure>Unstructured</structure>
     <description>Textual data are unstructured data. Textual data will be preprocessed before being used in an ML model, for example, sentences will be split into words, stop words are removed and words are reduced to their root (e.g. words to word and writing to write).</description>
-    <format>.doc, .pdf, .txt</format>
+    <format>.doc, .pdf, .txt, .csv (with labels)</format>
     <image>assets/photos/text.png</image>
     <collection>Reviews, books, social media</collection>
   </datatoken>
@@ -53,7 +53,7 @@
     <ltoken>59</ltoken>
     <ultoken>10</ultoken>
     <structure>Unstructured</structure>
-    <description>Time series are unstructured data that contain repeated observations from e.g. a sensor or prices over time. Audio is a special subset of time series. Time series often need to be preprocessed, for example standardizing the data. </description>
+    <description>Time series are unstructured data that contain repeated observations from e.g. a sensor or prices over time. Time series are often recorded in a tabular format but are unstructured data as an extra step of preprocessing is often needed before it can be used as input for an machine learning model. Audio is a special subset of time series. Time series often need to be preprocessed, for example standardizing the data. </description>
     <format>.csv, .tsd, .arff</format>
     <image>assets/photos/timeseries.png</image>
     <collection>Accelerometer</collection>
@@ -64,7 +64,7 @@
     <ltoken>98</ltoken>
     <ultoken>67</ultoken>
     <structure>Structured</structure>
-    <description>Tabular data is structured data and are organised in rows and columns where each row (or column) represent one item. Tabular can be directly used in ML models.</description>
+    <description>Tabular data is structured data and are organized in rows and columns where each row (or column) represents one item. In case labels are available, they will form one column and all the remaining data are the features that are used to predict the label. Tabular data can be directly used in ML models.</description>
     <format>.csv, .xls, .json</format>
     <image>assets/photos/table.png</image>
     <collection>Excel</collection>
@@ -459,7 +459,7 @@
       <record index="56">
         <dataset>House Property Sales Time Series</dataset>
         <datatype>Time series</datatype>
-        <description>What model will produce the most accurate forecast?</description>
+        <description>Property sales of one specific region from the years 2007-2019</description>
         <labeled>yes</labeled>
         <url xlink:type="simple" xlink:show="new" xlink:href="https://www.kaggle.com/htagholdings/property-sales"></url>
       </record>

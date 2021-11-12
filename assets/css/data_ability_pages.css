@@ -105,7 +105,7 @@
 .headerData {
 
   margin: auto;
-  width: 80%;
+  width: 1200px;
   height: inherit;
   padding-bottom: 30px;
   overflow: auto;
@@ -136,23 +136,23 @@
 }
 
 .labeled {
-  color: #0F75B8 !important;
+  color: #006667 !important;
 }
 
 .unlabeled {
-  color: #3CC8C8 !important;
+  color: #26C6DA !important;
 }
 
 .supervised {
-  color: #008D24 !important;
+  color: #007B24 !important;
 }
 
 .unsupervised {
-  color: #82BE14 !important;
+  color: #5E9739 !important;
 }
 
 .reinforcement {
-  color: #78C8A5 !important;
+  color: #82BE14 !important;
 }
 
 .description {

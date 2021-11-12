@@ -137,54 +137,54 @@
 		}
 
 		//Control the pages for now with keys, replace once tokens work
-		var key = function(e) {
-			e = e || window.event;
-			var k = e.keyCode || e.which;
-			// console.log(k);
-			if (ready) {
-				switch (k) {
-					case 68: //68=d=data
-						console.log('data page');
-						//send the .xml, .xsl and datatoken to the transform function and open the data page
-						openDataPage(transform('datatypes.xml', 'labeleddata.xsl', 224));
-						break;
-					case 69: //69=e=unlabeleddata
-						console.log('data page');
-						//send the .xml, .xsl and datatoken to the transform function and open the data page
-						openDataPage(transform('datatypes.xml', 'unlabeleddata.xsl', 227));
-						break;
-					case 83: //83=s=supervised
-						console.log('model ability page');
-						//send the .xml, .xsl and abilitytoken to the transform function and open the ability page
-						openAbilityPage(transform('abilities.xml', 'supervised.xsl', 140)); //140= categorize
-						sendOOCSI('abilitypage', 140);
-						break;
-					case 85: //85=u=unsupervised
-						console.log('model ability page');
-						//send the .xml, .xsl and abilitytoken to the transform function and open the ability page
-						openAbilityPage(transform('abilities.xml', 'unsupervised.xsl', 124)); //124= cluster
-						sendOOCSI('abilitypage', 140);
-						break;
-					case 82: //82=r=reinforcement
-						console.log('model ability page');
-						//send the .xml, .xsl and abilitytoken to the transform function and open the ability page
-						openAbilityPage(transform('abilities.xml', 'reinforcement.xsl', 60)); //60=optimize
-						sendOOCSI('abilitypage', 140);
-						break;
-					case 67: //67=c=combinationPage
-						console.log('combination page');
-						//send the .xml, .xsl and datatoken and abilitytoken to the transform2 function and open the combination page
-
-						openCombinationPage(transform2('combies.xml', 'combies.xsl', 224, 140)); //236, 140image recognition
-						break;
-						//in case of any other key, go back to the infopage (equal to removing the token)
-					default:
-						console.log('back to infopage');
-						openInfo();
-				}
-			}
-		};
-		document.onkeydown = key;
+		// var key = function(e) {
+		// 	e = e || window.event;
+		// 	var k = e.keyCode || e.which;
+		// 	// console.log(k);
+		// 	if (ready) {
+		// 		switch (k) {
+		// 			case 68: //68=d=data
+		// 				console.log('data page');
+		// 				//send the .xml, .xsl and datatoken to the transform function and open the data page
+		// 				openDataPage(transform('datatypes.xml', 'labeleddata.xsl', 224));
+		// 				break;
+		// 			case 69: //69=e=unlabeleddata
+		// 				console.log('data page');
+		// 				//send the .xml, .xsl and datatoken to the transform function and open the data page
+		// 				openDataPage(transform('datatypes.xml', 'unlabeleddata.xsl', 227));
+		// 				break;
+		// 			case 83: //83=s=supervised
+		// 				console.log('model ability page');
+		// 				//send the .xml, .xsl and abilitytoken to the transform function and open the ability page
+		// 				openAbilityPage(transform('abilities.xml', 'supervised.xsl', 140)); //140= categorize
+		// 				sendOOCSI('abilitypage', 140);
+		// 				break;
+		// 			case 85: //85=u=unsupervised
+		// 				console.log('model ability page');
+		// 				//send the .xml, .xsl and abilitytoken to the transform function and open the ability page
+		// 				openAbilityPage(transform('abilities.xml', 'unsupervised.xsl', 124)); //124= cluster
+		// 				sendOOCSI('abilitypage', 140);
+		// 				break;
+		// 			case 82: //82=r=reinforcement
+		// 				console.log('model ability page');
+		// 				//send the .xml, .xsl and abilitytoken to the transform function and open the ability page
+		// 				openAbilityPage(transform('abilities.xml', 'reinforcement.xsl', 60)); //60=optimize
+		// 				sendOOCSI('abilitypage', 140);
+		// 				break;
+		// 			case 67: //67=c=combinationPage
+		// 				console.log('combination page');
+		// 				//send the .xml, .xsl and datatoken and abilitytoken to the transform2 function and open the combination page
+		//
+		// 				openCombinationPage(transform2('combies.xml', 'combies.xsl', 224, 140)); //236, 140image recognition
+		// 				break;
+		// 				//in case of any other key, go back to the infopage (equal to removing the token)
+		// 			default:
+		// 				console.log('back to infopage');
+		// 				openInfo();
+		// 		}
+		// 	}
+		// };
+		// document.onkeydown = key;
 
 		//open the datapage when pressed on 'd or when a data token is placed
 		function openDataPage() {

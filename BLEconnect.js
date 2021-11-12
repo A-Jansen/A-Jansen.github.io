@@ -114,6 +114,7 @@ function removeTags() {
 }
 
 function updateTags() {
+    console.log(tagRemoved);
   if (!arrayEquals(incomingValues, emptyArray)) {
     //loop over the incomingValues to detect how many tags are present, their location and their ID.
     for (let i = 0; i < incomingValues.length; i++) {
@@ -125,20 +126,24 @@ function updateTags() {
           tags[i] = incomingValues[i]; //save the tag number for identification later
           loc[i] = 1; // 1: tag is present, 0: no tag present
 
-          // console.log(i +", "+ tags[i] +", "+ tagsPresent);
+          console.log(i +", "+ tags[i] +", "+ tagsPresent);
           numPages(tags[i], tagsPresent);
         } else if (tagRemoved) { //if a tag is removed, the if-loop above will not rerun since the remaining token is the same, so in that case run this elseif
           tags[i] = incomingValues[i];
+            console.log(i +",, "+ tags[i] +", "+ tagsPresent);
           numPages(tags[i], tagsPresent);
           tagRemoved = false;
+          console.log(tagRemoved);
         }
       } //if
     } //for
+  } else{
+    tagRemoved=false;
   }
 }
 
 function numPages(tagID, numTags) {
-   // console.log("tagspresent: "+ numTags);
+   console.log("tagspresent: "+ numTags);
   switch (numTags) {
     case 1: //1 tag present if loc[0]: data, loc[1]: label, loc[2]: ability
       //show data or ability page depending on token

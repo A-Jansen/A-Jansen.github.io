@@ -84,7 +84,7 @@
         <div>
 
           <table>
-            <tr style="background-color: #82BE14;">
+            <tr style="background-color: #8CA61D;">
               <th>Trained model</th>
               <th>Description</th>
               <th>Data type</th>

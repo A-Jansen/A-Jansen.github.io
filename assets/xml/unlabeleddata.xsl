@@ -55,7 +55,7 @@
         <div class='centerBlock'>
           <p class="bold unlabeled">Selection of datasets:</p>
           <table>
-            <tr style="background-color: #3CC8C8;">
+            <tr style="background-color: #26C6DA;">
               <th >Dataset</th>
               <th>Description</th>
               <th>Labeled</th>
