@@ -134,10 +134,16 @@
                     <span class='bold'>Description:
                     </span><xsl:value-of select="exdescription"/></p>
                   <p>
-                    <a href="{exlink/@xlink:href}" target="_blank">See example</a>
+                    <a href="{exlink/@xlink:href}" target="_blank">
+                      <xsl:attribute name="onclick">sendlinkOOCSI("examplelink","<xsl:value-of select="exlink/@xlink:href"/>")
+                      </xsl:attribute>
+                      See example</a>
                   </p>
                   <p>
-                    <a href="{diylink/@xlink:href}" target="_blank">Train it yourself</a>
+                    <a href="{diylink/@xlink:href}" target="_blank">
+                      <xsl:attribute name="onclick">sendlinkOOCSI("diylink","<xsl:value-of select="diylink/@xlink:href"/>")
+                      </xsl:attribute>
+                      Train it yourself</a>
                   </p>
                 </div>
               </xsl:for-each>

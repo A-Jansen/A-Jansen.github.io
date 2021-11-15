@@ -36,6 +36,7 @@
                     </span>
                     <span><xsl:value-of select="techterm"/></span>
                   </p>
+                  <div class='fullspan'>
                 <div class='leftdiv'>
                 <p>
                   <span class='bold reinforcement'>Abilities:
@@ -45,7 +46,7 @@
                     <xsl:for-each select="capabilities/*">
                       <li><xsl:value-of select="@value"/></li>
                     </xsl:for-each>
-                    <li>And much more...</li>
+                    <!-- <li>And much more...</li> -->
                   </ul>
                 </p>
               </div>
@@ -63,6 +64,19 @@
                   </ul>
                 </p>
               </div>
+            </div>
+            <div>
+              <p>
+                <span class='bold reinforcement'>Examples:
+                </span>
+                <ul>
+
+                  <xsl:for-each select="examples/*">
+                    <li><xsl:value-of select="@value"/></li>
+                  </xsl:for-each>
+                </ul>
+              </p>
+            </div>
               </xsl:for-each>
             </div>
 
@@ -96,6 +110,8 @@
               <tr>
                 <td>
                   <a href="{url/@xlink:href}" target="_blank">
+                    <xsl:attribute name="onclick">sendlinkOOCSI("modellink","<xsl:value-of select="mlmodel"/>")
+                    </xsl:attribute>
                     <xsl:value-of select="mlmodel"/></a>
                 </td>
                 <td><xsl:value-of select="description"/></td>

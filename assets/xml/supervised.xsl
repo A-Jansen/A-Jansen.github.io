@@ -14,55 +14,79 @@
           <div class="headerData">
             <div class='leftheader'>
               <img>
+
                 <xsl:attribute name="class">labelimage
                 </xsl:attribute>
+
                 <xsl:attribute name="src"><xsl:value-of select="abilities/supervised"/>
                 </xsl:attribute>
               </img>
               <p class='overlaptextBig'><xsl:value-of select="abilities/abilitytoken[token=$tokenselected]/ability"/></p>
               <p class='overlaptextability'>Supervised learning</p>
 
-
             </div>
 
             <div class='rightheader'>
 
               <xsl:for-each select="abilities/abilitytoken[token=$tokenselected]">
-                <h3 class='type supervised' ><xsl:value-of select="ability"/></h3>
+                <h3 class='type supervised'><xsl:value-of select="ability"/></h3>
                 <p class='descriptionAbility'>
                   <xsl:value-of select="description"/></p>
+                <p>
+                  <span class='bold supervised'>Technical terms:
+                  </span>
+                  <span><xsl:value-of select="techterm"/></span>
+                </p>
+                <div class='fullspan'>
+                  <div class='leftdiv'>
+                    <p>
+                      <span class='bold supervised'>Abilities:
+                      </span>
+                      <ul>
+
+                        <xsl:for-each select="capabilities/*">
+                          <li><xsl:value-of select="@value"/></li>
+                        </xsl:for-each>
+                        <!-- <li>And much more...</li> -->
+                      </ul>
+                    </p>
+                  </div>
+                  <div class='rightdiv'>
+                    <p>
+                      <span class='bold supervised'>Limitations:
+                      </span>
+                      <ul>
+
+                        <xsl:for-each select="limitations/*">
+                          <li><xsl:value-of select="@value"/></li>
+                        </xsl:for-each>
+                        <li>ML is not perfect and will always make some errors</li>
+                        <li>The output of the model can be different even with the same input</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+                <div>
                   <p>
-                    <span class='bold supervised'>Technical terms:
+                    <span class='bold supervised'>Examples:
                     </span>
-                    <span><xsl:value-of select="techterm"/></span>
+                    <ul>
+
+                      <xsl:for-each select="examples/*">
+                        <li><xsl:value-of select="@value"/></li>
+                      </xsl:for-each>
+                    </ul>
                   </p>
-                <div class='leftdiv'>
-                <p>
-                  <span class='bold supervised'>Abilities:
-                  </span>
-                  <ul>
+                </div>
+            <!-- <a href="#" class="scroll-down" address="true"></a> -->
 
-                    <xsl:for-each select="capabilities/*">
-                      <li><xsl:value-of select="@value"/></li>
-                    </xsl:for-each>
-                    <li>And much more...</li>
-                  </ul>
-                </p>
-              </div>
-              <div class='rightdiv'>
-                <p>
-                  <span class='bold supervised'>Limitations:
-                  </span>
-                  <ul>
 
-                    <xsl:for-each select="limitations/*">
-                      <li><xsl:value-of select="@value"/></li>
-                    </xsl:for-each>
-                    <li>ML is not perfect and will always make some errors</li>
-                    <li>The output of the model can be different even with the same input</li>
-                  </ul>
-                </p>
-              </div>
+                <!-- https://codepen.io/postor/pen/mskxI -->
+                <!-- <svg class="arrows">
+							<path class="a1 supervised" d="M0 0 L30 32 L60 0"></path>
+							<path class="a2 supervised" d="M0 20 L30 52 L60 20"></path>
+							<path class="a3 supervised" d="M0 40 L30 72 L60 40"></path>
+						</svg> -->
               </xsl:for-each>
             </div>
 
@@ -74,7 +98,7 @@
 
           <!-- <header> <h2>ML ability: <xsl:value-of select="ability"/></h2> <p class='centerText'><xsl:value-of select="type"/></p> </header> -->
           <div class="centerBlock">
-              <p>
+            <p>
               <span class='bold supervised'>Selection of pretrained models:
               </span>
 
@@ -97,6 +121,10 @@
               <tr>
                 <td>
                   <a href="{url/@xlink:href}" target="_blank">
+
+                    <xsl:attribute name="onclick">sendlinkOOCSI("modellink","<xsl:value-of select="mlmodel"/>")
+                    </xsl:attribute>
+
                     <xsl:value-of select="mlmodel"/></a>
                 </td>
                 <td><xsl:value-of select="description"/></td>

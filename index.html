@@ -91,6 +91,19 @@
 			OOCSI.send("M21_Anniek", output);
 		}
 
+		function sendlinkOOCSI(action, link) {
+
+			let output = {
+				'timestamp': Date.now(),
+				'id': IDnumber,
+				'action': action,
+				'link': link
+			}
+			console.log(output);
+			OOCSI.send("M21_Anniek", output);
+		}
+
+
 		var IDnumber; //for logging each session to oocsi so it can be identified for analyses
 		let ready = false; //use to not skip the setup page by pressing key or placing tokens
 

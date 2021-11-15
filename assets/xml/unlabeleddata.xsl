@@ -44,7 +44,15 @@
                   </span>
                   <span><xsl:value-of select="format"/></span>
                 </p>
+                <img>
 
+                  <xsl:attribute name="class">illustration
+                  </xsl:attribute>
+
+                  <xsl:attribute name="src"><xsl:value-of select="ulimage"/>
+                  </xsl:attribute>
+                </img>
+                <p class='source'>Image source: <xsl:value-of select="ulsource"/></p>
               </xsl:for-each>
             </div>
 
@@ -65,7 +73,10 @@
             <xsl:for-each select="data/records/record[datatype=$dataselected]">
               <tr>
                 <td>
-                  <a href="{url/@xlink:href}" target="_blank"><xsl:value-of select="dataset"/></a>
+                  <a href="{url/@xlink:href}" target="_blank">
+                    <xsl:attribute name="onclick">sendlinkOOCSI("datalink","<xsl:value-of select="dataset"/>")
+                    </xsl:attribute>
+                    <xsl:value-of select="dataset"/></a>
                 </td>
                 <!-- <td><xsl:value-of select="dataset"/></td> -->
                 <td><xsl:value-of select="description"/></td>

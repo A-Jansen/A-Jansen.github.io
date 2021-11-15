@@ -18,6 +18,11 @@
       <l1 value="Requires labeled data"></l1>
       <l2 value="If the output is categorical (multi-class) or binary data (2 classes), it can only predict on what is has been trained."></l2>
     </limitations>
+    <examples>
+      <e1 value="Weather forecasts can predict if it will start to rain based on a.o. the temperature and humidity (classification)"></e1>
+      <e2 value="Your music app will predict what type of music you want to listen on that moment, taking into account for example the time of the day (classification)"></e2>
+      <e3 value="The price of flight tickets can be predicted based on different features such as how many chairs are left, the time left before departure, how popular that destination is, etc (regression)"></e3>
+    </examples>
   </abilitytoken>
   <abilitytoken>
     <ability>Recommend</ability>
@@ -36,6 +41,11 @@
       <l2 value="Risk of creating a filter bubble: only recommending one perspective/ vision/ opinion"></l2>
       <l3 value="People update their preferences, can be unpredictable or someone else might use their account"></l3>
     </limitations>
+    <examples>
+      <e1 value="If you are looking at a product on for example bol.com or Amazon, it will recommend you items that are very similar (they share the same features). For example if you are looking at books about Machine Learning, it will recommend other books about the same topic (content-based recommender system)"></e1>
+      <e2 value="Spotify and YouTube will recommend you music and videos that people who listen/ watch to the same type of items as you also liked (collaborative filtering)."></e2>
+      <!-- <e3 value=""></e3> -->
+    </examples>
   </abilitytoken>
   <abilitytoken>
     <ability>Distinguish</ability>
@@ -53,6 +63,11 @@
       <l2 value="Noise could also be seen as different"></l2>
       <l3 value="It does not always informs you how it is different"></l3>
     </limitations>
+    <examples>
+      <e1 value=""></e1>
+      <e2 value=""></e2>
+      <e3 value=""></e3>
+    </examples>
   </abilitytoken>
   <abilitytoken>
     <ability>Categorize</ability>
@@ -71,6 +86,11 @@
       <l3 value="It might learn to recognize certain categories based on irrelevant data (e.g. the background color of an image or background noise of audio)"></l3>
       <!-- <l3></l3> -->
     </limitations>
+    <examples>
+      <e1 value="A classification model for images can recognize if it are dogs or cats but if you show it a photo of a fish, it will predict this as either a dog or a cat."></e1>
+      <e2 value="Based on the dimension of the petals and sepals of Iris, a classification model can predict to which class of Irises it belongs. However, it will cannot categorize other types of flowers."></e2>
+      <e3 value="Sensors in your mobile phone or smartphone can give input data for a model that will classify which activity you are currently performing."></e3>
+    </examples>
   </abilitytoken>
   <abilitytoken>
     <ability>Identify</ability>
@@ -88,6 +108,11 @@
       <l2 value=""></l2>
       <l3 value=""></l3>
     </limitations>
+    <examples>
+      <e1 value=""></e1>
+      <e2 value=""></e2>
+      <e3 value=""></e3>
+    </examples>
   </abilitytoken>
   <abilitytoken>
     <ability>Understand</ability>
@@ -105,6 +130,11 @@
       <l2 value="Irony and sarcasm are hard to detect and can change the meaning"></l2>
       <l3 value="Homonyms (words that are pronounced the same) are hard for speech to text models"></l3>
     </limitations>
+    <examples>
+      <e1 value=""></e1>
+      <e2 value=""></e2>
+      <e3 value=""></e3>
+    </examples>
   </abilitytoken>
   <abilitytoken>
     <ability>Communicate</ability>
@@ -122,6 +152,11 @@
       <l2 value="Having the correct emotions and pronunciations is difficult"></l2>
       <l3 value=""></l3>
     </limitations>
+    <examples>
+      <e1 value=""></e1>
+      <e2 value=""></e2>
+      <e3 value=""></e3>
+    </examples>
   </abilitytoken>
   <abilitytoken>
     <ability>Translate</ability>
@@ -140,6 +175,11 @@
       <l2 value=""></l2>
       <l3 value=""></l3>
     </limitations>
+    <examples>
+      <e1 value=""></e1>
+      <e2 value=""></e2>
+      <e3 value=""></e3>
+    </examples>
   </abilitytoken>
   <abilitytoken>
     <ability>Generate</ability>
@@ -159,6 +199,11 @@
       <l2 value="It is not always possible to steer the model in the right direction"></l2>
       <l3 value="Seeing is believing is no longer true. Fake data can be made and can spread misinformation"></l3>
     </limitations>
+    <examples>
+      <e1 value="Generate new images based on a text description. For example: an image of a stack of blocks in different colours. This will result in several images that visualize this"></e1>
+      <e2 value="Deep fakes are videos in which this ability is used to generate copies of the original video, but where the person is saying different text"></e2>
+      <e3 value="Create new texts or music from scratch which can be used e.g. without copyrights or as inspiration for your own creations"></e3>
+    </examples>
   </abilitytoken>
   <abilitytoken>
     <ability>Optimize</ability>
@@ -176,6 +221,11 @@
       <l2 value="It will start untrained and randomly guesses"></l2>
       <l3 value="It is not possible to train and evaluate it beforehand"></l3>
     </limitations>
+    <examples>
+      <e1 value="AlphaGo Zero learned how to play the difficult game Go by playing a lot of sessions against itself and learning each time from its mistakes. This way it improved over time and was eventually able to beat the world champion"></e1>
+      <e2 value="Google Maps is constantly improving its routes and its predictions for where it will be busy, how fast people will drive at certain routes at certain times of the day. It will use the new data to see if it was correct and learn from this to improve."></e2>
+      <!-- <e3 value=""></e3> -->
+    </examples>
   </abilitytoken>
   <abilitytoken>
     <ability>Navigate</ability>
@@ -193,6 +243,11 @@
       <l2 value=""></l2>
       <l3 value=""></l3>
     </limitations>
+    <examples>
+      <e1 value=""></e1>
+      <e2 value=""></e2>
+      <e3 value=""></e3>
+    </examples>
   </abilitytoken>
   <abilitytoken>
     <ability>Cluster</ability>
@@ -210,6 +265,11 @@
       <l2 value="Groups can overlap"></l2>
       <l3 value="Often you need to specify the number of clusters you want to find"></l3>
     </limitations>
+    <examples>
+      <e1 value="Group similar customers together, for example, customers who do their grocery shopping in the morning or customers who always buy biological products. Human interpretation is needed to see what the similar feature is in each group, the model will only show which customers are grouped together."></e1>
+      <e2 value="By clustering all the weather observations together, you can identify outliers (observations that are very far from other groups)  and these can be hints about climate change."></e2>
+      <!-- <e3 value=""></e3> -->
+    </examples>
   </abilitytoken>
   <!-- ****************************************** -->
   <records>

@@ -19,8 +19,8 @@
                 <xsl:attribute name="src"><xsl:value-of select="abilities/unsupervised"/>
                 </xsl:attribute>
               </img>
-              <p class='overlaptextBig' style="transform: translate(-10%);"><xsl:value-of select="abilities/abilitytoken[token=$tokenselected]/ability"/></p>
-              <p class='overlaptextability'>Unsupervised learning</p>
+              <p class='overlaptextBig' style="transform: translate(-15%);"><xsl:value-of select="abilities/abilitytoken[token=$tokenselected]/ability"/></p>
+              <p class='overlaptextability' style="transform: translate(-15%);">Unsupervised learning</p>
 
 
             </div>
@@ -36,6 +36,7 @@
                     </span>
                     <span><xsl:value-of select="techterm"/></span>
                   </p>
+                  <div class="fullspan">
                 <div class='leftdiv'>
                 <p>
                   <span class='bold unsupervised'>Abilities:
@@ -45,7 +46,7 @@
                     <xsl:for-each select="capabilities/*">
                       <li><xsl:value-of select="@value"/></li>
                     </xsl:for-each>
-                    <li>And much more...</li>
+                    <!-- <li>And much more...</li> -->
                   </ul>
                 </p>
               </div>
@@ -63,6 +64,19 @@
                   </ul>
                 </p>
               </div>
+            </div>
+            <div>
+              <p>
+                <span class='bold unsupervised'>Examples:
+                </span>
+                <ul>
+
+                  <xsl:for-each select="examples/*">
+                    <li><xsl:value-of select="@value"/></li>
+                  </xsl:for-each>
+                </ul>
+              </p>
+            </div>
               </xsl:for-each>
             </div>
 
@@ -97,6 +111,8 @@
               <tr>
                 <td>
                   <a href="{url/@xlink:href}" target="_blank">
+                    <xsl:attribute name="onclick">sendlinkOOCSI("modellink","<xsl:value-of select="mlmodel"/>")
+                    </xsl:attribute>
                     <xsl:value-of select="mlmodel"/></a>
                 </td>
                 <td><xsl:value-of select="description"/></td>

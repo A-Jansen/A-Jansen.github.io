@@ -34,17 +34,28 @@
             </div>
 
             <div class='rightheader'>
+
               <xsl:for-each select="data/datatoken[ltoken=$tokenselected]">
-                <h3 class='type labeled' ><xsl:value-of select="dataname"/> data</h3>
-                <h4 class=''><xsl:value-of select="structure"/> data</h4>
+                <h3 class='type labeled'><xsl:value-of select="dataname"/>
+                  data</h3>
+                <h4 class=''><xsl:value-of select="structure"/>
+                  data</h4>
                 <p class='description'>
-                <xsl:value-of select="description"/></p>
+                  <xsl:value-of select="description"/></p>
                 <p>
                   <span class='bold labeled'>Possible formats:
                   </span>
                   <span><xsl:value-of select="format"/></span>
                 </p>
+                <img>
 
+                  <xsl:attribute name="class">illustration
+                  </xsl:attribute>
+
+                  <xsl:attribute name="src"><xsl:value-of select="image2"/>
+                  </xsl:attribute>
+                </img>
+                <p class='source'>Image source: <xsl:value-of select="source"/></p>
               </xsl:for-each>
             </div>
 
@@ -53,6 +64,8 @@
         </header>
 
         <div class='centerBlock'>
+
+
           <p class="bold labeled">Selection of datasets:</p>
           <table>
             <tr style="background-color: #006667;">
@@ -65,7 +78,12 @@
             <xsl:for-each select="data/records/record[datatype=$dataselected and labeled='yes']">
               <tr>
                 <td>
-                  <a href="{url/@xlink:href}" target="_blank"><xsl:value-of select="dataset"/></a>
+                  <a href="{url/@xlink:href}" target="_blank">
+
+                    <xsl:attribute name="onclick">sendlinkOOCSI("datalink","<xsl:value-of select="dataset"/>")
+                    </xsl:attribute>
+
+                    <xsl:value-of select="dataset"/></a>
                 </td>
                 <!-- <td><xsl:value-of select="dataset"/></td> -->
                 <td><xsl:value-of select="description"/></td>
