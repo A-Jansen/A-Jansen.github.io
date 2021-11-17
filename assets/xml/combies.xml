@@ -363,7 +363,7 @@
   </combi>
 
   <combi>
-    <name>Prediction</name>
+    <name>Time based predictions</name>
     <datatype>Time series</datatype>
     <ability>Foresee</ability>
     <datatoken>59</datatoken>
@@ -524,7 +524,7 @@
       <ex>
         <exname>Synthetic time series data</exname>
         <exdescription>Creating extra time series data based on some starting data. More data can help to train a better model.</exdescription>
-        <eximage></eximage>
+        <eximage>assets/photos/synthetictimeseries.jpg</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.osti.gov/servlets/purl/1607585"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/creating-synthetic-time-series-data-67223ff08e34"></diylink>
       </ex>

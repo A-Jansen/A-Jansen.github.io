@@ -8,7 +8,7 @@
     <token>22</token>
     <description>Predict an action, event, state, behavior, intention, etc.</description>
     <type>Supervised learning</type>
-    <image>assets/photos/icon_foresee2.png</image>
+    <image>assets/photos/icon_foresee.png</image>
     <techterm>Classification, regression</techterm>
     <capabilities>
       <c1 value="Predict what the next steps are likely to be and already make preselections or skip steps to reduce the workload of the user (e.g. adaptive interfaces)"></c1>
