@@ -21,7 +21,16 @@
               </img>
               <p class='overlaptextBig' style="top: 50px;   transform: translate(-30%);"><xsl:value-of select="abilities/abilitytoken[token=$tokenselected]/ability"/></p>
               <p class='overlaptextability' style="top: 130px;   transform: translate(-45%);">Reinforcement learning</p>
+              <img>
 
+                <xsl:attribute name="class">illustrationAbility
+                </xsl:attribute>
+                <xsl:attribute name="style">transform: translate(-5%);     max-width: 220px;
+                </xsl:attribute>
+
+                <xsl:attribute name="src"><xsl:value-of select="abilities/abilitytoken[token=$tokenselected]/image"/>
+                </xsl:attribute>
+              </img>
 
             </div>
 

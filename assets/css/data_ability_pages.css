@@ -1,5 +1,13 @@
 .illustration{
-  width: 500px;
+  max-height: 200px;
+  width: auto;
+
+}
+
+.illustrationAbility{
+visibility: hidden;
+    transform: translate(35%);
+  max-width: 180px;
 
 }
 
@@ -66,7 +74,7 @@
   position: absolute;
   width: inherit;
   height: inherit;
-  top: 32%;
+  top: 70.4px;
   /* left: 125px; */
   left: 50%;
   text-align: left;

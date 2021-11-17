@@ -23,7 +23,14 @@
               </img>
               <p class='overlaptextBig'><xsl:value-of select="abilities/abilitytoken[token=$tokenselected]/ability"/></p>
               <p class='overlaptextability'>Supervised learning</p>
+              <img>
 
+                <xsl:attribute name="class">illustrationAbility
+                </xsl:attribute>
+
+                <xsl:attribute name="src"><xsl:value-of select="abilities/abilitytoken[token=$tokenselected]/image"/>
+                </xsl:attribute>
+              </img>
             </div>
 
             <div class='rightheader'>

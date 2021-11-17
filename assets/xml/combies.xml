@@ -12,8 +12,7 @@
     <ability>Foresee</ability>
     <datatoken>236</datatoken>
     <abilitytoken>22</abilitytoken>
-    <description>Using images as input for predicting actions, states, etc or predict an image based on other types of input.
-    </description>
+    <description>Images could also be used as input for making predictions about for example next actions, states e.g. emotional states (overlap with categorizing images, in this case will it predict your future emotion) and values (on e.g. a continuous scale). </description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -28,7 +27,7 @@
     <examples>
       <ex>
         <exname>LikelyAI</exname>
-        <exdescription>Predict the popularity of your instagram posts</exdescription>
+        <exdescription> LikelyAI will use your images as input and predicts how popular they will be when you post it on Instagram and choose the best. In this case it is using regression as it shows a percentage score of expected popularity for each image. It uses already existing images with known popularity, and the machine learning model will try to find patterns in these.</exdescription>
         <eximage>assets/photos/likelyai.png</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.likelyai.com/"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/analytics-vidhya/fastai-image-regression-age-prediction-based-on-image-68294d34f2ed"></diylink>
@@ -41,7 +40,7 @@
     <ability>Categorize</ability>
     <datatoken>236</datatoken>
     <abilitytoken>140</abilitytoken>
-    <description>Recognize what is visible in images. This can be a person, an object, handwritten numbers and more. Some models can recognize only one object in each image and others can detect multiple, as well as their location.</description>
+    <description>Images are easy to recognize for people, but can be very hard for computers as there will always be slight variations in how the photo was taken but also in what you are capturing. You could for example want to recognize different animals of a photo or handwritten numbers and not all cats look alike and everyone's handwritten 2 looks different. ML models for this ability will learn to recognize what is shown in the images. Some models can recognize only one object in each image and others can detect multiple, as well as their location. In the case of the latter, the images will not only need a label but also a bounding box around the different objects in the image with a label for what is in each bounding box.</description>
     <capabilities>
       <c1 value="Can recognize all kind of visual input"></c1>
       <c2 value="It can learn things humans are not capable of recognizing"></c2>
@@ -55,7 +54,7 @@
     <examples>
       <ex >
         <exname>Google Lens</exname>
-        <exdescription>Identify objects in your image, translate text from photos , explore similar looking items.</exdescription>
+        <exdescription> Google Lens has many different functionalities and one of them is recognizing what is in the image. It will show you the class to which your image belongs. For example, recognize the type of flower. However, it can only recognize objects on which it has been trained, so it might not be able to recognize it.</exdescription>
         <eximage>assets/photos/googlelens.jpg</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://techengage.com/google-lens-now-detects-billion-items/">Link to example</exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://www.tensorflow.org/tutorials/images/classification">Link to DIY</diylink>
@@ -68,7 +67,7 @@
     <ability>Cluster</ability>
     <datatoken>236</datatoken>
     <abilitytoken>124</abilitytoken>
-    <description>Group images that are similar together</description>
+    <description>When the images are not labeled, but you still want to find images that might belong to the same category or you might want to find similar images for other purposes. In these cases, image clustering can be used as it will try to make clusters of similar images. It might take attributes into account such as the dominant color, the shape of what is in the image or find other patterns.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -83,7 +82,7 @@
     <examples>
       <ex>
         <exname>Google Photos</exname>
-        <exdescription>Cluster your photos based on activities, locations, objects, etc. that are in the photos</exdescription>
+        <exdescription>Google Photos will cluster your photos based on metadata it collected (time, location) but it will also try to cluster your images and place similar pictures together. At the end, it will also use categorization to describe what is in the cluster.</exdescription>
         <eximage>assets/photos/googlephotos.jpg</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://photos.google.com/explore"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/how-to-cluster-images-based-on-visual-similarity-cd6e7209fe34"></diylink>
@@ -119,12 +118,40 @@
     </examples>
   </combi>
   <combi>
+    <name>Image recommendation</name>
+    <datatype>Image</datatype>
+    <ability>Recommend</ability>
+    <datatoken>236</datatoken>
+    <abilitytoken>17</abilitytoken>
+    <description>Image recommendation can use two main approaches. The first approach is content-based filtering, in this approach the machine learning model will look at what images are similar to the one you liked in the past and recommend those new similar images to you. The second approach is collaborative filtering and in this case the machine learning model will look at what similar users liked and recommend those images(user-user) or look at which images are also often liked when image X is liked by the user and recommend those images (item-item).</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Recommender system images, collaborative filtering images, content based filtering images</techterm>
+    <examples>
+      <ex>
+        <exname>Pinterest</exname>
+        <exdescription>Pinterest is build around the ability of recommending images. On Pinterest you can "pin" images and based on what you have "pinned" and on what you  have searched, it will recommend other images that you probably like as well. For this is it will use a combination of the different recommender systems, as it will show you both more images that share the same content but also images that other users liked.</exdescription>
+        <eximage>assets/photos/pinterest.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://pinterest.com/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/geekculture/building-a-visual-similarity-based-recommendation-system-using-python-872a5bea568e"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
     <name>Image generation</name>
     <datatype>Image</datatype>
     <ability>Generate</ability>
     <datatoken>236</datatoken>
     <abilitytoken>24</abilitytoken>
-    <description>Generate new images based on examples</description>
+    <description>The ability to generate new images can be used to generate new images based on already existing images, for example when you want to augment your dataset. It can also finish your sketches based on what it thinks you are drawing or generate images based on a text prompt, which might help when generating new (design) ideas.</description>
     <capabilities>
       <c1 value="Can create new content from scratch"></c1>
       <c2 value="Can augment your dataset so you have more data to train with"></c2>
@@ -139,7 +166,7 @@
     <examples>
       <ex>
         <exname>Dall-e</exname>
-        <exdescription>Create images from text captions.</exdescription>
+        <exdescription>DALL-E uses the text captions that users can input to generate new images that visualize what was written in the text. It will generate different images for the same input so it can help for example with ideating or when you want to visualize something of which you do not have a photo.</exdescription>
         <eximage>assets/photos/dall-e.JPG</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://openai.com/blog/dall-e/"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/image-generation-in-10-minutes-with-generative-adversarial-networks-c2afc56bfa3b"></diylink>
@@ -152,7 +179,7 @@
     <ability>Foresee</ability>
     <datatoken>224</datatoken>
     <abilitytoken>22</abilitytoken>
-    <description>Predict how to complete a word or a sentence or what possible response options are based on the entered text data</description>
+    <description>Text prediction captures two different concepts. On the one hand you can use text as input and have for example a score associated with it. For example, predict its readability.The other concept is that you are predicting the text you are likely to type, these could be the next words or letters but also possible responses to an email. For both concepts, the text will need to be preprocessed to make it understandable for machine learning models.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -163,11 +190,11 @@
       <l2 value=""></l2>
       <l3 value=""></l3>
     </limitations>
-    <techterm>Autocomplete, predictive text</techterm>
+    <techterm>Autocomplete, predictive text, NLP</techterm>
     <examples>
       <ex>
         <exname>Autocomplete Google</exname>
-        <exdescription>When using the Google search engine, it will predict what you are probably searching and suggest several options for completing your search query</exdescription>
+        <exdescription>When using the Google search engine, it will predict what you are probably searching and suggest several options for completing your search query. To do this, it will use your browsing history and data from all its users to predict what the most probable search query will be.</exdescription>
         <eximage>assets/photos/autocomplete.png</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.google.com/"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/analytics-vidhya/build-a-simple-autocomplete-model-with-your-own-google-search-history-ead26b3b6bd4"></diylink>
@@ -180,7 +207,7 @@
     <ability>Categorize</ability>
     <datatoken>224</datatoken>
     <abilitytoken>140</abilitytoken>
-    <description>Matches texts with certain predefined categories, these could be certain sentiments, categories of mail, etc.</description>
+    <description>To match text with certain predefined categories, you need to have a model that is trained on text fragments with a label. For example, movie reviews are labeled as positive or negative or emails can be labeled as spam/ no spam.To be able to recognize the texts, they need to be preprocessed to make them understandable for machine learning models.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -190,11 +217,11 @@
       <l1 value=""></l1>
       <l2 value=""></l2>
       <l3 value=""></l3>Categories should be predefined, does not understand the text</limitations>
-    <techterm>Text classification</techterm>
+    <techterm>Text classification, NLP</techterm>
     <examples>
       <ex>
         <exname>Sentiment analysis</exname>
-        <exdescription>Analyse the text and show if it has a postive or a negative sentiment.</exdescription>
+        <exdescription>This tool allows you to analyse the sentiment of a fragment of text and will predict if it is positive or negative, and also shows how confident is that it has predicted it correctly. You could use this information to monitor reviews about your product on for example social media.</exdescription>
         <eximage>assets/photos/sentimentanalysis.JPG</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://monkeylearn.com/sentiment-analysis-online/">Link to example</exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://www.tensorflow.org/text/tutorials/text_classification_rnn">Link to DIY</diylink>
@@ -207,7 +234,7 @@
     <ability>Cluster</ability>
     <datatoken>224</datatoken>
     <abilitytoken>124</abilitytoken>
-    <description>Cluster text based similarities such as topics, sentence construction, language, etc.</description>
+    <description>When no labels are present, texts can be clustered based on their similarities. For example, you might want to cluster them on writing style, the language in which it is written or the topic they are covering. In order to find these similarities between texts, you will first need to preprocess the data to make it understandable for the machine learning models.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -222,7 +249,7 @@
     <examples>
       <ex>
         <exname>Google News</exname>
-        <exdescription>Shows news in clusters of articles that cover the same topic but come from different sources</exdescription>
+        <exdescription>Google News clusters articles from different sources that cover the same topic. For this, it will look at similarities between the news articles and group them together. At the end, the extra step of categorization is done to describe what is in these clusters.</exdescription>
         <eximage>assets/photos/googlenews.JPG</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://news.google.com/"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/making-sense-of-text-clustering-ca649c190b20"></diylink>
@@ -278,12 +305,12 @@
     </examples>
   </combi>
   <combi>
-    <name>Text generation</name>
+    <name>Text recommendation</name>
     <datatype>Text</datatype>
-    <ability>Generate</ability>
+    <ability>Recommend</ability>
     <datatoken>224</datatoken>
-    <abilitytoken>24</abilitytoken>
-    <description>Generate new texts from scratch, often based on a few words or a style (e.g. Shakespearean texts)</description>
+    <abilitytoken>17</abilitytoken>
+    <description>Text recommendation can be done by using techniques to get an idea of e.g. the topics that are being addressed in the text (this requires another ML ability first) and next recommend texts that have a similar topic to the one you liked or just read (content-based filtering) . Another approach is not looking at what the text is discussing, but looking at what similar users read and recommending those texts to you (collaborative filtering).</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -294,11 +321,40 @@
       <l2 value=""></l2>
       <l3 value=""></l3>
     </limitations>
-    <techterm>Text generation, generative adversarial network (GAN)</techterm>
+    <techterm>Recommender system text, text collaborative filtering, text content based filtering, NLP</techterm>
+    <examples>
+      <ex>
+        <exname>LinkedIn</exname>
+        <exdescription>LinkedIn offers job recommendations based on your job searches, job alerts, profile, and activity on LinkedIn. This data is textual data and will be used to recommend jobs that are matching with what you have searched for, what you have liked or what you have written on your profile. For this, it will also need to analyse the job description to see what is being asked.</exdescription>
+        <eximage>assets/photos/linkedin.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.linkedin.com/help/linkedin/answer/11783/job-recommendations-overview?lang=en"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/@armandj.olivares/building-nlp-content-based-recommender-systems-b104a709c042"></diylink>
+      </ex>
+    </examples>
+  </combi>
+
+  <combi>
+    <name>Text generation</name>
+    <datatype>Text</datatype>
+    <ability>Generate</ability>
+    <datatoken>224</datatoken>
+    <abilitytoken>24</abilitytoken>
+    <description>Text generation can be used to generate completely new texts from scratch (based on a few key words), to complete texts or write it in a specific style (e.g. Shakespearean language). In order to have properly constructed sentences this ML ability requires another ML ability, communicate and understand, to write understandable texts.</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Text generation, generative adversarial network (GAN), NLP</techterm>
     <examples>
       <ex>
         <exname>Plot generator</exname>
-        <exdescription>Based on a few parameters you can generate movie scripts, short stories, opening lines and more.</exdescription>
+        <exdescription>This plot generator allows you to generate different types of texts such as fairytales, movie scripts or headlines based on a few parameters that you need to set beforehand.</exdescription>
         <eximage>assets/photos/plotgenerator.JPG</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.plot-generator.org.uk/">"</exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/the-making-of-an-ai-storyteller-c3b8d5a983f5"></diylink>
@@ -312,7 +368,7 @@
     <ability>Foresee</ability>
     <datatoken>59</datatoken>
     <abilitytoken>22</abilitytoken>
-    <description>Predict action, events, states, etc. that will happen in the future</description>
+    <description>Time series are suited for making predictions since one of the measurements (attributes) of time series data, is the time. This makes it possible to predict what could happen in the attribute by making e.g. a regression plot with the time on the X axis. Then you can either predict a continuous range of numbers or have discrete outcomes (only a certain number of categories or classes). For example, predicting the temperature tomorrow (continuous: scale of real numbers), or if it is going to rain in the upcoming hour (discrete: yes/no).</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -327,7 +383,7 @@
     <examples>
       <ex>
         <exname>Stock market</exname>
-        <exdescription>Predictions for the stockmarket</exdescription>
+        <exdescription>While perfect stock market predictions are not (yet) possible, it is possible to recognize some general trends based on time series data. For the stock market, it is important to take the time component into account, which is why time series data is used. So based on the historic data, the model will try to find patterns and use these to predict the future.</exdescription>
         <eximage>assets/photos/stockmarket.JPG</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.wallstreetzen.com/stock-screener/stock-forecast"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://data-flair.training/blogs/stock-price-prediction-machine-learning-project-in-python/"></diylink>
@@ -340,7 +396,7 @@
     <ability>Categorize</ability>
     <datatoken>59</datatoken>
     <abilitytoken>140</abilitytoken>
-    <description>Match extracts of a time series (e.g. 10 seconds) with categories. You first need to preprocess the data before you are able to do this.</description>
+    <description>For time series categorization (or classification) you will need to have labeled time series data. Often time series data will be first pre processed and afterwards labeled, e.g. taking the means of every second of sensor data and assign that to one category. Next the model will learn how to match the time series with the categories (or classes) and make its prediction.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -355,7 +411,7 @@
     <examples>
       <ex>
         <exname>Acitivity recognition</exname>
-        <exdescription>Recognize activity based on data from gps and sensors</exdescription>
+        <exdescription>To recognize activity, data from sensors such as accelerometers (measuring the acceleration in the X, Y and Z axis), ECG (heartbeat) and GPS (your location and based on this how fast you are moving) can be used. These data are time series, since one of the measurements (or features) is the time of measuring the other features. Based on the sensor data, classes can be assigned to each fragment of data and the model can learn to recognize what data pattern belongs to cycling or walking, standing still, etc.</exdescription>
         <eximage>assets/photos/activityrecognition.JPG</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://tinyurl.com/ytms74s9"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://machinelearningmastery.com/how-to-load-and-explore-a-standard-human-activity-recognition-problem/"></diylink>
@@ -368,7 +424,7 @@
     <ability>Cluster</ability>
     <datatoken>59</datatoken>
     <abilitytoken>124</abilitytoken>
-    <description>Cluster extracts of a time series (e.g. 10 seconds). You first need to preprocess the data before you are able to do this.</description>
+    <description>Time series clustering resembles time series categorization somewhat, but the difference is that with clustering, you only look at what data seems similar and group these together. So you will start with time series data, and these often need to be pre-processed. Next these data are analysed for patterns and afterwards the different data fragments will be assigned to one of the clusters.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -383,7 +439,7 @@
     <examples>
       <ex>
         <exname>Clustering earthquake signals</exname>
-        <exdescription>Cluster continuous seismic activity data into different type of signals which could help to forecast eartquakes</exdescription>
+        <exdescription>Monitoring seismic data is very labour intensive and there is more data than can be currently analysed in a supervised manner. Therefore, clustering can be used to find patterns in these data and use these clusters to for example forecast earthquakes.</exdescription>
         <eximage>assets/photos/earthquake.JPG</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.nature.com/articles/s41467-020-17841-x"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://www.kaggle.com/izzettunc/introduction-to-time-series-clustering"></diylink>
@@ -419,12 +475,40 @@
     </examples>
   </combi>
   <combi>
+    <name>Time series recommendation</name>
+    <datatype>Time series</datatype>
+    <ability>Recommend</ability>
+    <datatoken>59</datatoken>
+    <abilitytoken>17</abilitytoken>
+    <description>Recommendations are often about what to recommend to someone based on e.g. products they bought before or music you listen often. But time series can also be used in recommendation as this will take into account when you do all these things and therefore can also take into account when to make a recommendation. In this case, an extra attribute (column) is added to your dataset with the time, while the other columns will still contain e.g. the products you bought or with which sites you interacted.</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Time series recommender systems, latent dirichlet allocation time series</techterm>
+    <examples>
+      <ex>
+        <exname>Netflix</exname>
+        <exdescription>Netflix records what you  have watched, which movies you liked, etc. and also when you watched certain shows which makes it time series data. So if you are always watching the show in the morning, it might only recommend it in the morning and recommend different shows in the evening.</exdescription>
+        <eximage>assets/photos/netflix.jpg</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://help.netflix.com/en/node/100639"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/create-a-recommendation-system-based-on-time-series-data-using-latent-dirichlet-allocation-2aa141b99e19"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
     <name>Synthetic time series</name>
     <datatype>Time series</datatype>
     <ability>Generate</ability>
     <datatoken>59</datatoken>
     <abilitytoken>24</abilitytoken>
-    <description>Create time series from scratch</description>
+    <description>Time series are data sets that has as one of the attribute the time at which the other features were measured. These can be recorded in a tabular format and/or visualized in a graph with the time on the x-axis. Based on existing data you can generate more time series data which can afterwards be used for e.g. training a better machine learning model with more data.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -480,7 +564,7 @@
     <ability>Categorize</ability>
     <datatoken>94</datatoken>
     <abilitytoken>140</abilitytoken>
-    <description>Match audio with predefined categories</description>
+    <description>Audio data is a special subset of time series data, and some similar techniques can be used. Using audio categorization, you can match certain segments of the audio with predefined classes (categories). For example you can recognize the pitch of sound, match the bird song to a specific bird or recognize what someone is saying. For this last example you can either have a system that does not understand what is being said but just recognizes the sounds or you can use another ML ability (understand) to interpret what is being said.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -495,7 +579,7 @@
     <examples>
       <ex>
         <exname>Lego Duplo Stories</exname>
-        <exdescription>Use voice commands (via Alexa) to interact with the story being told (e.g. quite, yes, no, colours) while building with lego blocks</exdescription>
+        <exdescription>With Lego Duplo stories, children can experience interactive stories. For this, it is using Alexa to tell the story. During this story, Alexa will give prompts to the child to build along with their Duplo and it will ask for input for the story. For example, it will ask what the theme is of the story (limited options) and the child can say for example 'Animal story'. Machine learning is here used to recognize what is being said and incorporates that into the story.</exdescription>
         <eximage>assets/photos/legoduplostories.jpg</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.amazon.com/LEGO-System-A-S-Stories/dp/B07C225J2T"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://www.tensorflow.org/tutorials/audio/simple_audio"></diylink>
@@ -508,7 +592,7 @@
     <ability>Cluster</ability>
     <datatoken>94</datatoken>
     <abilitytoken>124</abilitytoken>
-    <description>Cluster audio based on similarities</description>
+    <description>Audio clustering will look for similarities between the audio fragments. Before it can do this, it is often needed to preprocess the audio by for example taking certain segments of the audio track. Next, it will find patterns in the data and cluster similar patterns together. However, it cannot tell you what is the commonality, human interpretation or labeled data is needed for this.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -523,7 +607,7 @@
     <examples>
       <ex>
         <exname>Bird sounds</exname>
-        <exdescription>Bird sounds are placed in a map where similar sounding sounds are placed closer together</exdescription>
+        <exdescription>In this project, smart segments of bird sounds were taken and used without label as the input for a machine learning model. The model created some kind of fingerprints/ or images from the sounds and next group similar sounds closer together in a two-dimensional space. This eventually led to a map with bird sounds in which similar sounding birds are grouped closer together. After this process the labels of the sounds were added again to the data so you as user can see the name of the bird.</exdescription>
         <eximage>assets/photos/birdsounds.JPG</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://experiments.withgoogle.com/ai/bird-sounds/view/"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/clustering-music-to-create-your-personal-playlists-on-spotify-using-python-and-k-means-a39c4158589a"></diylink>
@@ -560,12 +644,40 @@
     </examples>
   </combi>
   <combi>
+    <name>Audio recommendation</name>
+    <datatype>Audio</datatype>
+    <ability>Recommend</ability>
+    <datatoken>94</datatoken>
+    <abilitytoken>17</abilitytoken>
+    <description>Audio recommendation can be done in two ways, it can recommend audio to the user that is similar to audio you have interacted with before/ liked. In this case it might use the metadata of e.g. music (genre, artist, etc.) or look for audio that sounds similar (see the example of audio clustering), this is content-based filtering. Another way is to recommend audio based on what similar users listened to and recommend those songs to you (collaborative filtering).</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Recommender system audio, collaborative filtering audio, content based filtering audio</techterm>
+    <examples>
+      <ex>
+        <exname>Spotify</exname>
+        <exdescription>Spotify's Discover Weekly will use what you have listened to so far, as well as other information it has about you (your age, gender, location, etc.) and general information (season, hits, etc.) to recommend new music to you. For this they will use both filtering approaches as it will look at what similar users listened to and look for similar music.</exdescription>
+        <eximage>assets/photos/spotify.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.spotify.com/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/making-your-own-discover-weekly-f1ac7546fedb"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
     <name>Audio generation</name>
     <datatype>Audio</datatype>
     <ability>Generate</ability>
     <datatoken>94</datatoken>
     <abilitytoken>24</abilitytoken>
-    <description>Create new sounds from scratch. For example voices or music.</description>
+    <description>Audio generation allows you to generate new audio from scratch. This could for example be new music, background noises or voices. For generating voices that speak 'human' language, you will also need another ML ability (communicate) to craft the messages that will be spoken.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -580,7 +692,7 @@
     <examples>
       <ex>
         <exname>AIVA</exname>
-        <exdescription>Create new music from scratch for different genres of music</exdescription>
+        <exdescription>AIVA is a service that creates new music for different kind of purposes. You can select a genre for the new music piece or upload a track of music to with which it should match.</exdescription>
         <eximage>assets/photos/aiva.png</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.aiva.ai/"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/neuronio/audio-generation-with-gans-428bc2de5a89"></diylink>
@@ -593,7 +705,7 @@
     <ability>Foresee</ability>
     <datatoken>98</datatoken>
     <abilitytoken>22</abilitytoken>
-    <description>Predict actions, events, values, etc. based on information stored in table</description>
+    <description> The data is stored in a table where each column holds information about one feature and each row represents one observation. Next to that, there is a column which contains the ground truth, which are the labels. These labels could be categorical (2 or more categories) or numerical (numbers on a scale). Based on all columns, except the one containing the labels, the ML model will try to predict what the label is.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -608,7 +720,7 @@
     <examples>
       <ex>
         <exname>Credit card fraud detection</exname>
-        <exdescription>Predict if a transaction is fraudulent</exdescription>
+        <exdescription>To detect credit card fraud, all transactions are stored in a table. Each row contains the information for one transaction and each column contains the information about one feature. For this example, the features are not the original measurements but are combinations of multiple original measurements so that in the end we have less columns. Finally, one column contains the label if it was or was not a fraudulent transaction. Based on all columns, except the one with the labels, the model will try to predict if it is credit card fraud.</exdescription>
         <eximage>assets/photos/creditcardfraud.jfif</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.mastercard.us/en-us/business/issuers/business-payments/fraud-prevention.html"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/credit-card-fraud-detection-using-machine-learning-python-5b098d4a8edc"></diylink>
@@ -621,7 +733,7 @@
     <ability>Categorize</ability>
     <datatoken>98</datatoken>
     <abilitytoken>140</abilitytoken>
-    <description>Match rows (or columns) from a table with categories</description>
+    <description>Each row of the table contains attributes that belong to one instance (the label which is also written down in one column of the table). When categorizing this data, the model will use all the attributes from the table (all the columns) to predict for each instance to with category it belongs.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -636,7 +748,7 @@
     <examples>
       <ex>
         <exname>Spotify</exname>
-        <exdescription>Match music based on several characteristics with different genres</exdescription>
+        <exdescription>Spotify for example could store the information about all the songs in a tabular format. The columns could be instruments, artist, length, etc. and one column contains the labels which in this case are the genres. The ML model will try to match each row to the correct genre based on the information in the other columns.</exdescription>
         <eximage>assets/photos/spotify.png</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.spotify.com/nl/"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://data-flair.training/blogs/python-project-music-genre-classification/"></diylink>
@@ -649,7 +761,7 @@
     <ability>Cluster</ability>
     <datatoken>98</datatoken>
     <abilitytoken>124</abilitytoken>
-    <description>Group similar rows together</description>
+    <description> Each row of the data contains information for one instance. The columns of the data are the different attributes that are measured, for example, how long you spend on one site and how many stars you gave it. Since clustering is an unsupervised learning technique, the table does not contain labels. If there are labels present, they are only used as another attribute and not to check if the prediction was correct (this would be the ability categorize).</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -664,7 +776,7 @@
     <examples>
       <ex>
         <exname>Customer clustering</exname>
-        <exdescription>Group customers together who are similar and use e.g. target marketing techniques for all groups</exdescription>
+        <exdescription>To cluster customers, for example to send targeted discounts, all the information of the customers is saved in a table. Each row contains the information of one customer and the columns contain the features such as the products they buy, their usual time spend in the shop and if they buy products that are discounted. Based on these attributes, the clustering model will try to find patterns among these users and group customers together who buy for example similar products. There might be one group who always buy fast food and candy, and one group who mainly buy fresh products. However, in real life these groups will be more nuanced and overlap.</exdescription>
         <eximage>assets/photos/customersegment.png</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.segmentify.com/blog/customer-consumer-user-segmentation-examples"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/codex/customer-segmentation-with-k-means-in-python-18336fb915be"></diylink>
@@ -700,12 +812,40 @@
     </examples>
   </combi>
   <combi>
+    <name>Recommender system</name>
+    <datatype>Table</datatype>
+    <ability>Recommend</ability>
+    <datatoken>98</datatoken>
+    <abilitytoken>17</abilitytoken>
+    <description>Recommender system will use tabular data to save all the characteristics of users and items (e.g. products). The table will have the information about one user or item stored in one row and all the attributes/ characteristics are saved in the columns. These could be the scores you give, the number of interactions you have had, if you have bought an item or saved it as favorites. Or if the rows contain the items, it could be how much it is bought and some specifics about the type of product. Based on these tables, the recommender system can either recommend for example items that are very similar to the one you liked, for this it will look in the table with items and see what other items have similar characteristics (content-based recommending). Or it will look at what other users are similar to you and recommend the items they liked (collaborative filtering).</description>
+    <capabilities>
+      <c1 value=""></c1>
+      <c2 value=""></c2>
+      <c3 value=""></c3>
+    </capabilities>
+    <limitations>
+      <l1 value=""></l1>
+      <l2 value=""></l2>
+      <l3 value=""></l3>
+    </limitations>
+    <techterm>Recommender system, collaborative filtering, content based filtering</techterm>
+    <examples>
+      <ex>
+        <exname>Amazon</exname>
+        <exdescription>Amazon uses both tables which contain the specifics of each product as well as the information about the users and their interactions with the product. So when you look at a product, it will recommend similar items based on the content of the item, for example recommend similar laptops and it will look at what other similar users bought and for example also recommend a mouse, a laptop cover or a tablet.</exdescription>
+        <eximage>assets/photos/amazon.png</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.amazon.com/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://www.kaggle.com/saurav9786/recommender-system-using-amazon-reviews"></diylink>
+      </ex>
+    </examples>
+  </combi>
+  <combi>
     <name>Synthetic tabular data</name>
     <datatype>Table</datatype>
     <ability>Generate</ability>
     <datatoken>98</datatoken>
     <abilitytoken>24</abilitytoken>
-    <description>Create extra tabular data from scratch</description>
+    <description>Sometimes you will need more data than you have in order to train for example a good model or you have to take privacy issues into account and cannot share for example the patient data you have in tabular format. In both cases, you can generate new data that share the same characteristics as your original data.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -720,7 +860,7 @@
     <examples>
       <ex>
         <exname>Tonic.ai</exname>
-        <exdescription>Company that creates fake data based on your original data. This extra fake data can for example be used for sharing (no privacy issues) or for training a (better) model with more data.</exdescription>
+        <exdescription>TONIC.ai is a company whose speciality it is to generate new, fake, data based on the original data you provide. So you can have a dataset of tabular data and TONIC.ai will use this to generate more data that is similar but still different.</exdescription>
         <eximage>assets/photos/tonic.png</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.tonic.ai/"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/analytics-vidhya/a-step-by-step-guide-to-generate-tabular-synthetic-dataset-with-gans-d55fc373c8db"></diylink>
@@ -733,7 +873,7 @@
     <ability>Foresee</ability>
     <datatoken>138</datatoken>
     <abilitytoken>22</abilitytoken>
-    <description>Predicting the next frames of a video (what happens next)</description>
+    <description>Since videos can be seen as time series of images with audio, you could also use some of those techniques. For example, you could predict what the next frame of a video will be or what will be said next.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -747,9 +887,8 @@
     <techterm>Video prediction</techterm>
     <examples>
       <ex>
-        <exname>Self driving cars</exname>
-        <exdescription>Predict where other vehicles or people will go
-        </exdescription>
+        <exname>Self-driving cars</exname>
+        <exdescription>Video prediction is nowadays being used for self-driving cars. Here, a camera will film the environment of the car and detect where other vehicles or people are. Using the ability foresee, they are trying to predict the next frame, which in this situation will inform you where other vehicles or people are going to. This can then be used to anticipate and redirect the trajectory of the car if needed.</exdescription>
         <eximage>assets/photos/selfdrivingcars.jpg</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.youtube.com/watch?v=yEtH23rKY8Q"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/deeppicar-part-1-102e03c83f2c"></diylink>
@@ -762,7 +901,7 @@
     <ability>Categorize</ability>
     <datatoken>138</datatoken>
     <abilitytoken>140</abilitytoken>
-    <description>Match the video itself with a certain category or match elements in the video with categories</description>
+    <description>Videos can be matched with categories based on their entire content. For example a video can be recognized as a sport video or a cooking video. In this case, their is one label for the entire video. Another option is to see each frame of the video as an image and have labels for each frame. In this case, machine learning models for images could also be used for recognizing categories in videos (for example recognizing cats and dogs in videos). In order to recognize multiple objects in one frame, you need, just as with images, a bounding box around each object.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -777,7 +916,7 @@
     <examples>
       <ex>
         <exname>Zenia</exname>
-        <exdescription>An app that provides yoga classes and uses pose recognition to to give feedback</exdescription>
+        <exdescription>Zenia is an app which provide yoga classes and uses pose recognition to give personalized feedback. For this it will analyse each frame of the image, recognize the locations of the joints and next use this to see if you are doing the right pose and if you do the pose right.</exdescription>
         <eximage>assets/photos/zenia.png</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://zenia.app/"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://thecodingtrain.com/learning/ml5/7.1-posenet.html"></diylink>
@@ -790,7 +929,7 @@
     <ability>Cluster</ability>
     <datatoken>138</datatoken>
     <abilitytoken>124</abilitytoken>
-    <description>Clustering videos based on similar characteristics</description>
+    <description>Videos can be clustered in their entirety by looking for similar attributes of the video itself or its metadata. Next to that, it can also cluster frames within the video and this will resemble image clustering.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -805,7 +944,7 @@
     <examples>
       <ex>
         <exname>Video summarization</exname>
-        <exdescription>Use clustering to identify the unique segments of a video and use these segments to create a summary</exdescription>
+        <exdescription>In this paper, they describe a technique to use video clustering to create a summary of the video. For this they split the video in short segments, use the first frame of each segment and use these for the clustering. If the frames are not too much alike (they do not belong to the same cluster), their segment will be used for the summary.</exdescription>
         <eximage>assets/photos/videocluster.png</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.researchgate.net/publication/266032463_Video_Summarization_Using_Clustering"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href=""></diylink>
@@ -841,125 +980,12 @@
     </examples>
   </combi>
   <combi>
-    <name>Video generation</name>
-    <datatype>Video</datatype>
-    <ability>Generate</ability>
-    <datatoken>138</datatoken>
-    <abilitytoken>24</abilitytoken>
-    <description>Create videos either from scratch or based on already existing videos</description>
-    <capabilities>
-      <c1 value=""></c1>
-      <c2 value=""></c2>
-      <c3 value=""></c3>
-    </capabilities>
-    <limitations>
-      <l1 value=""></l1>
-      <l2 value=""></l2>
-      <l3 value=""></l3>
-    </limitations>
-    <techterm>Video generative adversarial network (GAN)</techterm>
-    <examples>
-      <ex>
-        <exname>Deep fakes</exname>
-        <exdescription>Videos that are created from scratch or adapted from an original video where for example faces are swapped or where the person is saying something else compared to the original video.</exdescription>
-        <eximage>assets/photos/deepfake.jpg</eximage>
-        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://edition.cnn.com/interactive/2019/01/business/pentagons-race-against-deepfakes/"></exlink>
-        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://github.com/xaliceli/video-GAN"></diylink>
-      </ex>
-    </examples>
-  </combi>
-
-  <combi>
-    <name>Audio recommendation</name>
-    <datatype>Audio</datatype>
-    <ability>Recommend</ability>
-    <datatoken>94</datatoken>
-    <abilitytoken>17</abilitytoken>
-    <description>Recommending audio based on similar audio or audio that similar users also liked.</description>
-    <capabilities>
-      <c1 value=""></c1>
-      <c2 value=""></c2>
-      <c3 value=""></c3>
-    </capabilities>
-    <limitations>
-      <l1 value=""></l1>
-      <l2 value=""></l2>
-      <l3 value=""></l3>
-    </limitations>
-    <techterm>Recommender system audio, collaborative filtering audio, content based filtering audio</techterm>
-    <examples>
-      <ex>
-        <exname>Spotifiy</exname>
-        <exdescription>Spotify's weekly discover suggests songs based on your listening behaviour</exdescription>
-        <eximage>assets/photos/spotify.png</eximage>
-        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.spotify.com/"></exlink>
-        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/making-your-own-discover-weekly-f1ac7546fedb"></diylink>
-      </ex>
-    </examples>
-  </combi>
-  <combi>
-    <name>Recommender system</name>
-    <datatype>Table</datatype>
-    <ability>Recommend</ability>
-    <datatoken>98</datatoken>
-    <abilitytoken>17</abilitytoken>
-    <description>Recommend items based on similar features (content-based) in a table or compare features between users or items to find what others also liked and recommend these items (collaborative filtering).</description>
-    <capabilities>
-      <c1 value=""></c1>
-      <c2 value=""></c2>
-      <c3 value=""></c3>
-    </capabilities>
-    <limitations>
-      <l1 value=""></l1>
-      <l2 value=""></l2>
-      <l3 value=""></l3>
-    </limitations>
-    <techterm>Recommender system, collaborative filtering, content based filtering</techterm>
-    <examples>
-      <ex>
-        <exname>Amazon</exname>
-        <exdescription>Recommend items based on your browsing history and related articles</exdescription>
-        <eximage>assets/photos/amazon.png</eximage>
-        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.amazon.com/"></exlink>
-        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://www.kaggle.com/saurav9786/recommender-system-using-amazon-reviews"></diylink>
-      </ex>
-    </examples>
-  </combi>
-  <combi>
-    <name>Text recommendation</name>
-    <datatype>Text</datatype>
-    <ability>Recommend</ability>
-    <datatoken>224</datatoken>
-    <abilitytoken>17</abilitytoken>
-    <description>Recommend items based on their textual description or recommend similar texts (e.g. newspaper articles).</description>
-    <capabilities>
-      <c1 value=""></c1>
-      <c2 value=""></c2>
-      <c3 value=""></c3>
-    </capabilities>
-    <limitations>
-      <l1 value=""></l1>
-      <l2 value=""></l2>
-      <l3 value=""></l3>
-    </limitations>
-    <techterm>Recommender system text, text collaborative filtering, text content based filtering</techterm>
-    <examples>
-      <ex>
-        <exname>LinkedIn</exname>
-        <exdescription>Recommends jobs based on your job searches, job alerts, profile, and activity on LinkedIn</exdescription>
-        <eximage>assets/photos/linkedin.png</eximage>
-        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.linkedin.com/help/linkedin/answer/11783/job-recommendations-overview?lang=en"></exlink>
-        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/@armandj.olivares/building-nlp-content-based-recommender-systems-b104a709c042"></diylink>
-      </ex>
-    </examples>
-  </combi>
-  <combi>
     <name>Video recommendation</name>
     <datatype>Video</datatype>
     <ability>Recommend</ability>
     <datatoken>138</datatoken>
     <abilitytoken>17</abilitytoken>
-    <description>Recommend similar videos or videos that you similar users liked</description>
+    <description>Video recommendation can be based on the content and the metadata of the video. In this case, videos that share the same content and/or metadata will be recommended to you (content-based filtering). For example, when you have watched a lot of videos that explain Machine Learning it will recommend more videos on this topic. Or it will use your past behavior to find users with a similar bevhavior, e.g. you have watched or liked the same videos (collaborative-filtering). Then it will look at what these users also liked and recommend these items to you. For example, it will recommend programming videos, since similar users watched both machine learning and programming videos.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -974,7 +1000,7 @@
     <examples>
       <ex>
         <exname>Youtube</exname>
-        <exdescription>Recommend videos that you will probably like based on previous watched videos and on what other similar users like</exdescription>
+        <exdescription>YouTube is doing exactly what is described above, it will use both approaches to recommend new videos to you as well recommend the overall popular videos.</exdescription>
         <eximage>assets/photos/youtube.png</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.youtube.com/"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://www.datacamp.com/community/tutorials/recommender-systems-python"></diylink>
@@ -982,12 +1008,12 @@
     </examples>
   </combi>
   <combi>
-    <name>Image recommendation</name>
-    <datatype>Image</datatype>
-    <ability>Recommend</ability>
-    <datatoken>236</datatoken>
-    <abilitytoken>17</abilitytoken>
-    <description>Recommend similar images or images that similar users liked</description>
+    <name>Video generation</name>
+    <datatype>Video</datatype>
+    <ability>Generate</ability>
+    <datatoken>138</datatoken>
+    <abilitytoken>24</abilitytoken>
+    <description>With video generation you can either create videos from scratch, based on a few parameters, or base it on already existing videos. In this last scenario, it can be very hard to distinguish real from fake, and these videos are generally known as deep fakes.</description>
     <capabilities>
       <c1 value=""></c1>
       <c2 value=""></c2>
@@ -998,42 +1024,14 @@
       <l2 value=""></l2>
       <l3 value=""></l3>
     </limitations>
-    <techterm>Recommender system images, collaborative filtering images, content based filtering images</techterm>
+    <techterm>Video generative adversarial network (GAN)</techterm>
     <examples>
       <ex>
-        <exname>Pinterest</exname>
-        <exdescription>Recommend images based on images you have pinned and your past browsing activity</exdescription>
-        <eximage>assets/photos/pinterest.png</eximage>
-        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://pinterest.com/"></exlink>
-        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/geekculture/building-a-visual-similarity-based-recommendation-system-using-python-872a5bea568e"></diylink>
-      </ex>
-    </examples>
-  </combi>
-  <combi>
-    <name>Time series recommendation</name>
-    <datatype>Time series</datatype>
-    <ability>Recommend</ability>
-    <datatoken>59</datatoken>
-    <abilitytoken>17</abilitytoken>
-    <description>Takes time into account when making recommendations: when to predict something (e.g. at what time of the day)</description>
-    <capabilities>
-      <c1 value=""></c1>
-      <c2 value=""></c2>
-      <c3 value=""></c3>
-    </capabilities>
-    <limitations>
-      <l1 value=""></l1>
-      <l2 value=""></l2>
-      <l3 value=""></l3>
-    </limitations>
-    <techterm>Time series recommender systems, latent dirichlet allocation time series</techterm>
-    <examples>
-      <ex>
-        <exname>Netflix</exname>
-        <exdescription>Netflix takes into account the time of the day when making recommendations</exdescription>
-        <eximage>assets/photos/netflix.jpg</eximage>
-        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://help.netflix.com/en/node/100639"></exlink>
-        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/create-a-recommendation-system-based-on-time-series-data-using-latent-dirichlet-allocation-2aa141b99e19"></diylink>
+        <exname>Deep fakes</exname>
+        <exdescription>Videos that are adapted from an original video where for example faces are swapped or where the person is saying something else compared to the original video.</exdescription>
+        <eximage>assets/photos/deepfake.jpg</eximage>
+        <exlink xlink:type="simple" xlink:show="new" xlink:href="https://edition.cnn.com/interactive/2019/01/business/pentagons-race-against-deepfakes/"></exlink>
+        <diylink xlink:type="simple" xlink:show="new" xlink:href="https://github.com/xaliceli/video-GAN"></diylink>
       </ex>
     </examples>
   </combi>

@@ -8,6 +8,7 @@
     <token>22</token>
     <description>Predict an action, event, state, behavior, intention, etc.</description>
     <type>Supervised learning</type>
+    <image>assets/photos/icon_foresee2.png</image>
     <techterm>Classification, regression</techterm>
     <capabilities>
       <c1 value="Predict what the next steps are likely to be and already make preselections or skip steps to reduce the workload of the user (e.g. adaptive interfaces)"></c1>
@@ -29,6 +30,8 @@
     <token>17</token>
     <description>Provide suggestions or guidance; propose contents, activities, etc.</description>
     <type>Unsupervised learning</type>
+    <image>assets/photos/icon_recommend.png</image>
+    <source>Image source https://towardsdatascience.com/prototyping-a-recommender-system-step-by-step-part-1-knn-item-based-collaborative-filtering-637969614ea</source>
     <techterm>Recommender systems (collaborative filtering/ content based)</techterm>
     <capabilities>
       <c1 value="Recommend items based on what similar users like, based on your past interactions (collaborative filtering: user-user)"></c1>
@@ -52,6 +55,7 @@
     <token></token>
     <description>Differentiate certain items from a group or average (find outliers, anomalies, etc.)</description>
     <type>Unsupervised learning</type>
+        <image>assets/photos/</image>
     <techterm>Anomaly detection</techterm>
     <capabilities>
       <c1 value="Can automatically monitor data and alert if their is something suspicious"></c1>
@@ -74,6 +78,7 @@
     <token>140</token>
     <description>Match an item with a category</description>
     <type>Unsupervised learning</type>
+    <image>assets/photos/icon_categorize.png</image>
     <techterm>Classificaton</techterm>
     <capabilities>
       <c1 value="Can recognize objects by finding patterns in the data, including abstract data that is not easily interpretable for humans (e.g. large spreadsheets with sensor values)"></c1>
@@ -97,6 +102,7 @@
     <token></token>
     <description>Categorize the identity of a specific individual/item from a trait</description>
     <type>Supervised learning</type>
+      <image>assets/photos/</image>
     <techterm>Classification</techterm>
     <capabilities>
       <c1 value=""></c1>
@@ -119,6 +125,7 @@
     <token></token>
     <description>Comprehend topics, themes, or sentiments; interpret language</description>
     <type>Unsupervised learning</type>
+      <image>assets/photos/</image>
     <techterm>NLP, semantic analysis, Part-of-Speech tagging, topic analysis</techterm>
     <capabilities>
       <c1 value="Can recognize/analyze human language "></c1>
@@ -141,6 +148,7 @@
     <token></token>
     <description>Convey messages/content in understandable languages</description>
     <type>Unsupervised learning</type>
+      <image>assets/photos/</image>
     <techterm>Text to speech synthesis/ analysis</techterm>
     <capabilities>
       <c1 value="Can create texts/ answers in understandable languages"></c1>
@@ -165,6 +173,7 @@
     <type>Unsupervised learning</type>
     <techterm>Neural Machine Translation, neural style transfer
     </techterm>
+      <image>assets/photos/</image>
     <capabilities>
       <c1 value="Translate texts"></c1>
       <c2 value="Transform images from one style to another style"></c2>
@@ -186,6 +195,7 @@
     <token>24</token>
     <description>Create content (e.g. videos, images, music, text) from scratch</description>
     <type>Unsupervised learning</type>
+      <image>assets/photos/icon_generate.png</image>
     <techterm>Generative Adversarial Networks (GAN), speech synthesis, deep fakes</techterm>
     <capabilities>
       <c1 value="Can help ideating by creating a lot of various outputs as inspiration (e.g. images of different designs)"></c1>
@@ -210,6 +220,7 @@
     <token>60</token>
     <description>Improve or perfect a certain task/route/process</description>
     <type>Reinforcement learning</type>
+    <image>assets/photos/icon_optimize.png</image>
     <techterm>Optimization algorithms, reinforcement learning</techterm>
     <capabilities>
       <c1 value="Can learn from each new prediction and the model will improve over time"></c1>
@@ -232,6 +243,7 @@
     <token></token>
     <description>Steer autonomously through a physical or virtual environment</description>
     <type>Reinforcement learning</type>
+      <image>assets/photos/</image>
     <techterm>Navigation algorithms, reinforcement learning</techterm>
     <capabilities>
       <c1 value=""></c1>
@@ -254,6 +266,7 @@
     <token>124</token>
     <description>Group items based on their similarities</description>
     <type>Unsupervised learning</type>
+    <image>assets/photos/icon_cluster.png</image>
     <techterm>Clustering</techterm>
     <capabilities>
       <c1 value="Find groups in large datasets without the need of labelling data"></c1>
