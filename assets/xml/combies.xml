@@ -534,7 +534,7 @@
     <name></name>
     <datatype>Audio</datatype>
     <ability>Foresee</ability>
-    <datatoken>96</datatoken>
+    <datatoken>97</datatoken>
     <abilitytoken>110</abilitytoken>
     <description></description>
     <capabilities>
@@ -562,7 +562,7 @@
     <name>Audio categorization</name>
     <datatype>Audio</datatype>
     <ability>Categorize</ability>
-    <datatoken>96</datatoken>
+    <datatoken>97</datatoken>
     <abilitytoken>109</abilitytoken>
     <description>Audio data is a special subset of time series data, and some similar techniques can be used. Using audio categorization, you can match certain segments of the audio with predefined classes (categories). For example you can recognize the pitch of sound, match the bird song to a specific bird or recognize what someone is saying. For this last example you can either have a system that does not understand what is being said but just recognizes the sounds or you can use another ML ability (understand) to interpret what is being said.</description>
     <capabilities>
@@ -590,7 +590,7 @@
     <name>Audio clustering</name>
     <datatype>Audio</datatype>
     <ability>Cluster</ability>
-    <datatoken>96</datatoken>
+    <datatoken>97</datatoken>
     <abilitytoken>112</abilitytoken>
     <description>Audio clustering will look for similarities between the audio fragments. Before it can do this, it is often needed to preprocess the audio by for example taking certain segments of the audio track. Next, it will find patterns in the data and cluster similar patterns together. However, it cannot tell you what is the commonality, human interpretation or labeled data is needed for this.</description>
     <capabilities>
@@ -619,7 +619,7 @@
     </name>
     <datatype>Audio</datatype>
     <ability>Communicate</ability>
-    <datatoken>96</datatoken>
+    <datatoken>97</datatoken>
     <abilitytoken></abilitytoken>
     <description>Create understandable messages that are being spoken</description>
     <capabilities>
@@ -647,7 +647,7 @@
     <name>Audio recommendation</name>
     <datatype>Audio</datatype>
     <ability>Recommend</ability>
-    <datatoken>96</datatoken>
+    <datatoken>97</datatoken>
     <abilitytoken>116</abilitytoken>
     <description>Audio recommendation can be done in two ways, it can recommend audio to the user that is similar to audio you have interacted with before/ liked. In this case it might use the metadata of e.g. music (genre, artist, etc.) or look for audio that sounds similar (see the example of audio clustering), this is content-based filtering. Another way is to recommend audio based on what similar users listened to and recommend those songs to you (collaborative filtering).</description>
     <capabilities>
@@ -675,7 +675,7 @@
     <name>Audio generation</name>
     <datatype>Audio</datatype>
     <ability>Generate</ability>
-    <datatoken>96</datatoken>
+    <datatoken>97</datatoken>
     <abilitytoken>115</abilitytoken>
     <description>Audio generation allows you to generate new audio from scratch. This could for example be new music, background noises or voices. For generating voices that speak 'human' language, you will also need another ML ability (communicate) to craft the messages that will be spoken.</description>
     <capabilities>
@@ -703,7 +703,7 @@
     <name>Predictions</name>
     <datatype>Table</datatype>
     <ability>Foresee</ability>
-    <datatoken>98</datatoken>
+    <datatoken>99</datatoken>
     <abilitytoken>110</abilitytoken>
     <description> The data is stored in a table where each column holds information about one feature and each row represents one observation. Next to that, there is a column which contains the ground truth, which are the labels. These labels could be categorical (2 or more categories) or numerical (numbers on a scale). Based on all columns, except the one containing the labels, the ML model will try to predict what the label is.</description>
     <capabilities>
@@ -731,7 +731,7 @@
     <name>Categorize tabular data</name>
     <datatype>Table</datatype>
     <ability>Categorize</ability>
-    <datatoken>98</datatoken>
+    <datatoken>99</datatoken>
     <abilitytoken>109</abilitytoken>
     <description>Each row of the table contains attributes that belong to one instance (the label which is also written down in one column of the table). When categorizing this data, the model will use all the attributes from the table (all the columns) to predict for each instance to with category it belongs.</description>
     <capabilities>
@@ -759,7 +759,7 @@
     <name>Clustering tabular data</name>
     <datatype>Table</datatype>
     <ability>Cluster</ability>
-    <datatoken>98</datatoken>
+    <datatoken>99</datatoken>
     <abilitytoken>112</abilitytoken>
     <description> Each row of the data contains information for one instance. The columns of the data are the different attributes that are measured, for example, how long you spend on one site and how many stars you gave it. Since clustering is an unsupervised learning technique, the table does not contain labels. If there are labels present, they are only used as another attribute and not to check if the prediction was correct (this would be the ability categorize).</description>
     <capabilities>
@@ -787,7 +787,7 @@
     <name></name>
     <datatype>Table</datatype>
     <ability>Communicate</ability>
-    <datatoken>98</datatoken>
+    <datatoken>99</datatoken>
     <abilitytoken></abilitytoken>
     <description></description>
     <capabilities>
@@ -815,7 +815,7 @@
     <name>Recommender system</name>
     <datatype>Table</datatype>
     <ability>Recommend</ability>
-    <datatoken>98</datatoken>
+    <datatoken>99</datatoken>
     <abilitytoken>116</abilitytoken>
     <description>Recommender system will use tabular data to save all the characteristics of users and items (e.g. products). The table will have the information about one user or item stored in one row and all the attributes/ characteristics are saved in the columns. These could be the scores you give, the number of interactions you have had, if you have bought an item or saved it as favorites. Or if the rows contain the items, it could be how much it is bought and some specifics about the type of product. Based on these tables, the recommender system can either recommend for example items that are very similar to the one you liked, for this it will look in the table with items and see what other items have similar characteristics (content-based recommending). Or it will look at what other users are similar to you and recommend the items they liked (collaborative filtering).</description>
     <capabilities>
@@ -843,7 +843,7 @@
     <name>Synthetic tabular data</name>
     <datatype>Table</datatype>
     <ability>Generate</ability>
-    <datatoken>98</datatoken>
+    <datatoken>99</datatoken>
     <abilitytoken>115</abilitytoken>
     <description>Sometimes you will need more data than you have in order to train for example a good model or you have to take privacy issues into account and cannot share for example the patient data you have in tabular format. In both cases, you can generate new data that share the same characteristics as your original data.</description>
     <capabilities>
