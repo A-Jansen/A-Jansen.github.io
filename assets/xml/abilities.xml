@@ -5,7 +5,7 @@
   <reinforcement>assets/photos/rl.png</reinforcement>
   <abilitytoken>
     <ability>Foresee</ability>
-    <token>22</token>
+    <token>110</token>
     <description>Predict an action, event, state, behavior, intention, etc.</description>
     <type>Supervised learning</type>
     <image>assets/photos/icon_foresee.png</image>
@@ -27,7 +27,7 @@
   </abilitytoken>
   <abilitytoken>
     <ability>Recommend</ability>
-    <token>17</token>
+    <token>116</token>
     <description>Provide suggestions or guidance; propose contents, activities, etc.</description>
     <type>Unsupervised learning</type>
     <image>assets/photos/icon_recommend.png</image>
@@ -52,7 +52,7 @@
   </abilitytoken>
   <abilitytoken>
     <ability>Distinguish</ability>
-    <token></token>
+    <token>114</token>
     <description>Differentiate certain items from a group or average (find outliers, anomalies, etc.)</description>
     <type>Unsupervised learning</type>
         <image>assets/photos/</image>
@@ -75,7 +75,7 @@
   </abilitytoken>
   <abilitytoken>
     <ability>Categorize</ability>
-    <token>140</token>
+    <token>109</token>
     <description>Match an item with a category</description>
     <type>Unsupervised learning</type>
     <image>assets/photos/icon_categorize.png</image>
@@ -99,7 +99,7 @@
   </abilitytoken>
   <abilitytoken>
     <ability>Identify</ability>
-    <token></token>
+    <token>111</token>
     <description>Categorize the identity of a specific individual/item from a trait</description>
     <type>Supervised learning</type>
       <image>assets/photos/</image>
@@ -122,7 +122,7 @@
   </abilitytoken>
   <abilitytoken>
     <ability>Understand</ability>
-    <token></token>
+    <token>118</token>
     <description>Comprehend topics, themes, or sentiments; interpret language</description>
     <type>Unsupervised learning</type>
       <image>assets/photos/</image>
@@ -145,7 +145,7 @@
   </abilitytoken>
   <abilitytoken>
     <ability>Communicate</ability>
-    <token></token>
+    <token>113</token>
     <description>Convey messages/content in understandable languages</description>
     <type>Unsupervised learning</type>
       <image>assets/photos/</image>
@@ -168,7 +168,7 @@
   </abilitytoken>
   <abilitytoken>
     <ability>Translate</ability>
-    <token></token>
+    <token>117</token>
     <description>Transform contents from one domain to another</description>
     <type>Unsupervised learning</type>
     <techterm>Neural Machine Translation, neural style transfer
@@ -192,7 +192,7 @@
   </abilitytoken>
   <abilitytoken>
     <ability>Generate</ability>
-    <token>24</token>
+    <token>115</token>
     <description>Create content (e.g. videos, images, music, text) from scratch</description>
     <type>Unsupervised learning</type>
       <image>assets/photos/icon_generate.png</image>
@@ -217,7 +217,7 @@
   </abilitytoken>
   <abilitytoken>
     <ability>Optimize</ability>
-    <token>60</token>
+    <token>120</token>
     <description>Improve or perfect a certain task/route/process</description>
     <type>Reinforcement learning</type>
     <image>assets/photos/icon_optimize.png</image>
@@ -240,7 +240,7 @@
   </abilitytoken>
   <abilitytoken>
     <ability>Navigate</ability>
-    <token></token>
+    <token>119</token>
     <description>Steer autonomously through a physical or virtual environment</description>
     <type>Reinforcement learning</type>
       <image>assets/photos/</image>
@@ -263,7 +263,7 @@
   </abilitytoken>
   <abilitytoken>
     <ability>Cluster</ability>
-    <token>124</token>
+    <token>112</token>
     <description>Group items based on their similarities</description>
     <type>Unsupervised learning</type>
     <image>assets/photos/icon_cluster.png</image>
@@ -303,7 +303,7 @@
       <url xlink:type="simple" xlink:show="new" xlink:href="https://github.com/jiesutd/NCRFpp"></url>
     </record>
     <record index="3">
-      <ability>??? Translate</ability>
+      <ability>Translate</ability>
       <data>Video</data>
       <description>Unsupervised Learning of Depth and Ego-Motion from Monocular Video Using 3D Geometric Constrain</description>
       <mlmodel>vid2depth</mlmodel>

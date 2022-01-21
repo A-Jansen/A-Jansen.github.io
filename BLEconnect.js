@@ -1,20 +1,22 @@
-const serviceUuid = "e098a7b1-9074-4e8f-bb89-2a8e84a1a271";
+//Code for BLE connection from: https://itpnyu.github.io/p5ble-website/docs/getstarted
+
+
+//Variables for BLE connection
+const serviceUuid = "e098a7b1-9074-4e8f-bb89-2a8e84a1a271"; //should match with the serviceUuid from the Arduino code
 let isConnected = false;
 var connectButton;
 var disconnectButton;
-var identifier;
 
-var incomingValues = [255, 255];
+//Variables for reading the tag ID's
+var identifier;
+var incomingValues = [255, 255]; //255 is the received value if no token is presented, so start with "empty array"
 var emptyArray = [255, 255];
 var tags = [255, 255];
-var loc = [0, 0];
-var tagsPresent = 0;
+var loc = [0, 0]; //keep track where a token is present, (1= present on that position)
+var tagsPresent = 0; //keep track of number of tokens that are present
 
-
-
-var tag1;
-var tag2;
-var tag3;
+var tag1; //the tagID of tag1
+var tag2; //the tagID of tag2
 var tagRemoved = false;
 
 
@@ -22,6 +24,7 @@ function setup() {
   // Create a p5ble class
   myBLE = new p5ble();
 
+  //Connect button for the BLE
   connectButton = select('#connectBLE');
   connectButton.mousePressed(connectToBle);
 
@@ -41,6 +44,7 @@ function disconnectToBle() {
 }
 
 function onDisconnected() {
+  //If the device is disconnected, send an alert and reload the page so they can connect again
   console.log('Device got disconnected.');
   alert("Sensor board got disconnected");
   location.reload();
@@ -89,13 +93,14 @@ function readValues() {
   //check if there is at least one token available
   // console.log(incomingValues);
   if (arrayEquals(incomingValues, emptyArray)) {
+    //if not: open information page (0)
     open1Page(0);
   }
-  if (!arrayEquals(incomingValues, tags)) { //if something changed after the previous situation
+  if (!arrayEquals(incomingValues, tags)) { //if something changed after the previous situation, check if tokens are removed and update page
     removeTags();
     updateTags();
   }
-} //function
+}
 
 function removeTags() {
   for (let i = 0; i < incomingValues.length; i++) {
@@ -109,12 +114,11 @@ function removeTags() {
       loc[i] = 0; // 1: tag is present, 0: no tag present
       updateTags();
     } //if
-
   } //for
 }
 
 function updateTags() {
-    console.log(tagRemoved);
+  console.log(tagRemoved);
   if (!arrayEquals(incomingValues, emptyArray)) {
     //loop over the incomingValues to detect how many tags are present, their location and their ID.
     for (let i = 0; i < incomingValues.length; i++) {
@@ -160,6 +164,7 @@ function numPages(tagID, numTags) {
   }
 }
 
+//Check which of the arrays contain the token ID and open the corresponding page
 function open1Page(tagID) {
   if (tagID == 0) {
     openInfo();
@@ -185,7 +190,7 @@ function open1Page(tagID) {
   }
 }
 
-
+//In case two tokens are present, check if it is valid combination. If yes, then open the correct combination page and otherwise give an alert and return to info page
 function openCombiPage(tag1, tag2) {
   console.log(tag1);
   if (labeledDataTokens.includes(tag1) && (supTokens.includes(tag2) || unsupTokens.includes(tag2))) {
@@ -199,7 +204,6 @@ function openCombiPage(tag1, tag2) {
     sendOOCSI('combination', tag1, tag2);
   } else {
     openInfo();
-
     alert('This is not a correct/possible combination ');
   }
 

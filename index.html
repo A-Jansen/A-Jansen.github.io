@@ -1,4 +1,3 @@
-<?html Header("Cache-Control: max-age=300, must-revalidate"); ?>
 
 <!DOCTYPE html>
 <html>
@@ -51,7 +50,6 @@
 			<p class='bold'>Enter your group/ participant number: </p>
 			<input type="number" name="IDnumber" id='ID'><br>
 			<div>
-				<!-- <h3>Connect to board</h3> -->
 				<br>
 				<br>
 				<a id=connectBLE href="#">Connect to sensor board</a><span id='connected'>Succesfully connected to board</span>
@@ -67,12 +65,12 @@
 
 
 	<script>
-		var labeledDataTokens = [236, 138, 224, 94, 59, 98]; //images, video, text, audio, time series, tabular
-		var unlabeledDataTokens = [227, 12, 242, 20, 10, 67]; //images, video, text, audio, time series, tabular
-		var abilityTokens = [22, 140, 124, 24, 60, 17];
-		var supTokens = [22, 140]; //foresee, categorize
-		var unsupTokens = [124, 24, 17]; //cluster, generate, recommend
-		var reinTokens = [60];
+		var labeledDataTokens = [97,98,99,100,101,102];//[236, 138, 224, 96, 59, 98]; //images, video, text, audio(96), time series, tabular
+		var unlabeledDataTokens = [103,104,105,106,107,108];//[227, 12, 242, 20, 10, 67]; //images, video, text, audio, time series, tabular
+		var abilityTokens = [109,110,111,112,113,114,115,116,117,118,119,120];//[22, 140, 124, 24, 60, 17];
+		var supTokens = [109,110,111];//[22, 140]; //foresee, categorize
+		var unsupTokens = [112,113,114,115,116,117,118]//[124, 24, 17]; //cluster, generate, recommend
+		var reinTokens = [119,120];//[60];
 
 
 		OOCSI.connect('wss://oocsi.id.tue.nl/ws');
@@ -128,6 +126,7 @@
 			xhttp.send();
 		};
 
+//Functions for opening the pages via the menu instead of with a token
 		function openDatabyClick(tag) {
 			if (labeledDataTokens.includes(tag)) {
 				openDataPage(transform('datatypes.xml', 'labeleddata.xsl', tag));
@@ -156,6 +155,7 @@
 			sendOOCSI('combination', tag1, tag2);
 		}
 
+//Control the pages with a key, replaced by menu
 		//Control the pages for now with keys, replace once tokens work
 		// var key = function(e) {
 		// 	e = e || window.event;
@@ -206,7 +206,7 @@
 		// };
 		// document.onkeydown = key;
 
-		//open the datapage when pressed on 'd or when a data token is placed
+		//open the datapage
 		function openDataPage() {
 			console.log("open data page");
 			var xhttpData = new XMLHttpRequest();
@@ -221,7 +221,7 @@
 		};
 
 
-		//open the ML ability page when 'a' is pressed or when a ML ability token is placed
+		//open the ML ability page
 		function openAbilityPage() {
 			console.log("open ability page");
 			var xhttpAbility = new XMLHttpRequest();
@@ -249,7 +249,7 @@
 		};
 
 		//Load and style the information for the data or ability pages
-		//https://stackoverflow.com/questions/31459664/uncaught-typeerror-failed-to-execute-importstylesheet-on-xsltprocessor-par
+		//Source code from: https://stackoverflow.com/questions/31459664/uncaught-typeerror-failed-to-execute-importstylesheet-on-xsltprocessor-par
 		function load(url, callback) {
 			var req = new XMLHttpRequest();
 			req.open('GET', "/assets/xml/" + url);

@@ -10,8 +10,8 @@
     <name>Predictions based on images</name>
     <datatype>Image</datatype>
     <ability>Foresee</ability>
-    <datatoken>236</datatoken>
-    <abilitytoken>22</abilitytoken>
+    <datatoken>98</datatoken>
+    <abilitytoken>110</abilitytoken>
     <description>Images could also be used as input for making predictions about for example next actions, states e.g. emotional states (overlap with categorizing images, in this case will it predict your future emotion) and values (on e.g. a continuous scale). </description>
     <capabilities>
       <c1 value=""></c1>
@@ -38,8 +38,8 @@
     <name>Image recognition</name>
     <datatype>Image</datatype>
     <ability>Categorize</ability>
-    <datatoken>236</datatoken>
-    <abilitytoken>140</abilitytoken>
+    <datatoken>98</datatoken>
+    <abilitytoken>109</abilitytoken>
     <description>Images are easy to recognize for people, but can be very hard for computers as there will always be slight variations in how the photo was taken but also in what you are capturing. You could for example want to recognize different animals of a photo or handwritten numbers and not all cats look alike and everyone's handwritten 2 looks different. ML models for this ability will learn to recognize what is shown in the images. Some models can recognize only one object in each image and others can detect multiple, as well as their location. In the case of the latter, the images will not only need a label but also a bounding box around the different objects in the image with a label for what is in each bounding box.</description>
     <capabilities>
       <c1 value="Can recognize all kind of visual input"></c1>
@@ -65,8 +65,8 @@
     <name>Image clustering</name>
     <datatype>Image</datatype>
     <ability>Cluster</ability>
-    <datatoken>236</datatoken>
-    <abilitytoken>124</abilitytoken>
+    <datatoken>98</datatoken>
+    <abilitytoken>112</abilitytoken>
     <description>When the images are not labeled, but you still want to find images that might belong to the same category or you might want to find similar images for other purposes. In these cases, image clustering can be used as it will try to make clusters of similar images. It might take attributes into account such as the dominant color, the shape of what is in the image or find other patterns.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -93,7 +93,7 @@
     <name>Image to text/speech</name>
     <datatype>Image</datatype>
     <ability>Communicate</ability>
-    <datatoken>236</datatoken>
+    <datatoken>98</datatoken>
     <abilitytoken></abilitytoken>
     <description></description>
     <capabilities>
@@ -121,8 +121,8 @@
     <name>Image recommendation</name>
     <datatype>Image</datatype>
     <ability>Recommend</ability>
-    <datatoken>236</datatoken>
-    <abilitytoken>17</abilitytoken>
+    <datatoken>98</datatoken>
+    <abilitytoken>116</abilitytoken>
     <description>Image recommendation can use two main approaches. The first approach is content-based filtering, in this approach the machine learning model will look at what images are similar to the one you liked in the past and recommend those new similar images to you. The second approach is collaborative filtering and in this case the machine learning model will look at what similar users liked and recommend those images(user-user) or look at which images are also often liked when image X is liked by the user and recommend those images (item-item).</description>
     <capabilities>
       <c1 value=""></c1>
@@ -149,8 +149,8 @@
     <name>Image generation</name>
     <datatype>Image</datatype>
     <ability>Generate</ability>
-    <datatoken>236</datatoken>
-    <abilitytoken>24</abilitytoken>
+    <datatoken>98</datatoken>
+    <abilitytoken>115</abilitytoken>
     <description>The ability to generate new images can be used to generate new images based on already existing images, for example when you want to augment your dataset. It can also finish your sketches based on what it thinks you are drawing or generate images based on a text prompt, which might help when generating new (design) ideas.</description>
     <capabilities>
       <c1 value="Can create new content from scratch"></c1>
@@ -177,8 +177,8 @@
     <name>Text prediction</name>
     <datatype>Text</datatype>
     <ability>Foresee</ability>
-    <datatoken>224</datatoken>
-    <abilitytoken>22</abilitytoken>
+    <datatoken>100</datatoken>
+    <abilitytoken>110</abilitytoken>
     <description>Text prediction captures two different concepts. On the one hand you can use text as input and have for example a score associated with it. For example, predict its readability.The other concept is that you are predicting the text you are likely to type, these could be the next words or letters but also possible responses to an email. For both concepts, the text will need to be preprocessed to make it understandable for machine learning models.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -205,8 +205,8 @@
     <name>Text recognition</name>
     <datatype>Text</datatype>
     <ability>Categorize</ability>
-    <datatoken>224</datatoken>
-    <abilitytoken>140</abilitytoken>
+    <datatoken>100</datatoken>
+    <abilitytoken>109</abilitytoken>
     <description>To match text with certain predefined categories, you need to have a model that is trained on text fragments with a label. For example, movie reviews are labeled as positive or negative or emails can be labeled as spam/ no spam.To be able to recognize the texts, they need to be preprocessed to make them understandable for machine learning models.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -232,8 +232,8 @@
     <name>Text clustering</name>
     <datatype>Text</datatype>
     <ability>Cluster</ability>
-    <datatoken>224</datatoken>
-    <abilitytoken>124</abilitytoken>
+    <datatoken>100</datatoken>
+    <abilitytoken>112</abilitytoken>
     <description>When no labels are present, texts can be clustered based on their similarities. For example, you might want to cluster them on writing style, the language in which it is written or the topic they are covering. In order to find these similarities between texts, you will first need to preprocess the data to make it understandable for the machine learning models.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -260,8 +260,8 @@
     <name>Text understanding</name>
     <datatype>Text</datatype>
     <ability>Understand</ability>
-    <datatoken>242</datatoken>
-    <abilitytoken></abilitytoken>
+    <datatoken>100</datatoken>
+    <abilitytoken>118</abilitytoken>
     <description>Can recognize text from e.g. sheets of papers, credit cards, receipts and convert it to digital text</description>
     <capabilities>Can recognize text in real-time</capabilities>
     <limitations>The scan/image should be of good enough quality</limitations>
@@ -280,7 +280,7 @@
     <name>Written communication</name>
     <datatype>Text</datatype>
     <ability>Communicate</ability>
-    <datatoken>224</datatoken>
+    <datatoken>100</datatoken>
     <abilitytoken></abilitytoken>
     <description>Craft messages in understandable written language</description>
     <capabilities>
@@ -308,8 +308,8 @@
     <name>Text recommendation</name>
     <datatype>Text</datatype>
     <ability>Recommend</ability>
-    <datatoken>224</datatoken>
-    <abilitytoken>17</abilitytoken>
+    <datatoken>100</datatoken>
+    <abilitytoken>116</abilitytoken>
     <description>Text recommendation can be done by using techniques to get an idea of e.g. the topics that are being addressed in the text (this requires another ML ability first) and next recommend texts that have a similar topic to the one you liked or just read (content-based filtering) . Another approach is not looking at what the text is discussing, but looking at what similar users read and recommending those texts to you (collaborative filtering).</description>
     <capabilities>
       <c1 value=""></c1>
@@ -337,8 +337,8 @@
     <name>Text generation</name>
     <datatype>Text</datatype>
     <ability>Generate</ability>
-    <datatoken>224</datatoken>
-    <abilitytoken>24</abilitytoken>
+    <datatoken>100</datatoken>
+    <abilitytoken>115</abilitytoken>
     <description>Text generation can be used to generate completely new texts from scratch (based on a few key words), to complete texts or write it in a specific style (e.g. Shakespearean language). In order to have properly constructed sentences this ML ability requires another ML ability, communicate and understand, to write understandable texts.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -366,8 +366,8 @@
     <name>Time based predictions</name>
     <datatype>Time series</datatype>
     <ability>Foresee</ability>
-    <datatoken>59</datatoken>
-    <abilitytoken>22</abilitytoken>
+    <datatoken>101</datatoken>
+    <abilitytoken>110</abilitytoken>
     <description>Time series are suited for making predictions since one of the measurements (attributes) of time series data, is the time. This makes it possible to predict what could happen in the attribute by making e.g. a regression plot with the time on the X axis. Then you can either predict a continuous range of numbers or have discrete outcomes (only a certain number of categories or classes). For example, predicting the temperature tomorrow (continuous: scale of real numbers), or if it is going to rain in the upcoming hour (discrete: yes/no).</description>
     <capabilities>
       <c1 value=""></c1>
@@ -394,8 +394,8 @@
     <name>Time series categorization</name>
     <datatype>Time series</datatype>
     <ability>Categorize</ability>
-    <datatoken>59</datatoken>
-    <abilitytoken>140</abilitytoken>
+    <datatoken>101</datatoken>
+    <abilitytoken>109</abilitytoken>
     <description>For time series categorization (or classification) you will need to have labeled time series data. Often time series data will be first pre processed and afterwards labeled, e.g. taking the means of every second of sensor data and assign that to one category. Next the model will learn how to match the time series with the categories (or classes) and make its prediction.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -422,8 +422,8 @@
     <name>Time series clustering</name>
     <datatype>Time series</datatype>
     <ability>Cluster</ability>
-    <datatoken>59</datatoken>
-    <abilitytoken>124</abilitytoken>
+    <datatoken>101</datatoken>
+    <abilitytoken>112</abilitytoken>
     <description>Time series clustering resembles time series categorization somewhat, but the difference is that with clustering, you only look at what data seems similar and group these together. So you will start with time series data, and these often need to be pre-processed. Next these data are analysed for patterns and afterwards the different data fragments will be assigned to one of the clusters.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -450,7 +450,7 @@
     <name></name>
     <datatype>Time series</datatype>
     <ability>Communicate</ability>
-    <datatoken>59</datatoken>
+    <datatoken>101</datatoken>
     <abilitytoken></abilitytoken>
     <description></description>
     <capabilities>
@@ -478,8 +478,8 @@
     <name>Time series recommendation</name>
     <datatype>Time series</datatype>
     <ability>Recommend</ability>
-    <datatoken>59</datatoken>
-    <abilitytoken>17</abilitytoken>
+    <datatoken>101</datatoken>
+    <abilitytoken>116</abilitytoken>
     <description>Recommendations are often about what to recommend to someone based on e.g. products they bought before or music you listen often. But time series can also be used in recommendation as this will take into account when you do all these things and therefore can also take into account when to make a recommendation. In this case, an extra attribute (column) is added to your dataset with the time, while the other columns will still contain e.g. the products you bought or with which sites you interacted.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -506,8 +506,8 @@
     <name>Synthetic time series</name>
     <datatype>Time series</datatype>
     <ability>Generate</ability>
-    <datatoken>59</datatoken>
-    <abilitytoken>24</abilitytoken>
+    <datatoken>101</datatoken>
+    <abilitytoken>115</abilitytoken>
     <description>Time series are data sets that has as one of the attribute the time at which the other features were measured. These can be recorded in a tabular format and/or visualized in a graph with the time on the x-axis. Based on existing data you can generate more time series data which can afterwards be used for e.g. training a better machine learning model with more data.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -534,8 +534,8 @@
     <name></name>
     <datatype>Audio</datatype>
     <ability>Foresee</ability>
-    <datatoken>94</datatoken>
-    <abilitytoken>22</abilitytoken>
+    <datatoken>96</datatoken>
+    <abilitytoken>110</abilitytoken>
     <description></description>
     <capabilities>
       <c1 value=""></c1>
@@ -562,8 +562,8 @@
     <name>Audio categorization</name>
     <datatype>Audio</datatype>
     <ability>Categorize</ability>
-    <datatoken>94</datatoken>
-    <abilitytoken>140</abilitytoken>
+    <datatoken>96</datatoken>
+    <abilitytoken>109</abilitytoken>
     <description>Audio data is a special subset of time series data, and some similar techniques can be used. Using audio categorization, you can match certain segments of the audio with predefined classes (categories). For example you can recognize the pitch of sound, match the bird song to a specific bird or recognize what someone is saying. For this last example you can either have a system that does not understand what is being said but just recognizes the sounds or you can use another ML ability (understand) to interpret what is being said.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -590,8 +590,8 @@
     <name>Audio clustering</name>
     <datatype>Audio</datatype>
     <ability>Cluster</ability>
-    <datatoken>94</datatoken>
-    <abilitytoken>124</abilitytoken>
+    <datatoken>96</datatoken>
+    <abilitytoken>112</abilitytoken>
     <description>Audio clustering will look for similarities between the audio fragments. Before it can do this, it is often needed to preprocess the audio by for example taking certain segments of the audio track. Next, it will find patterns in the data and cluster similar patterns together. However, it cannot tell you what is the commonality, human interpretation or labeled data is needed for this.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -619,7 +619,7 @@
     </name>
     <datatype>Audio</datatype>
     <ability>Communicate</ability>
-    <datatoken>94</datatoken>
+    <datatoken>96</datatoken>
     <abilitytoken></abilitytoken>
     <description>Create understandable messages that are being spoken</description>
     <capabilities>
@@ -647,8 +647,8 @@
     <name>Audio recommendation</name>
     <datatype>Audio</datatype>
     <ability>Recommend</ability>
-    <datatoken>94</datatoken>
-    <abilitytoken>17</abilitytoken>
+    <datatoken>96</datatoken>
+    <abilitytoken>116</abilitytoken>
     <description>Audio recommendation can be done in two ways, it can recommend audio to the user that is similar to audio you have interacted with before/ liked. In this case it might use the metadata of e.g. music (genre, artist, etc.) or look for audio that sounds similar (see the example of audio clustering), this is content-based filtering. Another way is to recommend audio based on what similar users listened to and recommend those songs to you (collaborative filtering).</description>
     <capabilities>
       <c1 value=""></c1>
@@ -675,8 +675,8 @@
     <name>Audio generation</name>
     <datatype>Audio</datatype>
     <ability>Generate</ability>
-    <datatoken>94</datatoken>
-    <abilitytoken>24</abilitytoken>
+    <datatoken>96</datatoken>
+    <abilitytoken>115</abilitytoken>
     <description>Audio generation allows you to generate new audio from scratch. This could for example be new music, background noises or voices. For generating voices that speak 'human' language, you will also need another ML ability (communicate) to craft the messages that will be spoken.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -704,7 +704,7 @@
     <datatype>Table</datatype>
     <ability>Foresee</ability>
     <datatoken>98</datatoken>
-    <abilitytoken>22</abilitytoken>
+    <abilitytoken>110</abilitytoken>
     <description> The data is stored in a table where each column holds information about one feature and each row represents one observation. Next to that, there is a column which contains the ground truth, which are the labels. These labels could be categorical (2 or more categories) or numerical (numbers on a scale). Based on all columns, except the one containing the labels, the ML model will try to predict what the label is.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -732,7 +732,7 @@
     <datatype>Table</datatype>
     <ability>Categorize</ability>
     <datatoken>98</datatoken>
-    <abilitytoken>140</abilitytoken>
+    <abilitytoken>109</abilitytoken>
     <description>Each row of the table contains attributes that belong to one instance (the label which is also written down in one column of the table). When categorizing this data, the model will use all the attributes from the table (all the columns) to predict for each instance to with category it belongs.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -760,7 +760,7 @@
     <datatype>Table</datatype>
     <ability>Cluster</ability>
     <datatoken>98</datatoken>
-    <abilitytoken>124</abilitytoken>
+    <abilitytoken>112</abilitytoken>
     <description> Each row of the data contains information for one instance. The columns of the data are the different attributes that are measured, for example, how long you spend on one site and how many stars you gave it. Since clustering is an unsupervised learning technique, the table does not contain labels. If there are labels present, they are only used as another attribute and not to check if the prediction was correct (this would be the ability categorize).</description>
     <capabilities>
       <c1 value=""></c1>
@@ -816,7 +816,7 @@
     <datatype>Table</datatype>
     <ability>Recommend</ability>
     <datatoken>98</datatoken>
-    <abilitytoken>17</abilitytoken>
+    <abilitytoken>116</abilitytoken>
     <description>Recommender system will use tabular data to save all the characteristics of users and items (e.g. products). The table will have the information about one user or item stored in one row and all the attributes/ characteristics are saved in the columns. These could be the scores you give, the number of interactions you have had, if you have bought an item or saved it as favorites. Or if the rows contain the items, it could be how much it is bought and some specifics about the type of product. Based on these tables, the recommender system can either recommend for example items that are very similar to the one you liked, for this it will look in the table with items and see what other items have similar characteristics (content-based recommending). Or it will look at what other users are similar to you and recommend the items they liked (collaborative filtering).</description>
     <capabilities>
       <c1 value=""></c1>
@@ -844,7 +844,7 @@
     <datatype>Table</datatype>
     <ability>Generate</ability>
     <datatoken>98</datatoken>
-    <abilitytoken>24</abilitytoken>
+    <abilitytoken>115</abilitytoken>
     <description>Sometimes you will need more data than you have in order to train for example a good model or you have to take privacy issues into account and cannot share for example the patient data you have in tabular format. In both cases, you can generate new data that share the same characteristics as your original data.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -871,8 +871,8 @@
     <name>Video prediction</name>
     <datatype>Video</datatype>
     <ability>Foresee</ability>
-    <datatoken>138</datatoken>
-    <abilitytoken>22</abilitytoken>
+    <datatoken>102</datatoken>
+    <abilitytoken>110</abilitytoken>
     <description>Since videos can be seen as time series of images with audio, you could also use some of those techniques. For example, you could predict what the next frame of a video will be or what will be said next.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -899,8 +899,8 @@
     <name>Video categorization</name>
     <datatype>Video</datatype>
     <ability>Categorize</ability>
-    <datatoken>138</datatoken>
-    <abilitytoken>140</abilitytoken>
+    <datatoken>102</datatoken>
+    <abilitytoken>109</abilitytoken>
     <description>Videos can be matched with categories based on their entire content. For example a video can be recognized as a sport video or a cooking video. In this case, their is one label for the entire video. Another option is to see each frame of the video as an image and have labels for each frame. In this case, machine learning models for images could also be used for recognizing categories in videos (for example recognizing cats and dogs in videos). In order to recognize multiple objects in one frame, you need, just as with images, a bounding box around each object.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -927,8 +927,8 @@
     <name>Video clustering</name>
     <datatype>Video</datatype>
     <ability>Cluster</ability>
-    <datatoken>138</datatoken>
-    <abilitytoken>124</abilitytoken>
+    <datatoken>102</datatoken>
+    <abilitytoken>112</abilitytoken>
     <description>Videos can be clustered in their entirety by looking for similar attributes of the video itself or its metadata. Next to that, it can also cluster frames within the video and this will resemble image clustering.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -955,7 +955,7 @@
     <name></name>
     <datatype>Video</datatype>
     <ability>Communicate</ability>
-    <datatoken>138</datatoken>
+    <datatoken>102</datatoken>
     <abilitytoken></abilitytoken>
     <description></description>
     <capabilities>
@@ -983,8 +983,8 @@
     <name>Video recommendation</name>
     <datatype>Video</datatype>
     <ability>Recommend</ability>
-    <datatoken>138</datatoken>
-    <abilitytoken>17</abilitytoken>
+    <datatoken>102</datatoken>
+    <abilitytoken>116</abilitytoken>
     <description>Video recommendation can be based on the content and the metadata of the video. In this case, videos that share the same content and/or metadata will be recommended to you (content-based filtering). For example, when you have watched a lot of videos that explain Machine Learning it will recommend more videos on this topic. Or it will use your past behavior to find users with a similar bevhavior, e.g. you have watched or liked the same videos (collaborative-filtering). Then it will look at what these users also liked and recommend these items to you. For example, it will recommend programming videos, since similar users watched both machine learning and programming videos.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -1011,8 +1011,8 @@
     <name>Video generation</name>
     <datatype>Video</datatype>
     <ability>Generate</ability>
-    <datatoken>138</datatoken>
-    <abilitytoken>24</abilitytoken>
+    <datatoken>102</datatoken>
+    <abilitytoken>115</abilitytoken>
     <description>With video generation you can either create videos from scratch, based on a few parameters, or base it on already existing videos. In this last scenario, it can be very hard to distinguish real from fake, and these videos are generally known as deep fakes.</description>
     <capabilities>
       <c1 value=""></c1>
