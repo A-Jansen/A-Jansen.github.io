@@ -23,7 +23,7 @@
 	<link href="/assets/css/combipage.css" type="text/css" rel="stylesheet">
 	<link href="/assets/css/data_ability_pages.css" type="text/css" rel="stylesheet">
 
-	<script src="https://kit.fontawesome.com/778f64f404.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/778f64f404.js" crossorigin="anonymous"></script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,8 +68,8 @@
 		var labeledDataTokens = [97,98,99,100,101,102];//[236, 138, 224, 96, 59, 98]; //images, video, text, audio(96), time series, tabular
 		var unlabeledDataTokens = [103,104,105,106,107,108];//[227, 12, 242, 20, 10, 67]; //images, video, text, audio, time series, tabular
 		var abilityTokens = [109,110,111,112,113,114,115,116,117,118,119,120];//[22, 140, 124, 24, 60, 17];
-		var supTokens = [109,110,111];//[22, 140]; //foresee, categorize
-		var unsupTokens = [112,113,114,115,116,117,118]//[124, 24, 17]; //cluster, generate, recommend
+		var supTokens = [109,110,111,113, 117,118 ];//[22, 140]; //foresee, categorize
+		var unsupTokens = [112,114,115,116]//[124, 24, 17]; //cluster, generate, recommend
 		var reinTokens = [119,120];//[60];
 
 
@@ -80,25 +80,27 @@
 
 			let output = {
 				'timestamp': Date.now(),
-				'id': IDnumber,
+				'idDevice': deviceName,
 				'action': action,
 				'tag1': tag1,
 				'tag2': tag2
 			}
 			//console.log(output);
-			OOCSI.send("M21_Anniek", output);
+		//	OOCSI.send("M21_Anniek", output);
+			OOCSI.send("MLToolkit", output);
 		}
 
 		function sendlinkOOCSI(action, link) {
 
 			let output = {
 				'timestamp': Date.now(),
-				'id': IDnumber,
+				'idDevice': deviceName,
 				'action': action,
 				'link': link
 			}
 			console.log(output);
-			OOCSI.send("M21_Anniek", output);
+		//	OOCSI.send("M21_Anniek", output);
+			OOCSI.send("MLToolkit", output);
 		}
 
 		// //only show the menu button when you have not connected to the sensorboard
@@ -108,13 +110,15 @@
 
 		var IDnumber; //for logging each session to oocsi so it can be identified for analyses
 		let ready = false; //use to not skip the setup page by pressing key or placing tokens
+		var deviceName;
 
 		//When you click continue, the body will be replaced with the page from infopage.html, but you stay at the same page so the BLE connection does not get broken
 		function openInfo() {
 			if (!ready) {
 				ready = true;
 				IDnumber = document.getElementById('ID').value;
-				console.log("ID number: " + IDnumber);
+			//	console.log("ID number: " + IDnumber);
+			console.log("Device name:" + deviceName);
 			}
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
@@ -335,6 +339,11 @@
 			}
 		}
 		//-------------------------------------------------------------------------------------------
+
+		function showTechDetails(){
+			console.log("Show details");
+			document.getElementById("infobox").style.visibility = "visible";
+		}
 	</script>
 
 </body>

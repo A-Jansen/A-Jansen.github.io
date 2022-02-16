@@ -36,7 +36,7 @@
             <div class='rightheader'>
               <xsl:for-each select="data/datatoken[ultoken=$tokenselected]">
                 <h3 class='type unlabeled' ><xsl:value-of select="dataname"/> data</h3>
-                <h4 class=''><xsl:value-of select="structure"/> data</h4>
+                <h4 class='unlabeled'><xsl:value-of select="structure"/> data</h4>
                 <p class='description'>
                 <xsl:value-of select="description"/></p>
                 <p>

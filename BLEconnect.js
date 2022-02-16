@@ -20,6 +20,7 @@ var tag2; //the tagID of tag2
 var tagRemoved = false;
 
 
+
 function setup() {
   // Create a p5ble class
   myBLE = new p5ble();
@@ -51,6 +52,7 @@ function onDisconnected() {
   isConnected = false;
 }
 
+
 // A function that will be called once got characteristics
 function gotCharacteristics(error, characteristics) {
   // Add a event handler when the device is disconnected
@@ -58,6 +60,9 @@ function gotCharacteristics(error, characteristics) {
   if (error) console.log('error: ', error);
   console.log('characteristics: ', characteristics);
   myCharacteristic = characteristics[0];
+  deviceName = characteristics[0].service.device.name;
+  // var name = instanceOfBluetoothDevice.name
+  console.log(deviceName);
   // Start notifications on the first characteristic by passing the characteristic
   // And a callback function to handle notifications
   myBLE.startNotifications(myCharacteristic, handleNotifications);
@@ -90,15 +95,20 @@ function handleNotifications(data) {
 }
 
 function readValues() {
-  //check if there is at least one token available
-  // console.log(incomingValues);
+  //in case someone continues using the board without closing the alert, this code will make sure it will only opens the combination page instead of both the ability and combination page underneath each other
+  //it checks if three or more things are shown and if this is the case, only shows the combination page
+  if(document.getElementsByClassName("headerData").length>2){
+    numPages(2);
+  }
+    //check if there is at least one token available
   if (arrayEquals(incomingValues, emptyArray)) {
     //if not: open information page (0)
     open1Page(0);
   }
   if (!arrayEquals(incomingValues, tags)) { //if something changed after the previous situation, check if tokens are removed and update page
+    // console.log(incomingValues, tags);
     removeTags();
-    updateTags();
+    // updateTags();
   }
 }
 
@@ -107,14 +117,15 @@ function removeTags() {
     //console.log(tags);
     if (incomingValues[i] == 255 && tags[i] != 255) {
       //if no tag present on reader[i], then remove one tag present and remove value from tag[]
-      console.log("tag removed");
+      // console.log("tag removed");
       tagRemoved = true;
       tagsPresent--;
       tags[i] = 255;
       loc[i] = 0; // 1: tag is present, 0: no tag present
-      updateTags();
-    } //if
-  } //for
+      // updateTags();
+    }//if
+  }//for
+   updateTags();
 }
 
 function updateTags() {
@@ -129,37 +140,42 @@ function updateTags() {
           tagsPresent++; //add 1 to number of tagsPresent
           tags[i] = incomingValues[i]; //save the tag number for identification later
           loc[i] = 1; // 1: tag is present, 0: no tag present
-
-          console.log(i +", "+ tags[i] +", "+ tagsPresent);
-          numPages(tags[i], tagsPresent);
-        } else if (tagRemoved) { //if a tag is removed, the if-loop above will not rerun since the remaining token is the same, so in that case run this elseif
-          tags[i] = incomingValues[i];
-            console.log(i +",, "+ tags[i] +", "+ tagsPresent);
-          numPages(tags[i], tagsPresent);
-          tagRemoved = false;
-          console.log(tagRemoved);
+          // console.log(i + ", " + tags[i] + ", " + tagsPresent);
+          // numPages(tagsPresent);
         }
+        // else if (tagRemoved) { //if a tag is removed, the if-loop above will not rerun since the remaining token is the same, so in that case run this elseif
+        //   tags[i] = incomingValues[i];
+        //   // console.log(i + ",, " + tags[i] + ", " + tagsPresent);
+        //   // numPages(tagsPresent);
+        //     console.log("if loop2");
+        //   tagRemoved = false;
+        // }
       } //if
     } //for
-  } else{
-    tagRemoved=false;
+    // console.log(tagsPresent);
+    numPages(tagsPresent);
+  } else {
+    tagRemoved = false;
   }
 }
 
-function numPages(tagID, numTags) {
-   console.log("tagspresent: "+ numTags);
-  switch (numTags) {
-    case 1: //1 tag present if loc[0]: data, loc[1]: label, loc[2]: ability
-      //show data or ability page depending on token
-      console.log("1 tag present");
-      open1Page(tagID);
-      break;
+function numPages(numTags) {
+  console.log("tagspresent: " + numTags);
+    switch (numTags) {
     case 2: //2 tags present
-      console.log("2 tags present");
+      // console.log("2 tags present");
       tag1 = tags[0];
       tag2 = tags[1];
       openCombiPage(tag1, tag2);
       break;
+    case 1: //1 tag present if loc[0]: data, loc[1]: label, loc[2]: ability
+      //show data or ability page depending on token
+      // console.log("1 tag present");
+      tag1=tags[tags.findIndex(findTag)];
+      // console.log("tag1: "+tag1);
+      open1Page(tag1);
+      break;
+
     default: //0 tags
   }
 }
@@ -171,40 +187,45 @@ function open1Page(tagID) {
   } else if (labeledDataTokens.includes(tagID)) {
     //  openDataPage(transform('datatypes.xml', 'datatokens.xsl', 'Text'));
     openDataPage(transform('datatypes.xml', 'labeleddata.xsl', tagID));
-    sendOOCSI('labeleddatapage', tagID,0);
+    sendOOCSI('labeleddatapage', tagID, 0);
   } else if (unlabeledDataTokens.includes(tagID)) {
     openDataPage(transform('datatypes.xml', 'unlabeleddata.xsl', tagID));
-    sendOOCSI('unlabeleddatapage', tagID,0);
+    sendOOCSI('unlabeleddatapage', tagID, 0);
   } else if (supTokens.includes(tagID)) {
     openAbilityPage(transform('abilities.xml', 'supervised.xsl', tagID));
-    sendOOCSI('supervised', tagID,0);
+    sendOOCSI('supervised', tagID, 0);
   } else if (unsupTokens.includes(tagID)) {
     openAbilityPage(transform('abilities.xml', 'unsupervised.xsl', tagID));
-    sendOOCSI('unsupervised', tagID,0);
+    sendOOCSI('unsupervised', tagID, 0);
   } else if (reinTokens.includes(tagID)) {
     openAbilityPage(transform('abilities.xml', 'reinforcement.xsl', tagID));
-    sendOOCSI('reinforcement', tagID,0);
+    sendOOCSI('reinforcement', tagID, 0);
   } else {
     openInfo();
+
     alert('Token not recognized');
+    // tagsPresent=0;
+    // readValues();
+
   }
 }
 
 //In case two tokens are present, check if it is valid combination. If yes, then open the correct combination page and otherwise give an alert and return to info page
 function openCombiPage(tag1, tag2) {
-  console.log(tag1);
+  // console.log(tag1);
   if (labeledDataTokens.includes(tag1) && (supTokens.includes(tag2) || unsupTokens.includes(tag2))) {
     openCombinationPage(transform2('combies.xml', 'combies.xsl', tag1, tag2));
     sendOOCSI('combination', tag1, tag2);
-  }
-  else if (unlabeledDataTokens.includes(tag1) && unsupTokens.includes(tag2)) {
+  } else if (unlabeledDataTokens.includes(tag1) && unsupTokens.includes(tag2)) {
     // console.log(tag1);
     // let i = unlabeledDataTokens.indexOf(tag1);
-    openCombinationPage(transform2('combies.xml', 'combies.xsl',tag1, tag2));
+    openCombinationPage(transform2('combies.xml', 'combies.xsl', tag1, tag2));
     sendOOCSI('combination', tag1, tag2);
   } else {
     openInfo();
+    console.log("incorrect combination");
     alert('This is not a correct/possible combination ');
+
   }
 
 }

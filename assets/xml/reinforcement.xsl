@@ -41,6 +41,8 @@
                 <p class='descriptionAbility'>
                   <xsl:value-of select="description"/></p>
                   <p>
+                    <i class="fa-solid fa-magnifying-glass fa-lg reinforcement">&#160;
+                    </i>
                     <span class='bold reinforcement'>Technical terms:
                     </span>
                     <span><xsl:value-of select="techterm"/></span>
@@ -48,7 +50,7 @@
                   <div class='fullspan'>
                 <div class='leftdiv'>
                 <p>
-                  <span class='bold reinforcement'>Abilities:
+                  <span class='bold reinforcement'>Capabilities:
                   </span>
                   <ul>
 
@@ -68,8 +70,8 @@
                     <xsl:for-each select="limitations/*">
                       <li><xsl:value-of select="@value"/></li>
                     </xsl:for-each>
-                    <li>ML is not perfect and will always make some errors</li>
-                    <li>The output of the model can be different even with the same input</li>
+                    <!-- <li>ML is not perfect and will always make some errors</li>
+                    <li>The output of the model can be different even with the same input</li> -->
                   </ul>
                 </p>
               </div>

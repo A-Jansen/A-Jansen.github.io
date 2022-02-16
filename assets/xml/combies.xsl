@@ -65,7 +65,8 @@
               <div class="headerData">
 
                 <xsl:for-each select="combinations/combi[datatoken=$tokenselected1 and abilitytoken=$tokenselected2]">
-                  <div class='leftheader'>
+                  <div class='leftheadercombi'>
+
                     <div class='leftdiv'>
 
                       <img>
@@ -78,6 +79,7 @@
                       </img>
                       <h3 class='datatoken token'><xsl:value-of select="datatype"/></h3>
                       <!-- <p> <xsl:value-of select = "$label" /></p> <p> <xsl:value-of select = "../images/im[@value=$label]" /></p> -->
+
                     </div>
                     <div class='rightdiv'>
 
@@ -93,60 +95,83 @@
                       <!-- <p> <xsl:value-of select = "$learning" /></p> <p> <xsl:value-of select = "../images/im[@value=$learning]" /></p> -->
                     </div>
 
-                    <!-- <p class='overlaptextBig' style="top: 50px; transform: translate(-30%);"><xsl:value-of select="abilities/abilitytoken[token=$tokenselected]/ability"/></p> <p class='overlaptextability' style="top: 130px; transform:
-                    translate(-30%);">Reinforcement learning</p> -->
-
                   </div>
 
-                  <div class='rightheader'>
+                  <div class='rightheadercombi'>
                     <h3 class='type combi'><xsl:value-of select="name"/></h3>
-                    <p class='description'>
+                    <p class='descriptioncombi'>
                       <xsl:value-of select="description"/></p>
-                    <p>
-                      <span class='bold combi'>Technical terms:
+                    <p class='techterms'>
+                      <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #1E475E;">&#160;
+                      </i>
+                      <span class='bold'>Technical term(s):
                       </span>
+
                       <span><xsl:value-of select="techterm"/></span>
                     </p>
 
+                    <div class='techterms'>
+                      <i class="fa-solid fa-print fa-lg" style="color: #1E475E;">&#160;</i>
+                      <span class='bold'>Output:&#160;
+                      </span>
+                      <span class="output"><xsl:value-of select="output" disable-output-escaping="yes"/></span>
+                    </div>
                   </div>
                 </xsl:for-each>
               </div>
             </header>
+            <div class="headerData">
+              <!-- <xsl:value-of select="combinations/combi[datatoken=$tokenselected1 and abilitytoken=$tokenselected2]/examples/@exist"/> -->
+              <xsl:choose>
 
-            <div class='example'>
+                <xsl:when test="combinations/combi[datatoken=$tokenselected1 and abilitytoken=$tokenselected2]/examples/@exist = 'no'">
+                  <div class='example'>
 
-              <xsl:for-each select="combinations/combi[datatoken=$tokenselected1 and abilitytoken=$tokenselected2]/examples/ex">
+                  <h3 class='exampleHeader' style='text-align: center; '>There is no example (yet) for this combination</h3>
 
-                <div class='exImg'>
-                  <img>
-
-                    <xsl:attribute name="src">
-                      <xsl:value-of select="eximage"/>
-                    </xsl:attribute>
-
-                    <xsl:attribute name="class">exampleImage
-                    </xsl:attribute>
-                  </img>
                 </div>
-                <div class='exText'>
-                  <h3 class='exampleHeader'><xsl:value-of select="exname"/></h3>
-                  <p>
-                    <span class='bold'>Description:
-                    </span><xsl:value-of select="exdescription"/></p>
-                  <p>
-                    <a href="{exlink/@xlink:href}" target="_blank">
-                      <xsl:attribute name="onclick">sendlinkOOCSI("examplelink","<xsl:value-of select="exlink/@xlink:href"/>")
-                      </xsl:attribute>
-                      See example</a>
-                  </p>
-                  <p>
-                    <a href="{diylink/@xlink:href}" target="_blank">
-                      <xsl:attribute name="onclick">sendlinkOOCSI("diylink","<xsl:value-of select="diylink/@xlink:href"/>")
-                      </xsl:attribute>
-                      Train it yourself</a>
-                  </p>
-                </div>
-              </xsl:for-each>
+                </xsl:when>
+
+                <xsl:otherwise>
+                  <div class='example'>
+
+                    <xsl:for-each select="combinations/combi[datatoken=$tokenselected1 and abilitytoken=$tokenselected2]/examples/ex">
+
+                      <div class='exImg'>
+                        <img>
+
+                          <xsl:attribute name="src">
+                            <xsl:value-of select="eximage"/>
+                          </xsl:attribute>
+
+                          <xsl:attribute name="class">exampleImage
+                          </xsl:attribute>
+                        </img>
+                      </div>
+                      <div class='exText'>
+                        <h3 class='exampleHeader'><xsl:value-of select="exname"/></h3>
+                        <p>
+                          <span class='bold'>Description:
+                          </span><xsl:value-of select="exdescription"/></p>
+                        <p>
+                          <a href="{exlink/@xlink:href}" target="_blank">
+
+                            <xsl:attribute name="onclick">sendlinkOOCSI("examplelink","<xsl:value-of select="exlink/@xlink:href"/>")
+                            </xsl:attribute>
+                            See example</a>
+                        </p>
+                        <p>
+                          <a href="{diylink/@xlink:href}" target="_blank">
+
+                            <xsl:attribute name="onclick">sendlinkOOCSI("diylink","<xsl:value-of select="diylink/@xlink:href"/>")
+                            </xsl:attribute>
+                            Train it yourself</a>
+                        </p>
+                      </div>
+                    </xsl:for-each>
+                  </div>
+                </xsl:otherwise>
+              </xsl:choose>
             </div>
           </xsl:otherwise>
         </xsl:choose>

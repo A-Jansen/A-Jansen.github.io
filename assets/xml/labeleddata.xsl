@@ -38,7 +38,7 @@
               <xsl:for-each select="data/datatoken[ltoken=$tokenselected]">
                 <h3 class='type labeled'><xsl:value-of select="dataname"/>
                   data</h3>
-                <h4 class=''><xsl:value-of select="structure"/>
+                <h4 class='labeled'><xsl:value-of select="structure"/>
                   data</h4>
                 <p class='description'>
                   <xsl:value-of select="description"/></p>
@@ -68,7 +68,7 @@
 
           <p class="bold labeled">Selection of datasets:</p>
           <table>
-            <tr style="background-color: #006667;">
+            <tr style="background-color: #2D7F83;">
               <th >Dataset</th>
               <th>Description</th>
               <th>Labeled</th>
