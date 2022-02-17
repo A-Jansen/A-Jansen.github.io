@@ -174,7 +174,7 @@ You  might for example want to recognize different animals in a photo or handwri
     <datatype>Image</datatype>
     <ability>Understand</ability>
     <datatoken>98</datatoken>
-    <abilitytoken>118</abilitytoken>
+    <abilitytoken>122</abilitytoken>
     <description>To understand what is visible in an image, you can train an image categorization or identification model. This will learn to label objects or elements in an image and use this to come to some sense of 'understanding'. However, it can never really understand it, as it will for example not be able to tell the cause of something. Moreover, it will only recognize on what it has been trained.</description>
     <output> <![CDATA[ Label 2 (67%) <br> Label 7 (33%)]]></output>
     <techterm> Image classification</techterm>
@@ -438,7 +438,7 @@ For both concepts, the text will need to be preprocessed to make it understandab
     <datatype>Text</datatype>
     <ability>Understanding</ability>
     <datatoken>100</datatoken>
-    <abilitytoken>118</abilitytoken>
+    <abilitytoken>122</abilitytoken>
     <description>For some interactions, it is needed that what you are typing is not only written down, but also that it is understood. For example, when typing an email it is not always necessary that the program knows what you are writing or reading, but if it does, it can e.g. suggest possible responses or remind you that you might have forgotten the attachment. This is still quite a superficial understanding, but when using chatbots, the program really should understand what you are typing as it will need to create a fitting response.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -731,7 +731,7 @@ makes it possible to predict what could happen by making e.g. a regression plot 
     <datatype>Time series</datatype>
     <ability>Understand</ability>
     <datatoken>101</datatoken>
-    <abilitytoken>118</abilitytoken>
+    <abilitytoken>122</abilitytoken>
     <description>Time series are data where the time, and hence the sequence, is an important feature. Examples are periodic measurements over time, sensor data and much more. To understand what is captured in the time series you can use time series categorization, as this will allow you to recognize the category to which the data belongs, and you can use that label to 'understand' it.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -1026,7 +1026,7 @@ makes it possible to predict what could happen by making e.g. a regression plot 
     <datatype>Audio</datatype>
     <ability>Understand</ability>
     <datatoken>97</datatoken>
-    <abilitytoken>118</abilitytoken>
+    <abilitytoken>122</abilitytoken>
     <description>Audio data are sound waves and with several techniques you can convert these audio waves into written text. For this, the audio is often first transformed from the time to frequency domain. Next, a model will listen to the sounds that are made and try to predict which sounds these are. These sounds are then translated into words. Finally, using an extra model which has knowledge of general human language, the sentences are build from these words. This extra model will help to create understandable sentences.</description>
     <capabilities>
       <c1 value=""></c1>
@@ -1044,7 +1044,7 @@ makes it possible to predict what could happen by making e.g. a regression plot 
       <ex>
         <exname>Smart assistants</exname>
         <exdescription> Smart assistants use this function to understand the commands you are giving and the questions you are asking. Based on this, it will often make an extra step to interpret what is being said and either execute that action (e.g. "Turn off the lights") or to respond (this will be covered by Audio communication).</exdescription>
-        <eximage>assets/photos/smartassistant.jpg</eximage>
+        <eximage>assets/photos/smartassistants.jpg</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://en.wikipedia.org/wiki/Amazon_Alexa"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/how-to-build-your-own-ai-personal-assistant-using-python-f57247b4494b"></diylink>
       </ex>
@@ -1317,7 +1317,7 @@ Based on all columns, except the one with the labels, the model will try to pred
     <datatype>Table</datatype>
     <ability>Understand</ability>
     <datatoken>99</datatoken>
-    <abilitytoken>118</abilitytoken>
+    <abilitytoken>122</abilitytoken>
     <description></description>
     <capabilities>
       <c1 value=""></c1>
@@ -1610,7 +1610,7 @@ Next to that, videos can also contain audio and for this you can audio identific
     <datatype>Video</datatype>
     <ability>Understand</ability>
     <datatoken>102</datatoken>
-    <abilitytoken>118</abilitytoken>
+    <abilitytoken>122</abilitytoken>
     <description>To understanding what is seen and heard in a video, you can combine image and audio understanding. The first will look at what can be seen in the video and convert this to text. Next to that, you can also create automatic captions by converting the audio to text.</description>
     <capabilities>
       <c1 value=""></c1>

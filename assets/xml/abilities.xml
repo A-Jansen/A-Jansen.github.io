@@ -122,7 +122,7 @@
   </abilitytoken>
   <abilitytoken>
     <ability>Understand</ability>
-    <token>118</token>
+    <token>122</token>
     <description>Comprehend topics, themes, or sentiments; interpret language</description>
     <type>Supervised learning</type>
       <image>assets/photos/mlabilities_icon_understand.png</image>
@@ -242,7 +242,7 @@
   </abilitytoken>
   <abilitytoken>
     <ability>Navigate</ability>
-    <token>119</token>
+    <token>66</token>
     <description>Steer autonomously through a physical or virtual environment</description>
     <type>Reinforcement learning</type>
       <image>assets/photos/icon_optimize.png</image>
