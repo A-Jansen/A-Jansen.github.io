@@ -44,21 +44,23 @@
 
 	</header>
 	<div class=centerBlock>
-		<div>
-			<p>Before you can start, you need to enter your participant/group information
-				and connect your laptop to the sensor board. Follow the next steps to get ready. </p>
-			<p class='bold'>Enter your group/ participant number: </p>
-			<input type="number" name="IDnumber" id='ID'><br>
+		<!-- <div> -->
+			<!-- <p>Before you can start, you need to enter your participant/group information
+				and connect your laptop to the sensor board. Follow the next steps to get ready. </p> -->
+			<!-- <p class='bold'>Enter your group/ participant number: </p>
+			<input type="number" name="IDnumber" id='ID'><br> -->
+			<img class="instructiongif" src="assets/photos/instruction.gif"/ style=" ">
 			<div>
-				<br>
+				<!-- <br> -->
 				<br>
 				<a id=connectBLE href="#">Connect to sensor board</a><span id='connected'>Succesfully connected to board</span>
-			</div>
+				<a href="#" id='continue' onClick="openInfo()">Skip connection</a>
+			<!-- </div> -->
 		</div>
 		<div>
 			<!-- Will only be shown once connected (change in.continue in css to hidden) -->
 			<br>
-			<a href="#" id='continue' onClick="openInfo()">Skip connection</a>
+
 		</div>
 		<p id='demo'></p>
 	</div>

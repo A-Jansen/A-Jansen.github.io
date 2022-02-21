@@ -37,8 +37,25 @@ header {
   z-index: 1;
 }
 
+
+.instructiongif{
+  width:700px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 #continue {
-  visibility: visible;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: grey;
+  float: right;
+  font-family: Lato;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+
 }
 
 #connected {
@@ -49,7 +66,6 @@ header {
   padding: 10px 20px;
   text-align: center;
   background-color: #2B5F6E;
-  ;
   font-family: Lato;
   text-decoration: none;
   color: white;
