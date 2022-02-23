@@ -456,7 +456,7 @@ For both concepts, the text will need to be preprocessed to make it understandab
       <ex>
         <exname>Code oracle</exname>
         <exdescription>Code is one very specific form of text and can be quite hard to understand, especially when using an unfamiliar language. Code Oracle allows you to highlight a snippet of your code to see in "normal" language what it is doing.</exdescription>
-        <eximage>assets/photos/codexplainer.jpg</eximage>
+        <eximage>assets/photos/codexplainer.JPG</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://gpt3demo.com/apps/repl-it">"</exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/analytics-vidhya/ai-generates-code-using-python-and-openais-gpt-3-2ddc95047cba"></diylink>
       </ex>
