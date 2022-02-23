@@ -436,7 +436,7 @@ For both concepts, the text will need to be preprocessed to make it understandab
   <combi>
     <name>Text understanding</name>
     <datatype>Text</datatype>
-    <ability>Understanding</ability>
+    <ability>Understand</ability>
     <datatoken>100</datatoken>
     <abilitytoken>122</abilitytoken>
     <description>For some interactions, it is needed that what you are typing is not only written down, but also that it is understood. For example, when typing an email it is not always necessary that the program knows what you are writing or reading, but if it does, it can e.g. suggest possible responses or remind you that you might have forgotten the attachment. This is still quite a superficial understanding, but when using chatbots, the program really should understand what you are typing as it will need to create a fitting response.</description>
