@@ -62,6 +62,10 @@ header {
   visibility: hidden;
 }
 
+#connecting {
+  visibility: hidden;
+}
+
 #connectBLE {
   padding: 10px 20px;
   text-align: center;
