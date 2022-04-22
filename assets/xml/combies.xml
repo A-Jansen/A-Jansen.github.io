@@ -456,7 +456,7 @@ For both concepts, the text will need to be preprocessed to make it understandab
       <ex>
         <exname>Code oracle</exname>
         <exdescription>Code is one very specific form of text and can be quite hard to understand, especially when using an unfamiliar language. Code Oracle allows you to highlight a snippet of your code to see in "normal" language what it is doing.</exdescription>
-        <eximage>assets/photos/codexplainer.JPG</eximage>
+        <eximage>assets/photos/codexplainer.jpg</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://gpt3demo.com/apps/repl-it">"</exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://medium.com/analytics-vidhya/ai-generates-code-using-python-and-openais-gpt-3-2ddc95047cba"></diylink>
       </ex>
@@ -661,7 +661,7 @@ makes it possible to predict what could happen by making e.g. a regression plot 
       <ex>
         <exname>Synthetic time series data</exname>
         <exdescription>Creating extra time series data based on some starting data. More data can help to train a better model.</exdescription>
-        <eximage>assets/photos/synthetictime series.jpg</eximage>
+        <eximage>assets/photos/synthetictimeseries.jpg</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://www.osti.gov/servlets/purl/1607585"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://towardsdatascience.com/creating-synthetic-time-series-data-67223ff08e34"></diylink>
       </ex>
@@ -690,13 +690,13 @@ makes it possible to predict what could happen by making e.g. a regression plot 
       <ex>
         <exname>Heart anomaly ECG</exname>
         <exdescription>One type of sensor data for which this capability can be used is ECG (heart) data. To manually monitor the ECG's of all patients is unfeasible, but by using this capability it is possible to train a model on what normal ECG's look like and then when there is an anomaly, the system will give an alarm to alert the nurses to check in on that patient.</exdescription>
-        <eximage>assets/photos/heartanomaly.JPG</eximage>
+        <eximage>assets/photos/heartanamolay.jpg</eximage>
         <exlink xlink:type="simple" xlink:show="new" xlink:href="https://ieeexplore.ieee.org/document/7344872"></exlink>
         <diylink xlink:type="simple" xlink:show="new" xlink:href="https://www.kaggle.com/devavratatripathy/ecg-anomaly-detection-using-autoencoders"></diylink>
       </ex>
     </examples>
   </combi>
-  <combi exist='no'>
+  <combi exist='no' NLP='yes'>
     <name></name>
     <datatype>Time series</datatype>
     <ability>Communicate</ability>
@@ -755,7 +755,7 @@ makes it possible to predict what could happen by making e.g. a regression plot 
       </ex>
     </examples>
   </combi>
-  <combi exist='no'>
+  <combi exist='no' NLP='yes'>
     <name></name>
     <datatype>Time series</datatype>
     <ability>Translate</ability>
@@ -784,7 +784,7 @@ makes it possible to predict what could happen by making e.g. a regression plot 
       </ex>
     </examples>
   </combi>
-  <combi exist='no'>
+  <combi exist='no' NLP='yes'>
     <name></name>
     <datatype>Audio</datatype>
     <ability>Foresee</ability>
@@ -1283,7 +1283,7 @@ Based on all columns, except the one with the labels, the model will try to pred
       </ex>
     </examples>
   </combi>
-  <combi exist='no'>
+  <combi exist='no' NLP='yes'>
     <name></name>
     <datatype>Table</datatype>
     <ability>Communicate</ability>
@@ -1312,7 +1312,7 @@ Based on all columns, except the one with the labels, the model will try to pred
       </ex>
     </examples>
   </combi>
-  <combi exist='no'>
+  <combi exist='no' NLP='yes'>
     <name></name>
     <datatype>Table</datatype>
     <ability>Understand</ability>
@@ -1341,7 +1341,7 @@ Based on all columns, except the one with the labels, the model will try to pred
       </ex>
     </examples>
   </combi>
-  <combi exist='no'>
+  <combi exist='no' NLP='yes'>
     <name></name>
     <datatype>Table</datatype>
     <ability>Translate</ability>
@@ -1576,7 +1576,7 @@ Next to that, videos can also contain audio and for this you can audio identific
       </ex>
     </examples>
   </combi>
-  <combi exist='no'>
+  <combi exist='no' NLP='yes'>
     <name></name>
     <datatype>Video</datatype>
     <ability>Communicate</ability>

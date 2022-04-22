@@ -54,6 +54,9 @@
                   <div class="rightheader">
                     <h3 class='type combi'>Sorry!</h3>
                     <p class='description'>This is not a common combination and no examples currently exist on this website</p>
+                    <xsl:if test="@NLP= 'yes'">
+                      <p class= 'description'>The ML capability <span class='highlight combi'><xsl:value-of select="ability"/></span> works (only) with human language. So try combining it with audio or text!</p>
+                    </xsl:if>
                   </div>
                 </xsl:for-each>
               </div>

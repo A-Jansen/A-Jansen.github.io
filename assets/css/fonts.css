@@ -85,7 +85,11 @@ pre {
   color: #1E475E;
 }
 
-
+.wrong{
+  color:red;
+  font-weight: 300;
+  font-size: 28px;
+}
 
 a{
   font-family: 'Lato', sans-serif;

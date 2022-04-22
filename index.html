@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -23,7 +22,7 @@
 	<link href="/assets/css/combipage.css" type="text/css" rel="stylesheet">
 	<link href="/assets/css/data_ability_pages.css" type="text/css" rel="stylesheet">
 
-<script src="https://kit.fontawesome.com/778f64f404.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/778f64f404.js" crossorigin="anonymous"></script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,18 +44,18 @@
 	</header>
 	<div class=centerBlock>
 		<!-- <div> -->
-			<!-- <p>Before you can start, you need to enter your participant/group information
+		<!-- <p>Before you can start, you need to enter your participant/group information
 				and connect your laptop to the sensor board. Follow the next steps to get ready. </p> -->
-			<!-- <p class='bold'>Enter your group/ participant number: </p>
+		<!-- <p class='bold'>Enter your group/ participant number: </p>
 			<input type="number" name="IDnumber" id='ID'><br> -->
-			<img class="instructiongif" src="assets/photos/instruction.gif"/ style=" ">
-			<div>
-				<!-- <br> -->
-				<br>
-				<a id=connectBLE href="#">Connect to sensor board</a>
+		<img class="instructiongif" src="assets/photos/instruction.gif" / style=" ">
+		<div>
+			<!-- <br> -->
+			<br>
+			<a id=connectBLE href="#">Connect to sensor board</a>
 			<span id='connected'>Succesfully connected to board</span>
-		<a href="#" id='continue' onClick="openInfo()">Skip connection</a>
-		<p id='connecting'>Connecting to sensorboard</p>
+			<a href="#" id='continue' onClick="openInfo()">Skip connection</a>
+			<p id='connecting'>Connecting to sensorboard</p>
 			<!-- </div> -->
 		</div>
 		<div>
@@ -69,12 +68,12 @@
 
 
 	<script>
-		var labeledDataTokens = [97,98,99,100,101,102];//[236, 138, 224, 96, 59, 98]; //images, video, text, audio(96), time series, tabular
-		var unlabeledDataTokens = [103,104,105,106,107,108];//[227, 12, 242, 20, 10, 67]; //images, video, text, audio, time series, tabular
-		var abilityTokens = [109,110,111,112,113,114,115,116,117,122,66,120];//[22, 140, 124, 24, 60, 17];
-		var supTokens = [109,110,111,113, 117,122 ];//[22, 140]; //foresee, categorize
-		var unsupTokens = [112,114,115,116]//[124, 24, 17]; //cluster, generate, recommend
-		var reinTokens = [66,120];//[60];
+		var labeledDataTokens = [97, 98, 99, 100, 101, 102]; //[236, 138, 224, 96, 59, 98]; //images, video, text, audio(96), time series, tabular
+		var unlabeledDataTokens = [103, 104, 105, 106, 107, 108]; //[227, 12, 242, 20, 10, 67]; //images, video, text, audio, time series, tabular
+		var abilityTokens = [109, 110, 111, 112, 113, 114, 115, 116, 117, 122, 66, 120]; //[22, 140, 124, 24, 60, 17];
+		var supTokens = [109, 110, 111, 113, 117, 122]; //[22, 140]; //foresee, categorize
+		var unsupTokens = [112, 114, 115, 116] //[124, 24, 17]; //cluster, generate, recommend
+		var reinTokens = [66, 120]; //[60];
 
 
 		OOCSI.connect('wss://oocsi.id.tue.nl/ws');
@@ -90,7 +89,7 @@
 				'tag2': tag2
 			}
 			//console.log(output);
-		//	OOCSI.send("M21_Anniek", output);
+			//	OOCSI.send("M21_Anniek", output);
 			OOCSI.send("MLToolkit", output);
 		}
 
@@ -103,7 +102,7 @@
 				'link': link
 			}
 			console.log(output);
-		//	OOCSI.send("M21_Anniek", output);
+			//	OOCSI.send("M21_Anniek", output);
 			OOCSI.send("MLToolkit", output);
 		}
 
@@ -120,9 +119,9 @@
 		function openInfo() {
 			if (!ready) {
 				ready = true;
-				IDnumber = document.getElementById('ID').value;
-			//	console.log("ID number: " + IDnumber);
-			console.log("Device name:" + deviceName);
+				//	IDnumber = document.getElementById('ID').value;
+				//	console.log("ID number: " + IDnumber);
+				console.log("Device name:" + deviceName);
 			}
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
@@ -134,11 +133,11 @@
 			xhttp.send();
 		};
 
-//Functions for opening the pages via the menu instead of with a token
+		//Functions for opening the pages via the menu instead of with a token
 		function openDatabyClick(tag) {
 			if (labeledDataTokens.includes(tag)) {
 				openDataPage(transform('datatypes.xml', 'labeleddata.xsl', tag));
-				sendOOCSI('labeleddatapage', tag,0);
+				sendOOCSI('labeleddatapage', tag, 0);
 			} else {
 				openDataPage(transform('datatypes.xml', 'unlabeleddata.xsl', tag));
 				sendOOCSI('unlabeleddatapage', tag, 0);
@@ -148,13 +147,13 @@
 		function openAbilitybyClick(tagID) {
 			if (supTokens.includes(tagID)) {
 				openAbilityPage(transform('abilities.xml', 'supervised.xsl', tagID));
-				sendOOCSI('supervised', tagID,0);
+				sendOOCSI('supervised', tagID, 0);
 			} else if (unsupTokens.includes(tagID)) {
 				openAbilityPage(transform('abilities.xml', 'unsupervised.xsl', tagID));
-				sendOOCSI('unsupervised', tagID,0);
+				sendOOCSI('unsupervised', tagID, 0);
 			} else if (reinTokens.includes(tagID)) {
 				openAbilityPage(transform('abilities.xml', 'reinforcement.xsl', tagID));
-				sendOOCSI('reinforcement', tagID,0);
+				sendOOCSI('reinforcement', tagID, 0);
 			}
 		}
 
@@ -163,7 +162,25 @@
 			sendOOCSI('combination', tag1, tag2);
 		}
 
-//Control the pages with a key, replaced by menu
+
+		function openNoCombi() {
+			if (!ready) {
+				ready = true;
+				IDnumber = document.getElementById('ID').value;
+				//	console.log("ID number: " + IDnumber);
+				console.log("Device name:" + deviceName);
+			}
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("replace").innerHTML = this.responseText;
+				}
+			};
+			xhttp.open("GET", "nocombi.html", true);
+			xhttp.send();
+		};
+
+		//Control the pages with a key, replaced by menu
 		//Control the pages for now with keys, replace once tokens work
 		// var key = function(e) {
 		// 	e = e || window.event;
@@ -344,7 +361,7 @@
 		}
 		//-------------------------------------------------------------------------------------------
 
-		function showTechDetails(){
+		function showTechDetails() {
 			console.log("Show details");
 			document.getElementById("infobox").style.visibility = "visible";
 		}

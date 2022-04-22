@@ -96,13 +96,19 @@ function handleNotifications(data) {
 
 }
 
+function resetReading() {
+  tags = [255, 255];
+  tagsPresent = 0;
+  tagRemoved = false;
+}
+
 function readValues() {
   //in case someone continues using the board without closing the alert, this code will make sure it will only opens the combination page instead of both the ability and combination page underneath each other
   //it checks if three or more things are shown and if this is the case, only shows the combination page
-  if(document.getElementsByClassName("headerData").length>2){
+  if (document.getElementsByClassName("headerData").length > 2) {
     numPages(2);
   }
-    //check if there is at least one token available
+  //check if there is at least one token available
   if (arrayEquals(incomingValues, emptyArray)) {
     //if not: open information page (0)
     open1Page(0);
@@ -125,9 +131,9 @@ function removeTags() {
       tags[i] = 255;
       loc[i] = 0; // 1: tag is present, 0: no tag present
       // updateTags();
-    }//if
-  }//for
-   updateTags();
+    } //if
+  } //for
+  updateTags();
 }
 
 function updateTags() {
@@ -163,7 +169,11 @@ function updateTags() {
 
 function numPages(numTags) {
   console.log("tagspresent: " + numTags);
-    switch (numTags) {
+  switch (numTags) {
+    case 3: //3 tags not possible so set back to 0
+      console.log("Reset reading");
+      resetReading();
+      break;
     case 2: //2 tags present
       // console.log("2 tags present");
       tag1 = tags[0];
@@ -173,7 +183,7 @@ function numPages(numTags) {
     case 1: //1 tag present if loc[0]: data, loc[1]: label, loc[2]: ability
       //show data or ability page depending on token
       // console.log("1 tag present");
-      tag1=tags[tags.findIndex(findTag)];
+      tag1 = tags[tags.findIndex(findTag)];
       // console.log("tag1: "+tag1);
       open1Page(tag1);
       break;
@@ -224,9 +234,8 @@ function openCombiPage(tag1, tag2) {
     openCombinationPage(transform2('combies.xml', 'combies.xsl', tag1, tag2));
     sendOOCSI('combination', tag1, tag2);
   } else {
-    openInfo();
+    openNoCombi();
     console.log("incorrect combination");
-    alert('This is not a correct/possible combination ');
 
   }
 
