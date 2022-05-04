@@ -258,7 +258,7 @@
       <l3 value="It is not possible to train and evaluate it beforehand"></l3>
     </limitations>
     <examples>
-      <e1 value="A robot learning to navigate through a space with obstacl"></e1>
+      <e1 value="A robot learning to navigate through a space with obstacles"></e1>
       <e2 value="Finding the shortest path to a point"></e2>
       <!-- <e3 value=""></e3> -->
     </examples>
