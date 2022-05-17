@@ -84,6 +84,7 @@ function gotCharacteristics(error, characteristics) {
 // A function that will be called once got characteristics
 function handleNotifications(data) {
   myValue = data;
+  //console.log(myValue);
   if (myValue == 0 | myValue == 1 | myValue == 2) {
     identifier = myValue;
   } else if (myValue == 254) {
