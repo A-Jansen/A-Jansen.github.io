@@ -76,7 +76,7 @@ a.bdt-link-reset,
 .bdt-divider-icon {
   position: relative;
   height: 20px;
-  background-image: url("/wp-content/plugins/bdthemes-element-pack-lite/images/backgrounds/divider-icon.svg");
+  background-image: url("/platform/wp-content/plugins/bdthemes-element-pack-lite/images/backgrounds/divider-icon.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -222,7 +222,7 @@ a.bdt-link-reset,
   width: 30px;
   height: 1.5em;
   margin-bottom: -1.5em;
-  background-image: url("/wp-content/plugins/bdthemes-element-pack-lite/images/backgrounds/list-bullet.svg");
+  background-image: url("/platform/wp-content/plugins/bdthemes-element-pack-lite/images/backgrounds/list-bullet.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -1012,7 +1012,7 @@ select.bdt-form-width-xsmall {
 }
 .bdt-input[list]:hover,
 .bdt-input[list]:focus {
-  background-image: url("/wp-content/plugins/bdthemes-element-pack-lite/images/backgrounds/form-datalist.svg");
+  background-image: url("/platform/wp-content/plugins/bdthemes-element-pack-lite/images/backgrounds/form-datalist.svg");
 }
 /* 1 */
 .bdt-input[list]::-webkit-calendar-picker-indicator {
