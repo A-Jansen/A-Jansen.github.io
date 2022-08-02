@@ -104,7 +104,7 @@
   <abilitytoken>
     <ability>Identify</ability>
     <token>111</token>
-    <description>Categorize the identity of a specific individual/item from a trait</description>
+    <description>Recognize the identity of a specific individual/item from a trait</description>
     <type>Supervised learning</type>
       <image>assets/photos/mlabilities_icon_identify.png</image>
       <imageHorizontal>assets/photos/mlabilities_horizontal_icon_identify.png</imageHorizontal>
