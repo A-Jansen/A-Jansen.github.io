@@ -22,7 +22,9 @@ var tagRemoved = false;
 var modeValue = 78; //start with normal mode
 var oldModeValue = 78;
 
-var emptyBefore=false;//use this to only load the info page once instead of constantly
+var emptyBefore=false;//use this to only load the info page once instead of constantly --> buttons don't work otherwise
+var modeSelectBefore =false;// use this to only load the select mode page once instead of constantly --> buttons don't work otherwise
+
 
 function setup() {
   // Create a p5ble class
@@ -224,8 +226,13 @@ function numPages(numTags) {
 //Check which of the arrays contain the token ID and open the corresponding page
 function open1Page(tagID) {
   if (tagID == 0) {
-    if (mode === 'none') {
-      openModeSelect();
+    if (mode === 'none' ) {
+      if (modeSelectBefore== false){
+        modeSelectBefore= true;
+        console.log(modeSelectBefore);
+        openModeSelect();
+      }
+
     } else {
       emptyBefore=true;
       openInfo();

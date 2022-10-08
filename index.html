@@ -426,7 +426,7 @@
 
 			proc2.setParameter(null, "tokenselected1", datatoken);
 			proc2.setParameter(null, "tokenselected2", type2);
-
+			proc2.setParameter(null, "exampleNO", '2');
 
 
 			document.getElementById('replace').appendChild(proc2.transformToFragment(xmlInput, document));
@@ -461,6 +461,7 @@
 				}
 				proc3.setParameter(null, "tokenselected1", datatoken1);
 				proc3.setParameter(null, "tokenselected2", datatoken2);
+
 			} else {
 				if (supTokens.includes(tag1)) {
 					proc3.setParameter(null, "token1", 'supervised');
@@ -509,6 +510,16 @@
 	function showTechDetails() {
 		console.log("Show details");
 		document.getElementById("infobox").style.visibility = "visible";
+	}
+
+	var curExampleNO=1;
+
+//go the next or previous example
+	function plusExample(n){
+		curExampleNO += n;
+		console.log(curExampleNO);
+		// proc2.setParameter(null, "exampleNO", curExampleNO);
+
 	}
 </script>
 
