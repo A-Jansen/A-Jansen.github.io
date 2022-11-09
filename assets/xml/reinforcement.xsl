@@ -112,6 +112,9 @@
               </span>
 
             </p>
+            <p>  <i class="fa-solid fa-triangle-exclamation fa-lg reinforcement">&#160;
+            </i> <i> Please be aware that these are models from the public domain, they might contain biases. </i>
+            </p>
           </div>
         </xsl:for-each>
         <div>

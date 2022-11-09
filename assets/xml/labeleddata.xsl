@@ -83,6 +83,9 @@
 
 
           <p class="bold labeled">Selection of datasets:</p>
+        <p>  <i class="fa-solid fa-triangle-exclamation fa-lg labeled">&#160;
+        </i> <i> Please be aware that these are datasets from the public domain, they might contain biased data. </i>
+        </p>
           <table>
             <tr style="background-color: #2D7F83;">
               <th >Dataset</th>

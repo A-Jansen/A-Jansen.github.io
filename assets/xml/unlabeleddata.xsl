@@ -77,6 +77,9 @@
 
         <div class='centerBlock'>
           <p class="bold unlabeled">Selection of datasets:</p>
+          <p>  <i class="fa-solid fa-triangle-exclamation fa-lg unlabeled">&#160;
+          </i> <i> Please be aware that these are datasets from the public domain, they might contain biased data. </i>
+          </p>
           <table>
             <tr style="background-color: #26C6DA;">
               <th >Dataset</th>
