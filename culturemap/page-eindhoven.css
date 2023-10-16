@@ -1,0 +1,197 @@
+.memorymap5 {
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+}
+.memories6 {
+  color: var(--color-black);
+}
+.about-us5,
+.memories6 {
+  flex: 1;
+  position: relative;
+}
+.memorymap-parent2 {
+  margin: 0 !important;
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 512px);
+  width: 1024px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-11xl);
+  box-sizing: border-box;
+  gap: var(--gap-119xl);
+  z-index: 0;
+}
+.navigation-bar5 {
+  align-self: stretch;
+  background-color: var(--color-gray-200);
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.eindhoven-container {
+  width: 261px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.pic1-icon4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-5xs);
+  width: 446px;
+  height: 476px;
+  object-fit: cover;
+}
+.glow {
+  position: absolute;
+  top: 392px;
+  left: 165px;
+  font-weight: 700;
+}
+.pic-1 {
+  position: relative;
+  width: 442px;
+  height: 476px;
+  cursor: pointer;
+}
+.pic2-icon3,
+.stan-schrama-gxf1qdn056s-unspl-icon2 {
+  position: relative;
+  width: 0;
+  height: 0;
+  object-fit: cover;
+}
+.pic2-icon3 {
+  border-radius: var(--br-5xs);
+  width: 446px;
+  height: 476px;
+}
+.frame24,
+.frame25 {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.frame25 {
+  align-self: stretch;
+  height: 476px;
+  flex-shrink: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--gap-5xl);
+  text-align: left;
+  color: var(--color-white);
+}
+.frame24 {
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap-26xl);
+}
+.pic3-icon2,
+.pic5-icon3 {
+  align-self: stretch;
+  position: relative;
+  border-radius: var(--br-5xs);
+  max-width: 100%;
+  overflow: hidden;
+  height: 484px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.pic5-icon3 {
+  height: 662px;
+}
+.frame28 {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-84xl);
+}
+.pic4-icon2,
+.pic6-icon2 {
+  align-self: stretch;
+  position: relative;
+  border-radius: var(--br-5xs);
+  max-width: 100%;
+  overflow: hidden;
+  height: 670px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.pic6-icon2 {
+  height: 496px;
+}
+.frame27,
+.frame29 {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame29 {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-63xl);
+}
+.frame27 {
+  width: 932px;
+  flex-direction: row;
+  gap: var(--gap-29xl);
+}
+.pic7-icon2 {
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-5xs);
+  max-width: 100%;
+  overflow: hidden;
+  height: 496px;
+  object-fit: cover;
+}
+.frame26 {
+  align-self: stretch;
+  height: 1819px;
+  flex-shrink: 0;
+  justify-content: center;
+  gap: var(--gap-29xl);
+}
+.frame23,
+.frame26,
+.page-eindhoven {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.frame23 {
+  align-self: stretch;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-64xl);
+  gap: var(--gap-26xl);
+  font-size: var(--font-size-29xl);
+  color: var(--color-black);
+}
+.page-eindhoven {
+  text-decoration: none;
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  justify-content: center;
+  gap: var(--gap-5xs);
+  text-align: center;
+  font-size: var(--font-size-15xl);
+  color: var(--color-gray-100);
+  font-family: var(--font-inter);
+}
