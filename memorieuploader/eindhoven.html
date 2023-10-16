@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="oocsi-web.js"></script>
+    <script src="script.js"></script>
+    <title>Eindhoven City Page</title>
+</head>
+<body>
+    <header>
+        <h1>MemoryMap</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    </header>
+    <nav>
+        <ul id="main-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="amsterdam.html">Amsterdam</a></li>
+            <li><a href="eindhoven.html">Eindhoven</a></li>
+            <li><a href="enschede.html">Enschede</a></li>
+            <li><a href="groningen.html">Groningen</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Add your own memory of Eindhoven</h2>
+        <p>Upload a photo or video and describe your memory, tradition, belief that is linked to Eindhoven.</p>
+        
+        <h3>Upload Your Photos and Media</h3>
+       
+        <div id="mediaGallery">
+            <!-- Uploaded media will be displayed here -->
+        </div>
+        <input type="file" id="fileInput" accept="image/*, video/*">
+        <button onclick="uploadMedia()">Upload</button>
+        <div>
+            <button onclick="submitMedia()">Submit</button>
+        </div>
+
+    </main>
+</body>
+</html>

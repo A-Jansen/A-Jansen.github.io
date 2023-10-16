@@ -1,0 +1,234 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+
+h1, h2, h3{
+    font-family: 'Inter', sans-serif;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    max-width: 100%; /* Ensure h1 doesn't overflow */
+    overflow: hidden; /* Hide overflowing text */
+    white-space: nowrap; /* Prevent line break */
+    text-overflow: ellipsis; /* Show ellipsis for very long text */
+    font-size: 24px; /* Adjust the font size as needed */
+    margin: 0; /* Remove margin to avoid extra space */
+    padding: 0; /* Remove padding to avoid extra space */
+    word-wrap: break-word; /* Allow long words to wrap */
+}
+
+header {
+    text-align: center;
+    background-color: #eeeeee;
+    color: #333;
+    padding: 10px;
+    overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.city-button {
+    text-align: center;
+    width: 45%;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.city-button:hover {
+    transform: scale(1.05);
+}
+
+.city-button h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.city-button p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.city-button img {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+}
+
+
+
+.author, .copyright {
+    margin: 2px 0;
+}
+
+/* ... (existing styles) */
+
+/* Hamburger menu styles */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+}
+
+/* Navigation menu styles */
+nav {
+    background-color: #eeeeee;
+    overflow: hidden;
+}
+
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    background-color: #eeeeee;
+}
+
+nav ul li {
+    margin: 0px 20px 10px 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+#main-nav {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    background-color: #eeeeee;
+}
+
+#main-nav li {
+    /* margin: 5px 20px; */
+    
+}
+
+#main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 18px; /* Adjust font size for smaller screens */
+
+    }
+    .menu-toggle {
+        display: block;
+    }
+
+    #main-nav {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #main-nav.active {
+        display: flex;
+    }
+}
+
+/* Author and copyright information styles */
+.photo-info {
+    position: relative; /* Change position to relative */
+    width: max-content; /* Make it auto width (same as the photo) */
+    color: #333; /* Dark grey text color */
+
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Center-align the text */
+    margin-top: 5px; /* Add some margin for spacing */
+
+}
+
+.author, .copyright {
+    margin: 2px 0;
+    font-size: 10px !important;
+}
+
+
+/* Additional CSS for the gallery and viewer */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.media-item {
+    width: 48%; /* Display two items per row */
+    margin-bottom: 20px;
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+.media-item img,
+.media-item video {
+    max-width: 100%; /* Set a maximum width for both images and videos */
+    height: auto;
+    cursor: pointer;
+}
+.viewer {
+    display: none;
+}
+
+.viewer img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.upload-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.upload-controls button {
+    margin-top: 10px;
+}
+
+input[type=text]{
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 10px;
+    width: 100%;
+}
+textarea {
+    width: 100%;
+    height: 50px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 10px;
+
+
+  }
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .media-item {
+        width: 80%; /* Display one item per row on smaller screens */
+    }
+}
