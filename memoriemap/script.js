@@ -18,4 +18,8 @@ OOCSI.subscribe("cultureMap_interface", function (msg) {
         console.log("Amsterdam")
         window.location.href = "page-amsterdam.html";
     }
+    if (msg.data.location == "Sinterklaas") {
+        console.log("Sinterklaas")
+        window.location.href = "sinterklaas.html";
+    }
 });

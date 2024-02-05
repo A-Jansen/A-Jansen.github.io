@@ -1,0 +1,169 @@
+.memorymap4 {
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+}
+.memories4 {
+  color: var(--color-black);
+}
+.about-us4,
+.memories4 {
+  flex: 1;
+  position: relative;
+}
+.frame-div,
+.navigation-bar4 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+}
+.frame-div {
+  margin: 0 !important;
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 512px);
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: var(--padding-11xl);
+  box-sizing: border-box;
+  gap: var(--gap-119xl);
+  z-index: 0;
+}
+.navigation-bar4 {
+  background-color: var(--color-gray-200);
+  height: 120px;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  text-align: center;
+  font-size: var(--font-size-15xl);
+  color: var(--color-gray-100);
+  font-family: var(--font-inter);
+}
+.frame24,
+.pic-icon {
+  align-self: stretch;
+  overflow: hidden;
+}
+.pic-icon {
+  position: relative;
+  max-width: 100%;
+  height: 985px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.frame24 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.arrival-of-sinterklaas {
+  margin: 0;
+}
+.arrival-of-sinterklaas-container {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: 0.87px;
+}
+.sinterklaas1 {
+  color: var(--color-royalblue);
+}
+.eindhoven-sparkled-with-container {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-mid);
+  letter-spacing: -0.41px;
+  line-height: 22px;
+  font-family: var(--font-sf-pro-text);
+}
+.content,
+.frame27 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.content {
+  align-self: stretch;
+  align-items: flex-start;
+  gap: var(--gap-lgi);
+}
+.frame27 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 809px;
+  overflow: hidden;
+  align-items: center;
+  font-size: var(--font-size-9xl);
+}
+.connection1 {
+  position: absolute;
+  top: 0.5px;
+  left: 711px;
+  display: inline-block;
+  text-align: center;
+  width: 149px;
+  height: 26px;
+  cursor: pointer;
+}
+.anonymous,
+.div {
+  position: relative;
+  letter-spacing: 0.75px;
+  line-height: 24px;
+  font-weight: 600;
+}
+.frame28,
+.name-date {
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.frame28 {
+  position: absolute;
+  top: calc(50% + 42.5px);
+  left: calc(50% + 301px);
+  width: 131px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--color-darkslategray);
+}
+.frame26 {
+  align-self: stretch;
+  position: relative;
+  height: 228px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.frame25,
+.sinterklaas {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.frame25 {
+  align-self: stretch;
+  height: 323px;
+  flex-shrink: 0;
+  justify-content: center;
+  padding: var(--padding-61xl) var(--padding-31xl) var(--padding-57xl)
+    var(--padding-61xl);
+  box-sizing: border-box;
+}
+.sinterklaas {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 1428px;
+  justify-content: space-between;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-sf-pro-display);
+}
