@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Roei Training App</title>
+
+</head>
+
+<body>
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <div class="page-header">
+            <h1>Hi Anniek!</h1>
+        </div>
+
+        <div class="content">
+            <!-- Trainingen Section -->
+            <div class="section">
+                <h2 class="section-header">Trainingen – Leren roeien</h2>
+
+                <!-- Upcoming Training Callout -->
+                <div class="training-callout">
+                    <div class="training-callout-header">
+                        <div>
+                            <div class="training-time">Za 31 jan • 13:00 - 14:30</div>
+                            <div class="training-boat">Boot - Leren roeien</div>
+                        </div>
+                        <div class="boat-icon"><img src="Figures/boot.svg" alt="Icon" width="70" height="70"></div>
+                    </div>
+                    <div class="attendance-buttons">
+                        <button class="attendance-btn check" onclick="toggleAttendance(this, 'check')">✓</button>
+                        <button class="attendance-btn cross" onclick="toggleAttendance(this, 'cross')">✗</button>
+                    </div>
+                    <button class="details-btn" onclick="showTrainingDetails('Za 31 jan 2026', '13:00 - 14:30', '4x+', 'Leren roeien', 'boat')">Details bekijken</button>
+                </div>
+
+                <!-- Horizontal Scroll of Trainings -->
+                <div class="horizontal-scroll">
+                    <!-- <div class="training-block" onclick="selectTraining(this)">
+                        <div class="training-block-date">Di 4 feb</div>
+                        <div class="training-block-icon">🚣</div>
+                    </div> -->
+                                    <div class="training-block" onclick="showTrainingDetails('Di 1 feb 2026', '17:00 - 18:00', 'ergo', 'Leren roeien', 'ergo')">
+                        <div class="training-block-date">Di 3 feb</div>
+                        <div class="training-block-icon"><img src="Figures/ergo.svg" alt="Icon" width="70"
+                                height="70"></div>
+                    </div>
+                    <div class="training-block" onclick="showTrainingDetails('Za 7 feb 2026', '13:00 - 14:30', 'boot', 'Leren roeien')">
+                        <div class="training-block-date">Za 7 feb</div>
+                        <div class="training-block-icon"><img src="Figures/boot.svg" alt="Icon" width="70"
+                                height="70"></div>
+                    </div>
+                    <div class="training-block" onclick="showTrainingDetails('Di 10 feb jan 2026', '17:00 - 18:00', 'ergo', 'Leren roeien', 'ergo')">
+                        <div class="training-block-date">Di 10 feb</div>
+                        <div class="training-block-icon"><img src="Figures/ergo.svg" alt="Icon" width="70" height="70">
+                        </div>
+                    </div>
+                    <div class="training-block" onclick="showTrainingDetails('Za 15 feb 2026', '13:00 - 14:30', 'boot', 'Leren roeien')">
+                        <div class="training-block-date">Za 15 feb</div>
+                        <div class="training-block-icon"><img src="Figures/boot.svg" alt="Icon" width="70"
+                                height="70"></div>
+                    </div>
+                    <div class="training-block" onclick="showTrainingDetails('Di 18 feb 2026', '17:00 - 18:00', 'ergo', 'Leren roeien', 'ergo')">
+                        <div class="training-block-date">Di 18 feb</div>
+                        <div class="training-block-icon"><img src="Figures/ergo.svg" alt="Icon" width="70" height="70">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mijn Team Section -->
+            <div class="section">
+                <h2 class="section-header">Mijn team</h2>
+                <div class="team-info">
+                    <div class="team-circle light-green"><img src="Figures/team.svg" alt="Icon" width="24" height="24"></div>
+                    <div class="team-name">Leren roeien</div>
+                </div>
+                <div class="team-stats">
+                    <div class="team-stat">12 roeiers</div>
+                    <div class="team-stat">3 trainers</div>
+                </div>
+                <button class="action-btn secondary" onclick="showTeamDetails()">Details bekijken</button>
+                <button class="action-btn secondary" onclick="showAddMember()">Personen toevoegen</button>
+                <button class="action-btn secondary" onclick="navigateTo('competencies')">Competenties
+                    controleren</button>
+            </div>
+
+            <!-- Berichten & Notities Preview -->
+            <div class="section">
+                <h2 class="section-header">Berichten & Notities</h2>
+                <div class="message-preview">
+                    <div class="message-preview-header">Training verplaatst</div>
+                    <div class="message-preview-text">De training van dinsdag is verplaatst naar 19:00...</div>
+                </div>
+                <div class="message-preview">
+                    <div class="message-preview-header">Nieuwe roeier</div>
+                    <div class="message-preview-text">Lisa heeft zich aangemeld voor het team...</div>
+                </div>
+                <div class="message-preview">
+                    <div class="message-preview-header">Notitie: Techniek punt</div>
+                    <div class="message-preview-text">Let op doordrukken bij Jan tijdens volgende training...</div>
+                </div>
+                <button class="action-btn" onclick="navigateTo('berichten')">Alle berichten bekijken</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trainingen Page -->
+    <div id="trainingen" class="page">
+        <div class="week-navigator">
+            <button class="week-nav-btn" onclick="changeWeek(-1)">←</button>
+            <span id="currentWeek">Week 5, 2026</span>
+            <button class="week-nav-btn" onclick="changeWeek(1)">→</button>
+        </div>
+
+        <div class="week-days" id="weekDays"></div>
+
+        <div class="training-list" id="trainingList"></div>
+
+        <button class="add-training-btn" onclick="openAddTrainingModal()">+</button>
+    </div>
+
+    <!-- Berichten Page -->
+    <div id="berichten" class="page">
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('messages')">Berichten</div>
+            <div class="tab" onclick="switchTab('notes')">Notities</div>
+        </div>
+
+        <div id="messagesTab" class="tab-content active">
+            <div class="content">
+                <button class="action-btn" onclick="openNewMessageModal()">+ Nieuw bericht</button>
+                <div class="message-item">
+                    <div class="message-header">
+                        <span class="message-sender">Anniek</span>
+                        <span class="message-time">2u geleden</span>
+                    </div>
+                    <div class="message-text">Training verplaatst naar 19:00 uur vanwege het weer.</div>
+                </div>
+                <div class="message-item">
+                    <div class="message-header">
+                        <span class="message-sender">Erik-Jan</span>
+                        <span class="message-time">5u geleden</span>
+                    </div>
+                    <div class="message-text">Nieuwe roeier Lisa heeft zich aangemeld voor het team!</div>
+                </div>
+                <div class="message-item">
+                    <div class="message-header">
+                        <span class="message-sender">Admin</span>
+                        <span class="message-time">8d geleden</span>
+                    </div>
+                    <div class="message-text">Vergeet niet de competenties van je team bij te werken.</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="notesTab" class="tab-content">
+            <div class="content">
+                <button class="action-btn" onclick="openNewNoteModal()">+ Nieuwe notitie</button>
+                <div class="note-item">
+                    <div class="message-header">
+                        <span class="message-sender">Techniek observatie</span>
+                        <span class="message-time">3d geleden</span>
+                    </div>
+                    <div class="message-text">Let op de polsen van Zalan en Zsombor op de ergometer, knikje op het laatst</div>
+                </div>
+                <div class="note-item">
+                    <div class="message-header">
+                        <span class="message-sender">Materiaal</span>
+                        <span class="message-time">1w geleden</span>
+                    </div>
+                    <div class="message-text">Boot 4x heeft onderhoud nodig - melding maken in systeem
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Page -->
+    <div id="team" class="page">
+        <div class="page-header">
+            <h1>Mijn team(s)</h1>
+        </div>
+
+        <div class="team-list">
+            <div class="team-card" onclick="showTeamDetail('leren-roeien')">
+                <div class="team-card-header">
+                    <div>
+                        <div class="team-info">
+                            <div class="team-circle light-green"><img src="Figures/team.svg" alt="Icon" width="24" height="24"></div>
+                            <div class="team-name">Leren roeien</div>
+                        </div>
+                    </div>
+                     <div class="role-badge hoofdcoach"> Hoofdcoach</div>
+                     <div class="role-badge trainer">Trainer</div>
+                    
+                </div>
+            </div>
+
+            <div class="team-card" onclick="showTeamDetail('leren-trainen')">
+                <div class="team-card-header">
+                    <div>
+                        <div class="team-info">
+                            <div class="team-circle" style="background-color: #FFD700;"><img src="Figures/team.svg" alt="Icon" width="24" height="24"></div>
+                            <div class="team-name">Leren trainen</div>
+                        </div>
+                    </div>
+                   <div class="role-badge trainer">Trainer</div>
+                </div>
+            </div>
+
+            <div class="team-card" onclick="showTeamDetail('leren-racen')">
+                <div class="team-card-header">
+                    <div>
+                        <div class="team-info">
+                            <div class="team-circle" style="background-color: #5e00aa;"><img src="Figures/team.svg" alt="Icon" width="24" height="24"></div>
+                            <div class="team-name">Leren racen</div>
+                        </div>
+                    </div>
+                    <div class="role-badge trainer">Trainer</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Detail Page -->
+    <div id="team-detail" class="page">
+        <div class="page-header">
+            <button class="back-btn" onclick="navigateTo('team')">←</button>
+            <h1 id="teamDetailName">Team Details</h1>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h2 class="section-header" style="margin-bottom: 0;">Roeiers</h2>
+                    <button class="action-btn" onclick="openAddMemberModal('roeier')">+ Toevoegen</button>
+                </div>
+                <div class="member-list" id="roeierslist">
+                    <div class="member-item">
+                        <div style="display: flex; align-items: center;">
+                            <div class="member-avatar">K</div>
+                            <div class="member-info">
+                                <div class="member-name">Kobe</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-item">
+                        <div style="display: flex; align-items: center;">
+                            <div class="member-avatar">V</div>
+                            <div class="member-info">
+                                <div class="member-name">Viky</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-item">
+                        <div style="display: flex; align-items: center;">
+                            <div class="member-avatar">V</div>
+                            <div class="member-info">
+                                <div class="member-name">Vince</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <button class="action-btn" onclick="navigateTo('competencies')" style="width: 100%;">Bekijk
+                competenties</button>
+            </div>
+
+            <div class="section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h2 class="section-header" style="margin-bottom: 0;">Trainers</h2>
+                    <button class="action-btn" onclick="openAddMemberModal('trainer')">+ Toevoegen</button>
+                </div>
+                <div class="member-list">
+                    <div class="member-item">
+                        <div style="display: flex; align-items: center;">
+                            <div class="member-avatar">AJ</div>
+                            <div class="member-info">
+                                <div class="member-name">Anniek Jansen</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-item">
+                        <div style="display: flex; align-items: center;">
+                            <div class="member-avatar">EJ</div>
+                            <div class="member-info">
+                                <div class="member-name">Erik-Jan Mol</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Competencies Page -->
+    <div id="competencies" class="page">
+        <div class="page-header">
+            <button class="back-btn" onclick="navigateTo('team-detail')">←</button>
+            <h1>Competenties</h1>
+        </div>
+
+        <div class="content">
+            <div class="competency-view-toggle">
+                <button class="toggle-btn active" onclick="toggleCompetencyView('roeier')">Per roeier</button>
+                <button class="toggle-btn" onclick="toggleCompetencyView('competentie')">Per competentie</button>
+            </div>
+
+            <div id="competencyByRoeier" class="competency-view">
+                <div class="competency-item">
+                    <div class="competency-header">Kobe</div>
+                    <div class="competency-list">
+                        <label class="competency-checkbox">
+                            <input type="checkbox" checked>
+                            <span>Skiff - I</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox" checked>
+                            <span>Skiff-II</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox">
+                            <span>Ploegroeien I</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox" checked>
+                            <span>Sturen I</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="competency-item">
+                    <div class="competency-header">Viky</div>
+                    <div class="competency-list">
+                        <label class="competency-checkbox">
+                            <input type="checkbox" checked>
+                            <span>Skiff - I</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox" checked>
+                            <span>Skiff-II</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox">
+                            <span>Ploegroeien I</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox">
+                            <span>Sturen I</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+                            <div class="competency-item">
+                    <div class="competency-header">Vince</div>
+                    <div class="competency-list">
+                        <label class="competency-checkbox">
+                            <input type="checkbox" checked>
+                            <span>Skiff - I</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox" >
+                            <span>Skiff-II</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox" checked> 
+                            <span>Ploegroeien I</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox">
+                            <span>Sturen I</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="competencyByCompetentie" class="competency-view" style="display: none;">
+                <div class="competency-item">
+                    <div class="competency-header">Skiff I</div>
+                    <div class="competency-list">
+                        <label class="competency-checkbox">
+                            <input type="checkbox" checked>
+                            <span>Kobe</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox" checked>
+                            <span>Viky</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox" checked>
+                            <span>Vince</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="competency-item">
+                    <div class="competency-header">Skiff II</div>
+                    <div class="competency-list">
+                        <label class="competency-checkbox">
+                            <input type="checkbox" checked>
+                            <span>Kobe</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox" checked>
+                            <span>Viky</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox">
+                            <span>Vince</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="competency-item">
+                    <div class="competency-header">Ploegroeien I</div>
+                    <div class="competency-list">
+                        <label class="competency-checkbox">
+                            <input type="checkbox">
+                            <span>Kobe</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox" checked>
+                            <span>Viky</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox">
+                            <span>Vince</span>
+                        </label>
+                    </div>
+                </div>
+
+                                <div class="competency-item">
+                    <div class="competency-header">Sturen I</div>
+                    <div class="competency-list">
+                        <label class="competency-checkbox">
+                            <input type="checkbox">
+                            <span>Kobe</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox" >
+                            <span>Viky</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox">
+                            <span>Vince</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account Page -->
+    <div id="jij" class="page">
+        <div class="page-header">
+            <h1>Mijn Profiel</h1>
+        </div>
+
+        <div class="profile-section">
+            <div class="profile-avatar">👤</div>
+
+            <div class="profile-info">
+                <h2 class="section-header">Profiel informatie</h2>
+                <div class="profile-field">
+                    <label>Naam</label>
+                    <input type="text" value="Anniek Jansen" placeholder="Naam">
+                </div>
+                <div class="profile-field">
+                    <label>Email</label>
+                    <input type="email" value="@outlook.com" placeholder="Email">
+                </div>
+                <div class="profile-field">
+                    <label>Telefoon</label>
+                    <input type="tel" value="+31 6 12345678" placeholder="Telefoon">
+                </div>
+                <button class="action-btn" style="width: 100%;">Profiel opslaan</button>
+            </div>
+
+            <div class="role-switcher">
+                <h2 class="section-header">Rol preview</h2>
+                <div class="role-option ">
+                    <strong>Trainer</strong>
+                    <div style="font-size: 12px; color: #666; margin-top: 5px;">Huidige weergave</div>
+                </div>
+                <div class="role-option">
+                    <strong>Roeier</strong>
+                    <div style="font-size: 12px; color: #666; margin-top: 5px;">Preview als roeier</div>
+                </div>
+                <div class="role-option active">
+                    <strong>Hoofdcoach</strong>
+                    <div style="font-size: 12px; color: #666; margin-top: 5px;">Preview als hoofdcoach</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Training Modal -->
+    <div id="addTrainingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Training toevoegen</h2>
+                <button class="close-btn" onclick="closeModal('addTrainingModal')">&times;</button>
+            </div>
+
+            <div class="option-buttons">
+                <button class="option-btn active" onclick="selectAddOption('search')">Zoek bestaande training</button>
+                <button class="option-btn" onclick="selectAddOption('new')">Voeg een nieuwe training toe</button>
+            </div>
+
+            <div id="searchExisting">
+                <input type="text" class="search-input" placeholder="Zoek training..."
+                    oninput="searchTrainings(this.value)">
+                <div id="existingTrainingsList">
+                    <div class="training-option" onclick="selectExistingTraining(this)">
+                        <strong>Uitlengen</strong><br>
+                        <small>Lichtgroen+ • Alle boottypes • Alle type water</small>
+                    </div>
+                    <div class="training-option" onclick="selectExistingTraining(this)">
+                        <strong>Terug in de skiff</strong><br>
+                        <small>Wit+ • Skiff • Warm weer + water</small>
+                    </div>
+                    <div class="training-option" onclick="selectExistingTraining(this)">
+                        <strong>Wisselen slag+stuur</strong><br>
+                        <small>Groen+ • Ploeg • Rustig water</small>
+                    </div>
+                </div>
+            </div>
+
+            <div id="addNew" style="display: none;">
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Titel</label>
+                        <input type="text" class="form-input" placeholder="Bijv. Leren roeien">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Leeftijd</label>
+                        <input type="text" class="form-input" placeholder="Bijv. 16+">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Roeiniveau</label>
+                        <select class="form-select">
+                            <option>Wit</option>
+                            <option>Lichtgroen</option>
+                            <option>Groen</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Boot-type</label>
+                        <select class="form-select">
+                            <option>1x</option>
+                            <option>2x</option>
+                            <option>2-</option>
+                            <option>4+</option>
+                            <option>4x</option>
+                            <option>8+</option>
+                            <option>C1</option>
+                            <option>C2x</option>
+                            <option>C2x+</option>
+                            <option>C3x+</option>
+                            <option>C4x+</option>
+                            <option>Wherry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Duur</label>
+                        <input type="text" class="form-input" placeholder="Bijv. 90 minuten">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Type roeiwater</label>
+                        <div class="tags-container">
+                            <div class="tag" onclick="toggleTag(this)">rivier</div>
+                            <div class="tag" onclick="toggleTag(this)">kanaal</div>
+                            <div class="tag" onclick="toggleTag(this)">smal</div>
+                            <div class="tag" onclick="toggleTag(this)">breed</div>
+                            <div class="tag" onclick="toggleTag(this)">golvend</div>
+                        </div>
+                    </div>
+                    <button type="button" class="action-btn" style="width: 100%;" onclick="saveNewTraining()">Training
+                        opslaan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Training Detail Page -->
+<div id="training-detail" class="page">
+    <div class="page-header">
+        <button class="back-btn" onclick="navigateBack()">←</button>
+        <h1>Training Details</h1>
+    </div>
+
+    <div class="content">
+        <div class="section">
+            <div style="margin-bottom: 20px;">
+                <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Datum</div>
+                <div style="font-size: 18px; font-weight: 600; color: var(--dark-blue);" id="trainingDetailDate"></div>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Tijd</div>
+                <div style="font-size: 18px; font-weight: 600; color: var(--dark-blue);" id="trainingDetailTime"></div>
+            </div>
+        </div>
+
+        <div class="section" id="boatPositionsSection">
+    <div class="form-group">
+        <label class="form-label">Bootnaam</label>
+        <input type="text" class="form-input" value="Beekse Waterloop (4*)" id="boatName">
+    </div>
+
+    <div id="positionsContainer">
+        <!-- Positions will be dynamically inserted here -->
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Coach</label>
+        <input type="text" class="form-input" placeholder="Naam coach" id="coach">
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Meefietser</label>
+        <input type="text" class="form-input" placeholder="Naam meefietser" id="meefietser">
+    </div>
+</div>
+
+<div class="section" id="ergoSection" style="display: none;">
+    <div class="form-group">
+        <label class="form-label">Ergometers</label>
+        <div id="ergoContainer">
+            <!-- Ergo positions will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Coach</label>
+        <input type="text" class="form-input" placeholder="Naam coach" id="coachErgo">
+    </div>
+</div>
+        <div class="section">
+            <div class="form-group">
+                <label class="form-label">Warming up</label>
+                <textarea class="form-input" rows="3" placeholder="Beschrijf de warming up..." id="warmingUp"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Kern 1</label>
+                <textarea class="form-input" rows="3" placeholder="Beschrijf kern 1..." id="kern1"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Kern 2</label>
+                <textarea class="form-input" rows="3" placeholder="Beschrijf kern 2..." id="kern2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Gamifier</label>
+                <textarea class="form-input" rows="3" placeholder="Beschrijf gamifier..." id="gamifier"></textarea>
+            </div>
+        </div>
+
+        <button class="action-btn" style="width: 100%;" onclick="saveTrainingDetails()">Opslaan</button>
+    </div>
+</div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <div class="nav-item active" onclick="navigateTo('home')">
+            <div class="nav-icon"><img src="Figures/home.svg" alt="Icon" width="24" height="24"></div>
+            <div class="nav-label">home</div>
+        </div>
+        <div class="nav-item" onclick="navigateTo('trainingen')">
+            <div class="nav-icon"><img src="Figures/calendar.svg" alt="Icon" width="24" height="24"></div>
+            <div class="nav-label">trainingen</div>
+        </div>
+        <div class="nav-item" onclick="navigateTo('berichten')">
+            <div class="nav-icon"><img src="Figures/chat.svg" alt="Icon" width="24" height="24"></div>
+            <div class="nav-label">berichten</div>
+        </div>
+        <div class="nav-item" onclick="navigateTo('team')">
+            <div class="nav-icon"><img src="Figures/team.svg" alt="Icon" width="24" height="24"></div>
+            <div class="nav-label">team</div>
+        </div>
+        <div class="nav-item" onclick="navigateTo('jij')">
+            <div class="nav-icon"><img src="Figures/user.svg" alt="Icon" width="24" height="24"></div>
+            <div class="nav-label">jij</div>
+            <div class="badge">HC</div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+
+</html>
