@@ -36,7 +36,7 @@
                         <button class="attendance-btn cross" onclick="toggleAttendance(this, 'cross')">✗</button>
                     </div>
                     <button class="details-btn"
-                        onclick="showTrainingDetails('Za 31 jan 2026', '13:00 - 14:30', '4x+', 'Leren roeien', 'boat')">Details
+                        onclick="showTrainingDetails('Za 31 jan 2026', '13:00 - 14:30', '4x+', 'Leren roeien', 'boot')">Details
                         bekijken</button>
                 </div>
 
@@ -53,9 +53,16 @@
                         </div>
                     </div>
                     <div class="training-block"
-                        onclick="showTrainingDetails('Za 7 feb 2026', '13:00 - 14:30', '4x+', 'Leren roeien')">
+                        onclick="showTrainingDetails('Za 7 feb 2026', '13:00 - 14:30', '4x+', 'Leren roeien', 'boot')">
                         <div class="training-block-date">Za 7 feb</div>
                         <div class="training-block-icon"><img src="Figures/boot.svg" alt="Icon" width="70" height="70">
+                        </div>
+                    </div>
+                    <div class="training-block"
+                        onclick="showTrainingDetails('Zo 8 feb 2026', '13:00 - 14:30', '4x+', 'Leren roeien', 'wedstrijd')">
+                        <div class="training-block-date">Zo 8 feb</div>
+                        <div class="training-block-icon"><img src="Figures/wedstrijd.svg" alt="Icon" width="70"
+                                height="70">
                         </div>
                     </div>
                     <div class="training-block"
@@ -65,7 +72,14 @@
                         </div>
                     </div>
                     <div class="training-block"
-                        onclick="showTrainingDetails('Za 15 feb 2026', '13:00 - 14:30', '2x', 'Leren roeien')">
+                        onclick="showTrainingDetails('Di 10 feb jan 2026', '17:00 - 18:00', 'hardlopen', 'Leren trainen', 'hardlopen')">
+                        <div class="training-block-date">Di 10 feb</div>
+                        <div class="training-block-icon"><img src="Figures/hardlopen.svg" alt="Icon" width="70"
+                                height="70">
+                        </div>
+                    </div>
+                    <div class="training-block"
+                        onclick="showTrainingDetails('Za 15 feb 2026', '13:00 - 14:30', '2x', 'Leren roeien', 'boot')">
                         <div class="training-block-date">Za 15 feb</div>
                         <div class="training-block-icon"><img src="Figures/boot.svg" alt="Icon" width="70" height="70">
                         </div>
@@ -110,7 +124,7 @@
                 </div>
                 <div class="message-preview">
                     <div class="message-preview-header">Notitie: Techniek punt</div>
-                    <div class="message-preview-text">Let op doordrukken bij Jan tijdens volgende training...</div>
+                    <div class="message-preview-text">Let op de polsen van...</div>
                 </div>
                 <button class="action-btn" onclick="navigateTo('berichten')">Alle berichten bekijken</button>
             </div>
@@ -368,29 +382,29 @@
                         </label>
                     </div>
                 </div>
-                            <div class="competency-item">
-                <div class="competency-header">Vince</div>
-                <div class="competency-list">
-                    <label class="competency-checkbox">
-                        <input type="checkbox" checked>
-                        <span>Skiff - I</span>
-                    </label>
-                    <label class="competency-checkbox">
-                        <input type="checkbox">
-                        <span>Skiff-II</span>
-                    </label>
-                    <label class="competency-checkbox">
-                        <input type="checkbox" checked>
-                        <span>Ploegroeien I</span>
-                    </label>
-                    <label class="competency-checkbox">
-                        <input type="checkbox">
-                        <span>Sturen I</span>
-                    </label>
+                <div class="competency-item">
+                    <div class="competency-header">Vince</div>
+                    <div class="competency-list">
+                        <label class="competency-checkbox">
+                            <input type="checkbox" checked>
+                            <span>Skiff - I</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox">
+                            <span>Skiff-II</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox" checked>
+                            <span>Ploegroeien I</span>
+                        </label>
+                        <label class="competency-checkbox">
+                            <input type="checkbox">
+                            <span>Sturen I</span>
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
-            </div>
 
 
 
@@ -439,7 +453,7 @@
                         <span>Kobe</span>
                     </label>
                     <label class="competency-checkbox">
-                        <input type="checkbox" >
+                        <input type="checkbox">
                         <span>Viky</span>
                     </label>
                     <label class="competency-checkbox">

@@ -277,7 +277,8 @@ function renderTrainingsForDay(dayIndex) {
         <div class="training-item" onclick="showTrainingDetails('${training.date}', '${training.time}', '${training.boat}', '${training.team}', '${training.type}')" style="cursor: pointer;">
             <div class="training-item-left">
                 <div class="training-item-icon">
-                    <img src="Figures/${training.type === 'ergo' ? 'ergo.svg' : 'boot.svg'}" alt="Icon" width="24" height="24">
+                    <img src="Figures/${training.type}.svg" alt="Icon" width="24" height="24">
+                    
                 </div>
                 <div class="training-item-info">
                     <h3>${training.team}</h3>
