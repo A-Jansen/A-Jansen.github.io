@@ -1,0 +1,57 @@
+ID,water,electricity,soc_impact,env_impact,from,to1,to2,to3,to4,to5,to6,to7,to8,to9,to10,to11,to12,to13,to14,to15,total_distance_km,rel_distance,frequency,quote
+f1,1000,Image,Very important,Very important,Venus,US,Venus,,,,,,,,,,,,,,82000000.0,retour earth-venus,high,"Yes, you really have to actively turn it off. Even when you're writing something, you get all those suggestions for what word you might mean. That's also AI. So it's everywhere."
+f10,1000,Image,Important,Important,SP,OS2,Venus,Moon,NP,US,,,,,,,,,,,82006000.0,>retour earth-venus,high,"Yeah, bizarre, insane! [reaction to seeing the distance you could fly] | I thought it would be around 30 litres or so, but it doesn’t give that as an option."
+f12,500,Image,Not important,Slightly important,SP,Moon,,,,,,,,,,,,,,,384400.0,earth-moon,high,"I had no awareness of it whatsoever, not at all."
+f13,1000,Text,Important,Important,SP,AU,ISS,NP,US,SA,SP,,,,,,,,,,29816.0,short inner space,high, 
+f14,500,Image,Important,Important,AU,Venus,SP,US,NP,ISS,AU,,,,,,,,,,82021816.0,>retour earth-venus,high, 
+f15,1000,Image,Important,Important,Venus,SP,,,,,,,,,,,,,,,41000000.0,earth-venus,high,"Yeah, but for me it’s still a bit vague. I’m left thinking: what’s watt? How much does a lamp actually cost? That’s just hard to estimate."
+f16,500,Image,Very important,Important,Venus,US,,,,,,,,,,,,,,,41000000.0,earth-venus,high,"I really want to beat my friend. So I have to [get it correct]. Ohh yeah OK, I got that one. Alright, nice!"
+f18,1000,Image,Very important,Very important,US,Venus,,,,,,,,,,,,,,,41000000.0,earth-venus,high, 
+f2,1000,Image,Very important,Very important,Venus,Moon,Venus,Moon,,,,,,,,,,,,,121846800.0,>retour earth-venus,high,"But that [using genAI to write a report] is of course not sustainable at all. | We always think it's in the cloud, but it [genAI] requires power and cooling."
+f21,250,Image,Very important,Very important,SP,AU,ISS,NP,US,SA,SP,AU,Moon,NP,US,SA,SP,,,,827616.0,between moon and venus,high,"I like it. Yes, it makes it appealing to join. I saw it and thought: ‘Oh, what could that be? 
+| Let’s see what other people have, oh, a picture. Yes. Yes, I think so too. |  don’t generate nice pictures, I think that’s such a waste. [...] Because I’m aware of the energy it takes. Then I think, well, it’s just for fun, [...] I want to use it for something useful."
+f23,1000,Image,Important,Very important,AF,AU,Venus,AU,AF,,,,,,,,,,,,82026000.0,>retour earth-venus,high,"Is it okay if my answer is a bit hypocritical? [...] Because I consider the ecological impact to be very important, but I also use it a lot.|I am aware of [the environmental impact], which is why I try to keep my [questions] as short as possible and use them sparingly. But I also see the advantages of it, especially since Google now also uses AI."
+f25,10,Image,Very important,Moderately important,US,NP,EU,SA,AF,SP,AS,AU,Moon,,,,,,,,446400.0,between moon and venus,high, 
+f26,500,Image,Important,Important,SP,OS,Venus,SP,,,,,,,,,,,,,84190000.0,>retour earth-venus,high,"For me, it’s new that it uses water. I had never really looked into that."
+f27,1000,Image,Important,Important,AF,EU,,,,,,,,,,,,,,,6000.0,short_distance earth,high, 
+f28,1000,Image,Very important,Very important,US,Moon,AS,US,,,,,,,,,,,,,779800.0,between moon and venus,high, 
+f29,500,Image,Very important,Very important,Moon,AU,SP,US,NP,Moon,,,,,,,,,,,797800.0,between moon and venus,high,"To train amodel like ChatGPT, per year or?"
+f3,1000,Image,Very important,Very important,Venus,AU,,,,,,,,,,,,,,,41000000.0,earth-venus,high, 
+f32,500,Image,Important,Moderately important,SP,AU,Moon,US,SP,,,,,,,,,,,,791800.0,between moon and venus,high, 
+f34,250,Image,Very important,Important,EU,Venus,EU,,,,,,,,,,,,,,82000000.0,retour earth-venus,high,"This is great, terrifying, and interesting at the same time. This is really informative."
+f35,100,Image,Important,Moderately important,SP,SA,US,NP,AS,AU,SP,,,,,,,,,,42000.0,short inner space,high, 
+f36,1000,Image,Slightly important,Very important,SP,AF,AS,Moon,AU,SP,AF,AS,Moon,AU,SP,AF,AS,Moon,AU,SP,2387400.0,between moon and venus,high,"There is no waste [...] we got a hydrosphere, and it is like a close loop, we not we are not wasting anything."
+f38,1000,Image,Very important,Very important,Moon,AU,Venus,AU,Moon,AU,Venus,AU,Moon,AU,,,,,,,165922000.0,>retour earth-venus,high, 
+f40,1000,Image,Important,Very important,Moon,ISS,NP,US,SA,SP,AU,Moon,,,,,,,,,797808.0,between moon and venus,high, 
+f41,500,Image,Very important,Moderately important,SP,Venus,,,,,,,,,,,,,,,41000000.0,earth-venus,high,"I really enjoyed it. I thought it was much better than a standard presentation. | I did know that it used water. I didn’t know exactly how much, but I knew it was quite a lot, and that it consumed a lot of energy and was pretty bad for the environment. | I think they're just random images that  it [genAI] collects and tries to put together, and the text is literally something it [genAI] looks up."
+f42,1000,Image,Slightly important,Important,Venus,SP,,,,,,,,,,,,,,,41000000.0,earth-venus,high, 
+f43,250,Text,Moderately important,Moderately important,US,Venus,,,,,,,,,,,,,,,41000000.0,earth-venus,high, 
+f45,250,Image,Very important,Very important,SP,US,AU,,,,,,,,,,,,,,30000.0,short inner space,high, 
+f46,500,Image,Important,Important,Venus,OS2,SP,SA,US,Venus,,,,,,,,,,,82149400.0,>retour earth-venus,high, 
+f49,1000,Image,Very important,Very important,EU,Moon,AS,US,SA,EU,,,,,,,,,,,797800.0,between moon and venus,high,"First of all, also because when I ask ChatGPT to generate an image, it takes a lot longer"
+f5,100,Image,Important,Important,EU,US,EU,US,EU,US,EU,US,EU,,,,,,,,60000.0,short inner space,high,"I don’t know how they [referring to companies behind the GenAI tools] care about making it efficient"
+f50,1000,Image,Very important,Very important,EU,Venus,,,,,,,,,,,,,,,41000000.0,earth-venus,high,"I’ve understood that every question you ask ChatGPT, depending a bit on its nature and complexity, uses enough electricity that you could actually charge your laptop a few times with it. That’s how much power it consumes!"
+f7,10,Image,Very important,Not important,NP,AS,EU,NP,,,,,,,,,,,,,16000.0,long distance earth,high,"So we have nuclear power, and we produce more electricity than [...] we can consume. So this industry is very intensive, but it’s good for us, because we need to develop our economy. So, I think it’s a great industry.”"
+if1,1000,Text,Important,Moderately important,Moon,EU,,,,,,,,,,,,,,,384400.0,earth-moon,low, 
+if10,500,Image,Very important,Important,SP,SA,US,NP,ISS,Moon,,,,,,,,,,,405408.0,between moon and venus,low, 
+if12,1000,Image,Very important,Very important,Moon,EU,,,,,,,,,,,,,,,384400.0,earth-moon,low, 
+if13,500,Image,Important,Very important,EU,Venus,EU,,,,,,,,,,,,,,82000000.0,retour earth-venus,low, 
+if16,1000,Text,Important,Very important,EU,AU,Moon,EU,,,,,,,,,,,,,783300.0,between moon and venus,low,"If I had paid attention to the news site, I might have known, because they also talked about enormous distances there, and I really don't remember what that was."
+if17,1000,Image,Important,Very important,EU,NP,Moon,Venus,OS2,SP,US,NP,,,,,,,,,82159400.0,>retour earth-venus,low, 
+if19,1000,Image,Important,Moderately important,AU,Venus,,,,,,,,,,,,,,,41000000.0,earth-venus,low,"I’m also quite suspicious that you put Venus up there. So I think the answer will be a lot higher than most of us expect.|I also kind of hope [...], because they are as trained on data and we’re kind of running out of data to train the AI on, or at least rich data, that it’s going to sort of collapse in on itself. Fingers crossed."
+if22,1000,Image,Very important,Important,SA,SP,AF,AS,NP,US,SA,,,,,,,,,,45000.0,short inner space,low, 
+if3,1000,Image,Very important,Very important,Venus,SP,,,,,,,,,,,,,,,41000000.0,earth-venus,low,"Well, it’s visually engaging, but in a creative way—so it sticks with you and you’re also interacting with it. And because you’re interacting, you feel more involved in the answer. That’s what makes it even better for raising awareness."
+if30,1000,Image,Very important,Very important,AU,Moon,SA,,,,,,,,,,,,,,768800.0,retour earth-moon,low, 
+if32,1000,Image,Important,Moderately important,EU,US,,,,,,,,,,,,,,,7500.0,long distance earth,low, 
+if33,1000,Image,Very important,Very important,OS,Venus,SP,US,NP,Moon,Venus,,,,,,,,,,102511000.0,>retour earth-venus,low,"Then I can remind myself that I need to look up the facts a little more before I get angry."
+if34,500,Image,Very important,Very important,SP,Venus,,,,,,,,,,,,,,,41000000.0,earth-venus,low, 
+if36,100,Image,Important,Very important,EU,Venus,EU,,,,,,,,,,,,,,82000000.0,retour earth-venus,low,"Will you tell us what it is later? Because now I'm curious."
+if38,1000,Image,Important,Important,SA,Moon,,,,,,,,,,,,,,,384400.0,earth-moon,low, 
+if39,1000,Image,Moderately important,Important,AF,Venus,Moon,Venus,AU,AF,,,,,,,,,,,163244200.0,>retour earth-venus,low, 
+if40,1000,Image,Important,Important,EU,OS,,,,,,,,,,,,,,,22700000.0,between moon and venus,low, 
+if41,1000,Image,Very important,Slightly important,US,Venus,US,,,,,,,,,,,,,,82000000.0,retour earth-venus,low,"An image consumes much more energy, you can already see that in the storage size. Saving a JPEG file requires more than a Word document."
+if43,1000,Image,Moderately important,Important,AU,SP,SA,US,NP,Moon,AU,,,,,,,,,,797800.0,between moon and venus,low, 
+if5,1000,Image,Moderately important,Very important,SP,EU,ISS,AU,EU,ISS,AU,,,,,,,,,,31132.0,short inner space,low, 
+if50,500,Image,Moderately important,Very important,Moon,EU,,,,,,,,,,,,,,,384400.0,earth-moon,low,"Just that it’s interactive you know, that’s really just super fun."
+if7,10,Image,Important,Important,SP,SA,US,NP,AS,AU,SP,US,NP,AU,SP,,,,,,83000.0,short inner space,low, 
+if8,250,Text,Very important,Very important,SA,AS,Moon,,,,,,,,,,,,,,401400.0,between moon and venus,low,"Because we’re like, I’m still living in a nice place, I still have water. I don’t really see the consequences, so I’m still going to ask chatGPT what I’m going to wear today."

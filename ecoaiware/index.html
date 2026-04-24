@@ -1,1 +1,886 @@
-test
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization ecoAIware</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.min.js"
+        integrity="sha512-iBAeBWWWFb8HqSBcrqcz98iIpuVH1la39dEYHtyQ/pGpeCQTQVvLJOWAuhv2Q7JSHp9k7hWA7sGxU3hHJe+tFg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="d3-annotation.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <div class="logo">ecoAIware</div>
+            <!-- <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#data">Data</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul> -->
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="about">
+            <!-- <h2>About</h2> -->
+            <p>This website is part of a research project conducted by Anniek Jansen, Supraja Sankaran and Emiel Krahmer. The visualizations are
+                based on data collected using a set of data physicalizations, ecoAIware, at an academic conference and a
+                library.
+                <br>
+                <br>
+
+                Explore the data by hovering over the data points and see what each participant answered at the
+                different locations. The correct answers, if applicable, are given in bold.
+
+                <br>
+                <br>
+                The tokens came in two colour shades: lighter colour shades indicate infrequent generative AI users (less than once a week) and darker colours for frequent (at least once a week) users. Outlined shapes indicate that the participant was featured with a quote in the pictorial. 
+            </p>
+            <div id="legend"></div>
+
+        </div>
+
+        <div class="about">
+            <div class="controls">
+                <label>Select Dataset:</label>
+                <button id="btnLibrary" class="active" onclick="switchDataset('library')">Library Data</button>
+                <button id="btnConference" onclick="switchDataset('conference')">Conference Data</button>
+
+
+            </div>
+            <div id="visualization">
+
+                <div class="loading">Loading data...</div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script type="text/javascript" charset="utf-8">
+        let conferenceData, libraryData;
+        let currentDataset = 'library';
+        let click = false;
+
+        // SVG path definitions
+        const dropletPath = "M16.25.39c-.37-.36-.95-.36-1.3,0C14.35.98.12,15.02.12,29.34c0,8.72,6.94,15.82,15.48,15.82s15.48-7.09,15.48-15.82C31.08,14.93,16.86.98,16.25.39Z";
+        const lightningBoltPath = "M5.82,2.87c.38-1.51,1.96-2.75,3.52-2.75h19.91c1.56,0,2.16,1.08,1.33,2.4l-8.62,13.81c-.83,1.32-.23,2.4,1.33,2.4h3.63c1.56,0,1.97.94.92,2.09L6.09,44.59c-1.05,1.15-1.61.85-1.23-.66l3.27-13.12c.38-1.51-.59-2.75-2.15-2.75h-3.63c-1.56,0-2.53-1.24-2.15-2.75L5.82,2.87Z";
+        const clothesPinPath = "M22.12,11.53c0,2.63,2.46,4.77,5.49,4.77s5.49-2.14,5.49-4.77-2.46-4.77-5.49-4.77-5.49,2.14-5.49,4.77ZM36.01.5h19.02v6.99l-4.07,3.72c-.95-.57-3.17-1.71-5.76-1.71-3.45,0-6.25,2.02-6.25,2.02,0,0,2.8,2.02,6.25,2.02,2.59,0,4.81-1.14,5.76-1.71l4.07,3.72v6.99h-19.02v-2.13h-3.96v2.13H.5v-4.77l17.51-3.15c-.71-.65-1.18-1.8-1.18-3.11s.47-2.46,1.18-3.11L.5,5.27V.5h31.54v2.14h3.96V.5";
+        const cloudPath = "M30.07.13c3.14-.09,6.19,1.07,8.48,3.22,2.29,2.16,3.62,5.14,3.72,8.28,0,1.12-.17,2.23-.51,3.29,4.05.65,7.06,4.1,7.16,8.21-.14,4.76-4.11,8.5-8.87,8.36H8.99c-4.76.13-8.73-3.61-8.87-8.36.08-3.91,2.83-7.26,6.66-8.1v-.26c.14-4.76,4.11-8.5,8.87-8.36,1.11,0,2.21.2,3.26.58C20.99,2.74,25.33.07,30.07.13Z";
+        const donutPath = "M44.98,22.74c0,12.28-9.96,22.24-22.24,22.24S.5,35.02.5,22.74,10.46.5,22.74.5s22.24,9.96,22.24,22.24ZM22.74,16.44c-3.48,0-6.29,2.82-6.29,6.29s2.82,6.29,6.29,6.29,6.29-2.82,6.29-6.29-2.82-6.29-6.29-6.29Z";
+
+        // Load data files
+        async function loadData() {
+            try {
+                conferenceData = await d3.csv("Data/data_conference.csv");
+                libraryData = await d3.csv("Data/data_library.csv");
+
+                console.log(conferenceData)
+                console.log(libraryData)
+
+                renderVisualization();
+            } catch (error) {
+                document.getElementById('visualization').innerHTML =
+                    '<div class="loading">Error loading data. Please ensure data files are in the correct location.</div>';
+                console.error('Error loading data:', error);
+            }
+        }
+
+        function processData(rawData) {
+            // Group data by frequency (high/low)
+            const FreqData = new Map();
+            FreqData.set('high', rawData.filter(d => d.frequency === 'high'));
+            FreqData.set('low', rawData.filter(d => d.frequency === 'low'));
+            console.log(FreqData)
+            return FreqData;
+        }
+
+        function switchDataset(dataset) {
+            currentDataset = dataset;
+
+            // Update button states
+            document.getElementById('btnConference').classList.toggle('active', dataset === 'conference');
+            document.getElementById('btnLibrary').classList.toggle('active', dataset === 'library');
+            console.log(click)
+            //close tooltip
+            closeTooltip(currentDataset)
+
+
+            renderVisualization();
+        }
+        function closeTooltip(d) {
+            click = false;
+            d3.selectAll(".token")
+                .attr("opacity", 1)
+                .attr("stroke", "none")
+            // .attr("stroke", d.quote.length===1  ? "none" : "black")
+            d3.selectAll(".withquote")
+                .attr("stroke", 'black')
+                .attr('stroke-width', 3);
+            d3.selectAll(".tooltip").style("visibility", "hidden");
+        }
+
+        function renderVisualization() {
+            const FreqData = processData(currentDataset === 'conference' ? conferenceData : libraryData);
+
+            if (!FreqData) {
+                return;
+            }
+
+            // Clear previous visualization
+            document.getElementById('visualization').innerHTML = '';
+
+            // Create the visualization using the provided code
+            const chart = createChart(FreqData);
+            document.getElementById('visualization').appendChild(chart);
+
+            document.getElementById('legend').innerHTML = '';
+            const legend = createLegend()
+            document.getElementById('legend').appendChild(legend);
+        }
+
+
+
+        function createLegend() {
+            const svg = d3.create("svg")
+                .attr("width", 800)
+                .attr("height", 150)
+                .attr("viewbox", [0, 0, 800, 150])
+
+            const type = d3.annotationCallout
+            const annotationLow = [
+                {
+                    note: {
+                        label: "Less than once a week ",
+                        title: "Infrequent genAI user"
+                    },
+                    connector: {
+                        end: "dot",        // Can be none, or arrow or dot
+                        endScale: 1     // dot size
+                    },
+                    color: ["#404040"],
+                    x: 280,
+                    y: 40,
+                    dy: 40,
+                    dx: -30,
+                    align: "right",  // try right or left
+                }
+            ]
+            const annotationHigh = [
+                {
+                    note: {
+                        label: "At least once a week",
+                        title: "Frequent genAI user",
+                        lineType: "horizontal"
+                    },
+                    connector: {
+                        end: "dot",        // Can be none, or arrow or dot
+                        endScale: 1     // dot size
+                    },
+                    color: ["#404040"],
+                    x: 340,
+                    y: 40,
+                    dy: 40,
+                    dx: 60
+                }
+            ]
+
+            const annotationQuote = [
+                {
+                    note: {
+                        label: "Participant of whom a quote was used in the pictorial",
+                        title: "Featured in the pictorial"
+                    },
+                    connector: {
+                        end: "none",        // Can be none, or arrow or dot
+                        endScale: 1     // dot size
+                    },
+                    color: ["#404040"],
+                    x: 360,
+                    y: 20,
+                    dy: 10,
+                    dx: 40
+                }
+            ]
+
+
+
+            const makeAnnotationLow = d3.annotation()
+                //   .editMode(true)
+                .type(type)
+                .annotations(annotationLow)
+
+            const makeAnnotationHigh = d3.annotation()
+                .annotations(annotationHigh)
+
+            const makeAnnotationQuote = d3.annotation()
+                .annotations(annotationQuote)
+
+
+
+            svg.append("rect")
+  .attr('width', 40)
+  .attr('height', 40)
+                // .attr("d", dropletPath)
+                .attr("transform", `translate(260,20) scale(1)`)
+                .attr("fill", '#69def0');
+            svg.append("g")
+                .attr("class", "end-anchor")
+                .call(makeAnnotationLow)
+
+            svg.append("rect")
+                // .attr("d", dropletPath)
+                  .attr('width', 40)
+  .attr('height', 40)
+                .attr("transform", `translate(320,20) scale(1)`)
+                .attr("fill", '#0096ad')
+                .attr("stroke-width", '3')
+                .attr("stroke", "black")
+
+            svg.append("g")
+                .call(makeAnnotationHigh)
+            svg.append("g")
+                .call(makeAnnotationQuote)
+            return svg.node();
+        }
+
+
+        function createChart(FreqData) {
+            // Set up the SVG
+            const graphWidth = 450;
+            const graphHeight = 350;
+
+            const svg = d3.create("svg")
+                .attr("width", 1000)
+                .attr("height", 1700)
+                .attr("viewBox", [0, 0, 1000, 1800]);
+
+            // Define color scale for frequency
+            const color = d3.scaleOrdinal()
+                .domain(["low", "high"])
+                .range(["#69def0", "#0096ad"]);
+
+            // FreqData= processData()
+
+            // Group data by water value
+
+            const waterGroups = new Map();
+            if (FreqData && FreqData.size > 0) {
+                FreqData.forEach((arr, key) => {
+                    if (Array.isArray(arr)) {
+                        arr.forEach((d) => {
+                            if (d.water !== undefined) {
+                                if (!waterGroups.has(d.water)) {
+                                    waterGroups.set(d.water, { high: [], low: [] });
+                                }
+                                waterGroups.get(d.water)[key].push(d);
+                            }
+                        });
+                    }
+                });
+            }
+
+            const sortedWaterValues = Array.from(waterGroups.keys()).sort((a, b) => a - b);
+
+            // Group data by societal importance
+            const socGroups = new Map();
+            if (FreqData && FreqData.size > 0) {
+                FreqData.forEach((arr, key) => {
+                    if (Array.isArray(arr)) {
+                        arr.forEach((d) => {
+                            if (d.soc_impact !== undefined) {
+                                if (!socGroups.has(d.soc_impact)) {
+                                    socGroups.set(d.soc_impact, { high: [], low: [] });
+                                }
+                                socGroups.get(d.soc_impact)[key].push(d);
+                            }
+                        });
+                    }
+                });
+            }
+            const sortedSocValues = Array.from(socGroups.keys()).sort((a, b) => a - b);
+
+            // Group data by environmental importance
+            const envGroups = new Map();
+            if (FreqData && FreqData.size > 0) {
+                FreqData.forEach((arr, key) => {
+                    if (Array.isArray(arr)) {
+                        arr.forEach((d) => {
+                            if (d.env_impact !== undefined) {
+                                if (!envGroups.has(d.env_impact)) {
+                                    envGroups.set(d.env_impact, { high: [], low: [] });
+                                }
+                                envGroups.get(d.env_impact)[key].push(d);
+                            }
+                        });
+                    }
+                });
+            }
+            const sortedEnvValues = Array.from(envGroups.keys()).sort((a, b) => a - b);
+
+            // Group data by electricity
+            const electricityGroups = new Map();
+            if (FreqData && FreqData.size > 0) {
+                FreqData.forEach((arr, key) => {
+                    if (Array.isArray(arr)) {
+                        arr.forEach((d) => {
+                            if (d.electricity !== undefined) {
+                                if (!electricityGroups.has(d.electricity)) {
+                                    electricityGroups.set(d.electricity, []);
+                                }
+                                electricityGroups.get(d.electricity).push(d);
+                            }
+                        });
+                    }
+                });
+            }
+
+
+            // Group data by energy intensive phase (training or use)
+            const phaseGroups = new Map();
+            if (FreqData && FreqData.size > 0) {
+                FreqData.forEach((arr, key) => {
+                    if (Array.isArray(arr)) {
+                        arr.forEach((d) => {
+                            if (d.energy !== undefined) {
+                                if (!phaseGroups.has(d.energy)) {
+                                    console.log("yea")
+                                    phaseGroups.set(d.energy, []);
+                                }
+                                phaseGroups.get(d.energy).push(d);
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Group data by flying distance
+            const mapGroups = new Map();
+            if (FreqData && FreqData.size > 0) {
+                FreqData.forEach((arr, key) => {
+                    if (Array.isArray(arr)) {
+                        arr.forEach((d) => {
+                            if (d.rel_distance !== undefined) {
+                                if (!mapGroups.has(d.rel_distance)) {
+                                    mapGroups.set(d.rel_distance, { high: [], low: [] });
+                                }
+                                mapGroups.get(d.rel_distance)[key].push(d);
+                            }
+                        });
+                    }
+                });
+            }
+
+
+            const customOrder = [
+                'short distance earth',
+                'long distance earth',
+                'short inner space',
+                'earth-moon',
+                'between moon and venus',
+                'retour earth-moon',
+                'earth-halfway moon-venus (correct)',
+                'earth-venus',
+                'retour earth-venus',
+                'retour earth-venus + detour',
+                '>retour earth-venus'
+            ];
+
+            const sortedMapValues = Array.from(mapGroups.keys()).sort((a, b) => {
+                return customOrder.indexOf(a) - customOrder.indexOf(b);
+            });
+
+            // Define scales
+            const xScale = d3.scaleBand()
+                .domain(sortedWaterValues)
+                .range([50, graphWidth])
+                .padding(0.2);
+
+            console.log(FreqData)
+            const yScale = d3.scaleLinear()
+                .domain([0, d3.max([FreqData.get("high"), FreqData.get("low")].map(arr => arr.length))])
+                .range([graphHeight, 50]);
+
+            const xScaleElec = d3.scaleBand()
+                .domain(Array.from(electricityGroups.keys()))
+                .range([50, graphWidth])
+                .padding(0.2);
+
+            const xScalePhase = d3.scaleBand()
+                .domain(Array.from(phaseGroups.keys()))
+                .range([50, graphWidth])
+                .padding(0.2);
+
+            const xScaleSoc = d3.scaleBand()
+                .domain(['Not important', 'Slightly important', 'Moderately important', 'Important', 'Very important'])
+                .range([50, graphWidth])
+                .padding(0.2);
+
+            const xScaleEnv = d3.scaleBand()
+                .domain(['Not important', 'Slightly important', 'Moderately important', 'Important', 'Very important'])
+                .range([50, graphWidth])
+                .padding(0.2);
+
+            const xScaleMap = d3.scaleBand()
+                .domain(sortedMapValues)
+                .range([50, graphWidth * 2])
+                .padding(0.2);
+
+            // Create groups for each visual
+            const socImpactSVG = svg.append("g").attr("class", "socImpact")
+
+            const envImpactSVG = svg.append("g").attr("class", "envImpact")
+                .attr("transform", `translate(${graphWidth}, 0)`);
+
+
+            const waterSVG = svg.append("g").attr("class", "water")
+                .attr("transform", `translate(0, ${graphHeight + 140 - 0})`);
+            const textImageSVG = svg.append("g").attr("class", "textImage")
+                .attr("transform", `translate(${graphWidth}, ${graphHeight + 140 - 0})`);
+
+
+
+            const mapSVG = svg.append("g").attr("class", "mapDistance")
+                .attr("transform", `translate(0, ${graphHeight * 2 + 60})`);
+
+
+
+            const phaseSVG = svg.append("g").attr("class", "phase")
+                .attr("transform", `translate(${0}, ${graphHeight * 3.7})`);
+
+
+            // console.log(waterSVG.selectAll("text").filter(d => d === 500))
+
+            // Draw axes
+            waterSVG.append("g")
+                .attr("transform", `translate(0, ${graphHeight})`)
+                .call(d3.axisBottom(xScale))
+                .append("text")
+                .attr("class", 'caption')
+                .attr("text-anchor", "middle")
+                .attr("x", graphWidth / 2)
+                .attr("y", -graphHeight + 50)
+                .text("Water usage 30 prompts");
+            ;
+
+            waterSVG.selectAll("text")
+                .filter(function (d) { return d === '500'; })
+                .style("font-weight", "bold");
+
+            textImageSVG.append("g")
+                .attr("transform", `translate(0, ${graphHeight})`)
+                .call(d3.axisBottom(xScaleElec))
+                .append("text")
+                .attr("class", 'caption')
+                .attr("text-anchor", "middle")
+                .attr("x", graphWidth / 2)
+                .attr("y", -graphHeight + 50)
+                .text("More energy intensive to generate");
+
+            textImageSVG.selectAll("text")
+                .filter(function (d) { return d === 'Image'; })
+                .style("font-weight", "bold");
+
+            socImpactSVG.append("g")
+                .attr("transform", `translate(0, ${graphHeight})`)
+                .call(d3.axisBottom(xScaleSoc))
+                .selectAll("text")
+                .style("text-anchor", "end")
+                .attr("dx", "-.8em")
+                .attr("dy", ".15em")
+                .attr("transform", "rotate(-45)")
+
+            socImpactSVG.append("g")
+                .attr("transform", `translate(0, ${graphHeight})`)
+                .append("text")
+                .attr("class", 'caption')
+                .attr("text-anchor", "middle")
+                .attr("x", graphWidth / 2)
+                .attr("y", -graphHeight + 50)
+                .text("Importance societal impact");
+
+            envImpactSVG.append("g")
+                .attr("transform", `translate(0, ${graphHeight})`)
+
+                .call(d3.axisBottom(xScaleEnv))
+                .selectAll("text")
+                .style("text-anchor", "end")
+                .attr("dx", "-.8em")
+                .attr("dy", ".15em")
+                .attr("transform", "rotate(-45)");
+
+            envImpactSVG.append("g")
+                .attr("transform", `translate(0, ${graphHeight})`)
+                .append("text")
+                .attr("class", 'caption')
+                .attr("text-anchor", "middle")
+                .attr("x", graphWidth / 2)
+                .attr("y", -graphHeight + 50)
+                .text("Importance environmental impact")
+
+
+            mapSVG.append("g")
+                .attr("transform", `translate(0, ${graphHeight})`)
+                .call(d3.axisBottom(xScaleMap))
+                .selectAll("text")
+                .style("text-anchor", "end")
+                .attr("dx", "-.8em")
+                .attr("dy", ".15em")
+                .attr("transform", "rotate(-45)")
+
+            mapSVG.append("g")
+                .attr("transform", `translate(0, ${graphHeight})`)
+                .append("text")
+                .attr("class", 'caption')
+                .attr("text-anchor", "middle")
+                .attr("x", graphWidth)
+                .attr("y", -graphHeight / 2 - 0)
+                .text("Flying distance that equals carbon emmission training GPT4o");
+
+            mapSVG.selectAll("text")
+                .filter(function (d) { return d === 'between moon and venus'; })
+                .style("font-weight", "bold");
+
+
+            if (currentDataset === "conference") {
+
+
+                phaseSVG.append("g")
+                    .attr("transform", `translate(0, ${graphHeight})`)
+                    .call(d3.axisBottom(xScalePhase))
+                    .append("text")
+                    .attr("class", 'caption')
+                    .attr("text-anchor", "middle")
+                    .attr("x", graphWidth / 2)
+                    .attr("y", -graphHeight + 50)
+                    .text("More energy intensive phase");
+
+                phaseSVG.selectAll("text")
+                    .filter(function (d) { return d === 'Use'; })
+                    .style("font-weight", "bold");
+            }
+            // Draw droplets for water data
+            let droplets = waterSVG.append("g").attr("class", "droplets");
+            sortedWaterValues.forEach((water) => {
+                const x = xScale(water);
+                ["low", "high"].forEach((key, j) => {
+                    const dataArray = waterGroups.get(water)[key];
+                    const offset = j * 28;
+                    dataArray.forEach((d, k) => {
+                        const row = Math.floor(k / 2);
+                        const col = k % 2;
+                        droplets.append("path")
+                            .classed("token", true)
+                            .classed(`id-${d.ID}`, true)
+                            .attr("d", dropletPath)
+                            .attr("transform", `translate(${x + offset + col * 14}, ${graphHeight - 22 - row * 20}) scale(0.4)`)
+                            .attr("fill", color(key))
+                            .attr("stroke-width", '3')
+                            .attr("stroke", d.quote.length === 1 ? "none" : "black")
+                            .classed("withquote", d.quote.length !== 1)
+                            .datum(d);
+                    });
+                });
+            });
+
+
+
+
+            // Draw lightning bolts for electricity data
+            let bolts = textImageSVG.append("g").attr("class", "bolts");
+            Array.from(electricityGroups.entries()).forEach(([elecType, dataArray]) => {
+                const x = xScaleElec(elecType);
+                const lowArray = dataArray.filter(d => d.frequency === "low");
+                const highArray = dataArray.filter(d => d.frequency === "high");
+
+                lowArray.forEach((d, k) => {
+                    const row = Math.floor(k / 2);
+                    const col = k % 2;
+                    bolts.append("path")
+                        .datum(d)
+                        .attr("d", lightningBoltPath)
+                        .attr("transform", `translate(${20 + x + col * 20}, ${graphHeight - 25 - row * 28}) scale(0.55)`)
+                        .classed("token", true)
+                        .classed(`id-${d.ID}`, true)
+                        .attr("stroke-width", '3')
+                        .attr("stroke", d.quote.length === 1 ? "none" : "black")
+                        .classed("withquote", d.quote.length !== 1)
+                        .attr("fill", "#FAFA33");
+                });
+
+                highArray.forEach((d, k) => {
+                    const row = Math.floor(k / 3);
+                    const col = k % 3;
+                    bolts.append("path")
+                        .datum(d)
+                        .attr("d", lightningBoltPath)
+                        .attr("transform", `translate(${60 + x + col * 20}, ${graphHeight - 25 - row * 28}) scale(0.55)`)
+                        .classed("token", true)
+                        .classed(`id-${d.ID}`, true)
+                        .attr("stroke-width", '3')
+                        .attr("stroke", d.quote.length === 1 ? "none" : "black")
+                        .classed("withquote", d.quote.length !== 1)
+                        .attr("fill", "#FDDA0D");
+                });
+            });
+
+
+
+            // Draw pins for societal impact
+            let socPins = socImpactSVG.append("g").attr("class", "socPins");
+            sortedSocValues.forEach((soc_impact) => {
+                const x = xScaleSoc(soc_impact);
+                ["low", "high"].forEach((key, j) => {
+                    const dataArray = socGroups.get(soc_impact)[key];
+                    const offset = j * 35;
+                    dataArray.forEach((d, k) => {
+                        socPins.append("path")
+                            .classed("token", true)
+                            .classed(`id-${d.ID}`, true)
+                            .attr("d", clothesPinPath)
+                            .attr("transform", `translate(${-2 + x + offset}, ${graphHeight - 15 - k * 15}) scale(0.55)`)
+                            .attr("fill", d.frequency === "low" ? "#FFC0CB" : "#E0115F")
+                            .attr("stroke-width", '3')
+                            .attr("stroke", d.quote.length === 1 ? "none" : "black")
+                            // .classed(d.quote.length===1  ? "noquote" : "withquote") 
+                            .classed("withquote", d.quote.length !== 1)
+                            .datum(d);
+                    });
+                });
+            });
+
+            // Draw pins for environmental impact
+            let envPins = envImpactSVG.append("g").attr("class", "envPins");
+            sortedEnvValues.forEach((env_impact) => {
+                const x = xScaleEnv(env_impact);
+                ["low", "high"].forEach((key, j) => {
+                    const dataArray = envGroups.get(env_impact)[key];
+                    const offset = j * 35;
+                    dataArray.forEach((d, k) => {
+                        envPins.append("path")
+                            .classed("token", true)
+                            .classed(`id-${d.ID}`, true)
+                            .attr("d", clothesPinPath)
+                            .attr("transform", `translate(${-2 + x + offset}, ${graphHeight - 15 - k * 15}) scale(0.55)`)
+                            .attr("fill", d.frequency === "low" ? "#8A9A5B" : "#355E3B")
+                            .attr("stroke-width", '3')
+                            .attr("stroke", d.quote.length === 1 ? "none" : "black")
+                            .classed("withquote", d.quote.length !== 1)
+                            .datum(d);
+                    });
+                });
+            });
+
+            // Draw clouds for flying distance
+            let clouds = mapSVG.append("g").attr("class", "clouds");
+            sortedMapValues.forEach((rel_distance) => {
+                const x = xScaleMap(rel_distance);
+                ["low", "high"].forEach((key, j) => {
+                    const dataArray = mapGroups.get(rel_distance)[key];
+                    const offset = j * 30;
+                    dataArray.forEach((d, k) => {
+                        clouds.append("path")
+                            .classed("token", true)
+                            .classed(`id-${d.ID}`, true)
+                            .attr("d", cloudPath)
+                            .attr("transform", `translate(${4 + x + offset}, ${graphHeight - 20 - k * 18}) scale(0.55)`)
+                            .attr("fill", d.frequency === "low" ? "#C0C0C0" : "#71797E")
+                            .attr("stroke-width", '3')
+                            .attr("stroke", d.quote.length === 1 ? "none" : "black")
+                            .classed("withquote", d.quote.length !== 1)
+                            .datum(d);
+                    });
+                });
+            });
+
+
+
+            // Draw donuts for phase energy data
+            // console.log(phaseGroups)
+            // console.log(electricityGroups)
+            let donuts = phaseSVG.append("g").attr("class", "donuts");
+            Array.from(phaseGroups.entries()).forEach(([phaseType, dataArray]) => {
+                const x = xScalePhase(phaseType);
+                const lowArray = dataArray.filter(d => d.frequency === "low");
+                const highArray = dataArray.filter(d => d.frequency === "high");
+
+                lowArray.forEach((d, k) => {
+                    const row = Math.floor(k / 2);
+                    const col = k % 2;
+                    donuts.append("path")
+                        .datum(d)
+                        .attr("d", donutPath)
+                        .attr("transform", `translate(${30 + x + col * 22}, ${graphHeight - 25 - row * 30}) scale(0.45)`)
+                        .classed("token", true)
+                        .classed(`id-${d.ID}`, true)
+                        .attr("stroke-width", '3')
+                        .attr("stroke", d.quote.length === 1 ? "none" : "black")
+                        .classed("withquote", d.quote.length !== 1)
+                        .attr("fill", "#b59ebf");
+                });
+
+                highArray.forEach((d, k) => {
+                    const row = Math.floor(k / 2);
+                    const col = k % 2;
+                    donuts.append("path")
+                        .datum(d)
+                        .attr("d", donutPath)
+                        .attr("transform", `translate(${75 + x + col * 22}, ${graphHeight - 25 - row * 30}) scale(0.45)`)
+                        .classed("token", true)
+                        .classed(`id-${d.ID}`, true)
+                        .attr("stroke-width", '3')
+                        .attr("stroke", d.quote.length === 1 ? "none" : "black")
+                        .classed("withquote", d.quote.length !== 1)
+                        .attr("fill", "#782996");
+                });
+            });
+
+
+            svg.selectAll('.tick').style("font", "18px sans-serif");
+
+            // d3.selectAll('g.tick')
+            //     .filter(function (d) { return d == 500; })
+            //     //only ticks that returned true for the filter will be included
+            //     //in the rest of the method calls:
+            //     .style('font-weight', "bold"); //or style directly with attributes or inline styles
+
+            // Add tooltip
+            const tooltip = d3.select(".container").append("div")
+                .attr("class", "tooltip")
+                .style("position", "absolute")
+                .style("visibility", "hidden")
+
+
+            // Add interactivity
+
+
+            svg.selectAll(".token")
+                .on("mouseover", function (event, d) {
+                    if (!click) {
+                        // console.log(d.quote==" ")
+                        d3.selectAll(".token").attr("opacity", 0.3);
+                        d3.selectAll(`.id-${d.ID}`)
+                            .attr("opacity", 1)
+                            .attr("stroke", "#202020")
+                            .attr("stroke-width", 2);
+
+
+                        if (currentDataset === 'library') {
+                            tooltip.html(`
+                        <button class="tooltip-close" >×</button>
+                        <strong>ID:</strong> ${d.ID}<br/>
+                        <strong>Quotation:</strong> ${d.quote}<br/>
+                        <strong>Social Impact:</strong> ${d.soc_impact}<br/>
+                        <strong>Environmental Impact:</strong> ${d.env_impact}<br/>
+                        <strong>Water:</strong> ${d.water}<br/>
+                        <strong>Text or Image:</strong> ${d.electricity}<br/>
+                        <strong>Flying distance:</strong> ${d.rel_distance}<br/>
+                        <strong>Exact distance (km):</strong> ${d.total_distance_km}<br/>
+                    `).style("visibility", "visible")
+                                .style("left", event.pageX + 10 + "px")
+                                .style("top", event.pageY - 28 + "px");
+                        } else {
+                            tooltip.html(`
+                        <button class="tooltip-close" >×</button>
+                        <strong>ID:</strong> ${d.ID}<br/>
+                        <strong>Social Impact:</strong> ${d.soc_impact}<br/>
+                        <strong>Environmental Impact:</strong> ${d.env_impact}<br/>
+                        <strong>Water:</strong> ${d.water}<br/>
+                        <strong>Text or Image:</strong> ${d.electricity}<br/>
+                        <strong>Flying distance:</strong> ${d.rel_distance}<br/>
+                        <strong>Exact distance (km):</strong> ${d.total_distance_km}<br/>
+                        <strong>Energy intenstive phase:</strong> ${d.energy}<br/>
+                    `).style("visibility", "visible")
+                                .style("left", event.pageX + 10 + "px")
+                                .style("top", event.pageY - 28 + "px");
+                        }
+
+
+                    }
+                })
+                .on("click", function (event, d) {
+                    click = true;
+                    d3.selectAll(".token")
+                        .attr("stroke-width", 0)
+                        .attr("opacity", 0.3);
+                    d3.selectAll(`.id-${d.ID}`)
+                        .attr("opacity", 1)
+                        .attr("stroke", "#202020")
+                        .attr("stroke-width", 2);
+
+                        if(currentDataset==='library'){
+                    tooltip.html(`
+                    <button class="tooltip-close" onclick="closeTooltip()">×</button>
+                        <strong>ID:</strong> ${d.ID}<br/>
+                        <strong>Quotation:</strong> ${d.quote}<br/>
+                        <strong>Social Impact:</strong> ${d.soc_impact}<br/>
+                        <strong>Environmental Impact:</strong> ${d.env_impact}<br/>
+                        <strong>Water:</strong> ${d.water}<br/>
+                        <strong>Text or Image:</strong> ${d.electricity}<br/>
+                        <strong>Flying distance:</strong> ${d.rel_distance}<br/>
+                        <strong>Exact distance (km):</strong> ${d.total_distance_km}<br/>
+                    `)
+                        .style("visibility", "visible")
+                        .style("left", event.pageX + 10 + "px")
+                        .style("top", event.pageY - 28 + "px");
+                        } else{
+                                                tooltip.html(`
+                    <button class="tooltip-close" onclick="closeTooltip()">×</button>
+                        <strong>ID:</strong> ${d.ID}<br/>
+                        <strong>Social Impact:</strong> ${d.soc_impact}<br/>
+                        <strong>Environmental Impact:</strong> ${d.env_impact}<br/>
+                        <strong>Water:</strong> ${d.water}<br/>
+                        <strong>Text or Image:</strong> ${d.electricity}<br/>
+                        <strong>Flying distance:</strong> ${d.rel_distance}<br/>
+                        <strong>Exact distance (km):</strong> ${d.total_distance_km}<br/>
+                         <strong>Energy intenstive phase:</strong> ${d.energy}<br/>
+                    `)
+                        .style("visibility", "visible")
+                        .style("left", event.pageX + 10 + "px")
+                        .style("top", event.pageY - 28 + "px");
+                        }
+
+                })
+                .on("mousemove", function (event) {
+                    if (!click) {
+                        tooltip
+                            .style("left", event.pageX + 10 + "px")
+                            .style("top", event.pageY - 28 + "px");
+                    }
+                })
+                .on("mouseout", function (event, d) {
+                    if (!click) {
+                        d3.selectAll(".token")
+                            .attr("opacity", 1)
+                            .attr("stroke", "none")
+                        // .attr("stroke", d.quote.length===1  ? "none" : "black")
+                        tooltip.style("visibility", "hidden")
+                        d3.selectAll(".withquote")
+                            .attr("stroke", 'black ')
+                            .attr('stroke-width', 3);
+                    }
+                })
+
+
+
+            return svg.node();
+        }
+
+
+        // Initialize
+        loadData();
+
+    </script>
+</body>
+
+</html>
