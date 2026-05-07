@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tech detectives dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="oocsi-web.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Lato", sans-serif
+        }
+
+        .data {
+            font-weight: bold;
+            color: #f44336;
+        }
+
+        .w3-bar,
+        h1,
+        button {
+            font-family: "Montserrat", sans-serif
+        }
+
+        .fa-paint-brush,
+        .fa-language,
+        .fa-lightbulb-o {
+            font-size: 120px
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- Header -->
+    <header class="w3-container w3-red w3-center" style="padding:30px 16px">
+        <h1 class="w3-margin" style="font-size: 60px;">Tech Detective dashboard</h1>
+
+    </header>
+
+    <!-- First Grid -->
+    <div class="w3-row-padding  w3-container">
+        <div class="w3-content">
+            <div class="w3-twothird">
+                <h1>Waar wordt AI van gemaakt?</h1>
+
+
+
+                <p class="w3-text-grey">Active LED: &emsp; <bold><span id="activeLED" class="data"></span></bold>
+                    <br>
+                    <br>
+                    Repeat: &emsp;<span id="repeat" class="data"></span>
+                </p>
+            </div>
+
+            <div class="w3-third w3-center">
+                <i class="fa fa-lightbulb-o  w3-padding-64 w3-text-red"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Grid -->
+    <div class="w3-row-padding w3-light-grey  w3-container">
+        <div class="w3-content">
+            <div class="w3-third w3-center">
+                <i class="fa fa-language  w3-padding-64 w3-text-red w3-margin-right"></i>
+            </div>
+
+            <div class="w3-twothird">
+                <h1>Sorry, ik begrijp je niet!</h1>
+
+
+                <p class="w3-text-grey">
+                    Distance: &emsp; <span id="distance" class="data"></span>
+                    <br> <br>
+                    Motor speed: &emsp; <span id="motorSpeed" class="data"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="w3-row-padding4 w3-container">
+        <div class="w3-content">
+            <div class="w3-twothird">
+                <h1>Rara, wie aap ik na?</h1>
+                <p class="w3-text-grey">
+                    Van Gogh: &emsp; <span id="vanGogh" class="data"></span>
+                    <br> <br>
+                    Picasso: &emsp; <span id="Picasso" class="data"></span>
+                    <br> <br>
+                    Disney: &emsp; <span id="Disney" class="data"></span>
+                    <br> <br>
+                    Studio Ghibli: &emsp; <span id="Ghibli" class="data"></span>
+                </p>
+            </div>
+
+            <div class="w3-third w3-center">
+                <i class="fa fa-paint-brush  w3-padding-64 w3-text-red"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+        <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
+    </div> -->
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+
+    </footer>
+
+    <script>
+
+        OOCSI.connect('wss://oocsi.id.tue.nl/ws');
+        console.log("Connected to oocsi");
+
+
+        OOCSI.subscribe("nightuniversity-resources", function (msg) {
+            // handle message on “test channel"
+            console.log(msg);
+            var ledNumber = msg.data.led;
+            var repeat = msg.data.repeat;
+            console.log(ledNumber);
+            document.getElementById("activeLED").innerHTML = ledNumber;
+            console.log(repeat);
+            document.getElementById('repeat').innerHTML = repeat;
+        });
+
+        OOCSI.subscribe("nightuniversity-art", function (msg) {
+            var vanGogh = msg.data.vanGogh;
+            var picasso = msg.data.picasso;
+            var disney = msg.data.disney;
+            var ghibli = msg.data.ghibli;
+            document.getElementById('vanGogh').innerHTML = vanGogh;
+            document.getElementById('Picasso').innerHTML = picasso;
+            document.getElementById('Disney').innerHTML = disney;
+            document.getElementById('Ghibli').innerHTML = ghibli;
+
+
+
+        });
+
+
+        OOCSI.subscribe("nightuniversity-languages", function (msg) {
+            var distance = msg.data.distance;
+            var motorSpeed = msg.data.motorSpeed;
+            console.log(ledNumber);
+            document.getElementById("distance").innerHTML = distance;
+            console.log(motorSpeed);
+            document.getElementById('motorSpeed').innerHTML = motorSpeed;
+
+
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>
